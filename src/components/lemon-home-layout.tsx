@@ -131,11 +131,11 @@ function LemonHomeHeader({
                     >
                         <ChevronDown className="!size-5.5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                     </MenuTrigger>
-                    <MenuContent className="sm:flex-row sm:items-center sm:justify-end">
+                    <MenuContent className="lg:flex-row lg:items-center lg:justify-end">
                         {menuItems
                             .filter((item) => !isSecondary(item))
                             .map((item, i) => (
-                                <MenuLinkItem key={i} item={item} className="sm:hidden" />
+                                <MenuLinkItem key={i} item={item} />
                             ))}
                         <div className="-ms-1.5 flex flex-row items-center gap-1.5 max-sm:mt-2">
                             {menuItems.filter(isSecondary).map((item, i) => (
@@ -158,7 +158,7 @@ function LemonHomeHeader({
                 </Menu>
             </ul>
         </Navbar>
-        <Navbar id="second-nav" className="!h-10 max-sm:hidden !top-[calc(var(--fd-banner-height)+3.5rem)] [&_nav]:!h-10 !border-t-0 backdrop-blur-sm">
+        <Navbar id="second-nav" className="!h-10 max-lg:hidden !top-[calc(var(--fd-banner-height)+3.5rem)] [&_nav]:!h-10 !border-t-0 backdrop-blur-sm">
             <ul className="flex flex-row items-center gap-2">
                 {navItems
                     .filter((item) => !isSecondary(item))
