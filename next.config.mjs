@@ -22,7 +22,7 @@ const config = {
     unoptimized: true,
   },
   // GitHub Pages 배포시 저장소 이름이 서브패스가 됩니다
-  basePath: process.env.NODE_ENV === 'production' ? '/codes-docs' : ''},
+  basePath: process.env.NODE_ENV === 'production' ? '/codes-docs' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/codes-docs' : '',
 };
 

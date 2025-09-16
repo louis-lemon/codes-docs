@@ -65,6 +65,16 @@ export const docs = defineDocs({
   },
 });
 
+export const blogPosts = defineDocs({
+  dir: "content/blog",
+  docs: {
+    schema: extendedFrontmatterSchema,
+  },
+  meta: {
+    schema: extendedMetaSchema,
+  },
+});
+
 export default defineConfig({
   mdxOptions: {
     // MDX options
