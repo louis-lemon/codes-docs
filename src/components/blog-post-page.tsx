@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ArrowLeft, Calendar, Clock, Share, Bookmark, Repeat2, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {Card, CardContent, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
 import { getMDXComponents } from '@/mdx-components';
 import { blog } from '@/lib/source';
 
@@ -15,11 +15,11 @@ export default function BlogPostPage({ page }: BlogPostPageProps) {
   const MDXContent = page.data.body;
   const publishDate = page.data.created || page.data.updated;
   const category = page.data.category || page.data.subCategory || 'AI';
-  
+
   // Get related posts (same category, excluding current post)
   const relatedPosts = blog.getPages()
-    .filter(post => 
-      !post.data.draft && 
+    .filter(post =>
+      !post.data.draft &&
       post.url !== page.url &&
       (post.data.category === page.data.category || post.data.subCategory === page.data.subCategory)
     )
@@ -32,8 +32,8 @@ export default function BlogPostPage({ page }: BlogPostPageProps) {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Back button */}
-        <Link 
-          href="/blog" 
+        <Link
+          href="/blog"
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors group"
         >
           <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
@@ -53,7 +53,7 @@ export default function BlogPostPage({ page }: BlogPostPageProps) {
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
             {page.data.title}
           </h1>
-          
+
           {/* Meta info */}
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-6">
             <div className="flex items-center gap-2">
@@ -114,7 +114,7 @@ export default function BlogPostPage({ page }: BlogPostPageProps) {
               {page.data.description}
             </p>
           )}
-          
+
           <div className="blog-content">
             <MDXContent components={getMDXComponents()} />
           </div>
@@ -160,38 +160,41 @@ function RelatedArticleCard({ post }: { post: any }) {
   const category = post.data.category || post.data.subCategory || 'AI';
 
   return (
-    <Link href={post.url} className="group">
-      <Card className="h-full border hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-        <div className="relative h-48 rounded-t-lg overflow-hidden">
-          <Image
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600&h=400&auto=format&fit=crop"
-            alt={post.data.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-          />
+    <Card className="h-full border hover:shadow-lg transition-all duration-300 hover:border-primary/50 flex flex-col group">
+      <div className="relative h-48 rounded-t-lg overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600&h=400&auto=format&fit=crop"
+          alt={post.data.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <CardHeader>
+        <div className="text-xs text-primary mb-2">
+          {category.toUpperCase()}
         </div>
-        <CardHeader>
-          <div className="text-xs text-primary mb-2">
-            {category}
+        <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
+          {post.data.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex-1">
+        <p className="text-muted-foreground text-sm line-clamp-2">
+          {post.data.description}
+        </p>
+      </CardContent>
+      <CardFooter className="flex justify-between text-xs text-muted-foreground mt-auto">
+        {publishDate && (
+          <div className="flex items-center gap-1">
+            <Calendar className="h-3 w-3" />
+            <span>
+              {new Date(publishDate).toLocaleDateString('ko-KR')}
+            </span>
           </div>
-          <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
-            {post.data.title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground text-sm line-clamp-2">
-            {post.data.description}
-          </p>
-          {publishDate && (
-            <div className="flex items-center gap-1 mt-3 text-xs text-muted-foreground">
-              <Calendar className="h-3 w-3" />
-              <span>
-                {new Date(publishDate).toLocaleDateString('ko-KR')}
-              </span>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-    </Link>
+        )}
+        <Link href={post.url} className="text-primary hover:text-primary/80 font-medium text-xs">
+          Read more →
+        </Link>
+      </CardFooter>
+    </Card>
   );
 }

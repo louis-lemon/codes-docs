@@ -114,7 +114,7 @@ export default function BlogListPage() {
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold">Recent Articles</h2>
             <Link href="/blog/all" className="text-primary hover:text-primary/80 text-sm flex items-center gap-2">
-              View all <Eye className="h-4 w-4" />
+              View All <Eye className="h-4 w-4" />
             </Link>
           </div>
 
@@ -148,21 +148,21 @@ function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: R
   const category = post.data.category || post.data.subCategory || 'AI'
 
   return (
-    <Card className="overflow-hidden border hover:shadow-lg transition-all duration-300 hover:border-primary/50">
+    <Card className="overflow-hidden border hover:shadow-lg transition-all duration-300 hover:border-primary/50 flex flex-col h-full">
       <div className="relative h-48">
         <Image src={image} alt={post.data.title} fill className="object-cover" />
       </div>
       <CardHeader>
         <div className="flex items-center gap-2 text-sm text-primary mb-2">
           {icon}
-          <span>{category}</span>
+          <span>{category.toUpperCase()}</span>
         </div>
         <CardTitle className="text-xl line-clamp-2">{post.data.title}</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         <CardDescription className="line-clamp-3">{post.data.description}</CardDescription>
       </CardContent>
-      <CardFooter className="flex justify-between text-sm text-muted-foreground">
+      <CardFooter className="flex justify-between text-sm text-muted-foreground mt-auto">
         <div className="flex items-center gap-1">
           <Clock className="h-4 w-4" />
           <span>
@@ -186,36 +186,37 @@ function ArticleCard({ post, image }: { post: any; image: string }) {
   const category = post.data.category || post.data.subCategory || 'AI'
 
   return (
-    <Link href={post.url} className="group">
-      <Card className="h-full border hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-        <div className="relative h-48 rounded-t-lg overflow-hidden">
-          <Image src={image} alt={post.data.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+    <Card className="h-full border hover:shadow-lg transition-all duration-300 hover:border-primary/50 flex flex-col group">
+      <div className="relative h-48 rounded-t-lg overflow-hidden">
+        <Image src={image} alt={post.data.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+      </div>
+      <CardHeader>
+        <div className="flex items-center gap-2 text-xs text-primary mb-2">
+          <BrainCircuit className="h-4 w-4" />
+          <span>{category.toUpperCase()}</span>
         </div>
-        <CardHeader>
-          <div className="flex items-center gap-2 text-xs text-primary mb-2">
-            <BrainCircuit className="h-4 w-4" />
-            <span>{category}</span>
-          </div>
-          <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
-            {post.data.title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="flex-1">
-          <CardDescription className="line-clamp-3">{post.data.description}</CardDescription>
-        </CardContent>
-        <CardFooter>
-          <div className="flex items-center gap-1 text-xs text-muted-foreground">
-            <Clock className="h-3 w-3" />
-            <span>
-              {publishDate ? new Date(publishDate).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              }) : 'No date'}
-            </span>
-          </div>
-        </CardFooter>
-      </Card>
-    </Link>
+        <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
+          {post.data.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex-1">
+        <CardDescription className="line-clamp-3">{post.data.description}</CardDescription>
+      </CardContent>
+      <CardFooter className="flex justify-between text-xs text-muted-foreground mt-auto">
+        <div className="flex items-center gap-1">
+          <Clock className="h-3 w-3" />
+          <span>
+            {publishDate ? new Date(publishDate).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            }) : 'No date'}
+          </span>
+        </div>
+        <Link href={post.url} className="text-primary hover:text-primary/80 font-medium text-xs">
+          Read more →
+        </Link>
+      </CardFooter>
+    </Card>
   )
 }
