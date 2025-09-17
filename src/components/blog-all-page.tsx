@@ -14,7 +14,10 @@ import {
   Eye,
   Cpu,
   Mail,
-  Search
+  Search,
+  Cloud,
+  Building,
+  Code
 } from "lucide-react"
 import { useSearchParams } from 'next/navigation'
 
@@ -26,10 +29,11 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
   const searchParams = useSearchParams()
   const selectedCategory = searchParams.get('category')
 
-  // Filter and sort posts (server-side only)
+  // Filter and sort posts (show all posts including drafts for development)
   const allPosts = blogPosts
     .filter(post => {
-      if (post.data.draft) return false
+      // Show all posts including drafts for now
+      // if (post.data.draft) return false
       if (selectedCategory) {
         const postCategory = post.data.category || post.data.subCategory || 'Other'
         return postCategory === selectedCategory
@@ -56,6 +60,9 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
     'ai': { name: 'Generative AI', icon: <BrainCircuit className="h-5 w-5" />, description: 'Explore the latest advancements in generative AI models, including GANs, diffusion models, and more.' },
     'machine-learning': { name: 'Computer Vision', icon: <Eye className="h-5 w-5" />, description: 'Discover how AI is revolutionizing image and video analysis, object detection, and scene understanding.' },
     'glossary': { name: 'AI Research', icon: <Cpu className="h-5 w-5" />, description: 'Stay updated with the latest research papers, breakthroughs, and academic developments in AI.' },
+    'aws': { name: 'AWS Cloud', icon: <Cloud className="h-5 w-5" />, description: 'Master Amazon Web Services with comprehensive guides on EC2, Lambda, S3, and cloud architecture best practices.' },
+    'business': { name: 'Business & Operations', icon: <Building className="h-5 w-5" />, description: 'Learn business fundamentals, operations management, and entrepreneurial strategies for tech companies.' },
+    'development': { name: 'Software Development', icon: <Code className="h-5 w-5" />, description: 'Practical programming tutorials, development frameworks, and software engineering best practices.' },
     'Other': { name: 'Deep Learning', icon: <BrainCircuit className="h-5 w-5" />, description: 'Learn about neural network architectures, training techniques, and applications in various domains.' }
   }
 
@@ -96,7 +103,7 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
               {Object.entries(categories).map(([categoryKey, posts]) => {
                 const info = categoryInfo[categoryKey] || categoryInfo['Other']
                 return (
-                  <Card key={categoryKey} className="overflow-hidden border hover:shadow-lg transition-all duration-300 hover:border-primary/50 bg-gradient-to-br from-background to-muted/20">
+                  <Card key={categoryKey} className="overflow-hidden border hover:shadow-lg transition-all duration-300 hover:border-primary/50 bg-gradient-to-br from-background to-muted/20 flex flex-col h-full">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2 text-primary">
@@ -109,10 +116,10 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
                       </div>
                       <CardTitle className="text-xl">{info.name}</CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="flex-1">
                       <CardDescription className="line-clamp-3">{info.description}</CardDescription>
                     </CardContent>
-                    <CardFooter>
+                    <CardFooter className="mt-auto">
                       <Link href={`/blog/all?category=${encodeURIComponent(categoryKey)}`} className="w-full">
                         <Button variant="ghost" className="w-full justify-between text-primary hover:text-primary/80">
                           View articles

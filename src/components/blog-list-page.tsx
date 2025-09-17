@@ -18,9 +18,9 @@ import {
 export default function BlogListPage() {
   const blogPosts = blog.getPages()
 
-  // Filter and sort posts (server-side only)
+  // Filter and sort posts (show all posts including drafts for development)
   const allPosts = blogPosts
-    .filter(post => !post.data.draft)
+    // .filter(post => !post.data.draft)  // Show drafts for now
     .sort((a, b) => {
       const dateA = new Date(a.data.created || a.data.updated || '').getTime()
       const dateB = new Date(b.data.created || b.data.updated || '').getTime()

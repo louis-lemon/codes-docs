@@ -19,7 +19,7 @@ export default function BlogPostPage({ page }: BlogPostPageProps) {
   // Get related posts (same category, excluding current post)
   const relatedPosts = blog.getPages()
     .filter(post =>
-      !post.data.draft &&
+      // !post.data.draft &&  // Show drafts for now
       post.url !== page.url &&
       (post.data.category === page.data.category || post.data.subCategory === page.data.subCategory)
     )
