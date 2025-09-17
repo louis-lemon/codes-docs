@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Calendar, Clock, Share, Bookmark, Repeat2, User } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
 import { getMDXComponents } from '@/mdx-components';
 import BlogToc from '@/components/blog-toc';
+import ShareButton from '@/components/share-button';
 
 interface BlogPostPageProps {
   page: any;
@@ -86,18 +87,7 @@ export default function BlogPostPage({ page, relatedPosts }: BlogPostPageProps) 
 
           {/* Social sharing buttons */}
           <div className="flex items-center gap-3 pb-8 border-b border-border">
-            <Button variant="outline" size="sm">
-              <Share className="h-4 w-4 mr-2" />
-              Share
-            </Button>
-            <Button variant="outline" size="sm">
-              <Bookmark className="h-4 w-4 mr-2" />
-              Save
-            </Button>
-            <Button variant="outline" size="sm">
-              <Repeat2 className="h-4 w-4 mr-2" />
-              Re-Share
-            </Button>
+            <ShareButton />
           </div>
         </header>
 
@@ -105,6 +95,7 @@ export default function BlogPostPage({ page, relatedPosts }: BlogPostPageProps) 
         <div className="mb-8">
           <BlogToc />
         </div>
+
 
         {/* Article content */}
         <article className="prose prose-lg dark:prose-invert max-w-none">
