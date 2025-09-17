@@ -1,15 +1,9 @@
 import { blog } from '@/lib/source';
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from 'fumadocs-ui/page';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
 import BlogListPage from '@/components/blog-list-page';
+import BlogPostPage from '@/components/blog-post-page';
 
 type PageProps = {
   params: Promise<{ slug?: string[] }>;
@@ -27,21 +21,7 @@ export default async function Page(props: PageProps) {
   const page = blog.getPage(params.slug);
   if (!page) notFound();
 
-  const MDXContent = page.data.body;
-
-  return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody>
-        <MDXContent
-          components={getMDXComponents({
-            a: createRelativeLink(blog, page),
-          })}
-        />
-      </DocsBody>
-    </DocsPage>
-  );
+  return <BlogPostPage page={page} />;
 }
 
 export async function generateStaticParams() {
