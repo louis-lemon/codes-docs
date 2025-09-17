@@ -38,15 +38,12 @@ export default function BlogListPage() {
 
   return (
     <main className="flex flex-1 flex-col">
-        {/* Hero Section - Following home page style */}
-        <section className="relative mb-12" style={{ height: '24rem' }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          
-          <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
-            <div className="text-center">
-              <h1 className="text-white font-semibold" style={{ fontSize: '28px', margin: 0 }}>
-                Stress-Free AI{' '}
+        {/* Blog Hero Section - Distinctive design */}
+        <section className="my-12 mx-auto max-w-6xl px-5">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900 dark:text-gray-200">
+                Exploring the Frontiers of{' '}
                 <span
                   style={{
                     background: 'linear-gradient(102deg, rgb(255, 212, 95) -3.17%, rgb(255, 164, 90) 40.51%, rgb(255, 98, 0) 89.47%)',
@@ -56,19 +53,38 @@ export default function BlogListPage() {
                     color: 'transparent'
                   }}
                 >
-                  DevOps
+                  Artificial Intelligence
                 </span>
               </h1>
-              <p className="text-white font-normal mt-4 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
-                LemonCloud provides an integrated service that unifies all DevOps functions, from module selection to integration, cost management, and monitoring.
+              <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-normal leading-relaxed">
+                Deep insights into AI, GenAI, Computer Vision, and Deep Learning advancements.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/blog/all" className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
+                  Latest Articles
+                </Link>
+                <button className="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-border bg-background text-foreground font-medium hover:bg-muted transition-colors">
+                  <Mail className="h-4 w-4 mr-2" />
+                  Join Newsletter
+                </button>
+              </div>
+            </div>
+            <div className="relative h-[400px] rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-background to-muted/20">
+              <Image
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&h=600&auto=format&fit=crop"
+                alt="AI visualization showing neural network connections and robotic intelligence"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
             </div>
           </div>
         </section>
 
       {/* Featured Posts */}
       <section className="my-12 mx-auto max-w-6xl px-5">
-        <p className="text-gray-900 dark:text-gray-200 text-left mt-4 text-2xl mb-4 font-semibold">
+        <p className="text-gray-900 dark:text-gray-200 text-left text-2xl mb-4 font-semibold">
           추천 포스트
         </p>
 
