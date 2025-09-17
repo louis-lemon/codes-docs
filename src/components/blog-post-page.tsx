@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
 import { getMDXComponents } from '@/mdx-components';
 import { blog } from '@/lib/source';
+import BlogToc from '@/components/blog-toc';
 
 interface BlogPostPageProps {
   page: any;
@@ -30,7 +31,7 @@ export default function BlogPostPage({ page }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Back button */}
         <Link
           href="/blog"
@@ -106,6 +107,11 @@ export default function BlogPostPage({ page }: BlogPostPageProps) {
             </Button>
           </div>
         </header>
+
+        {/* Table of Contents */}
+        <div className="mb-8">
+          <BlogToc />
+        </div>
 
         {/* Article content */}
         <article className="prose prose-lg dark:prose-invert max-w-none">
