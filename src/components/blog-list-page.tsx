@@ -4,11 +4,11 @@ import { blog } from '@/lib/source'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  BrainCircuit, 
-  Calendar, 
-  Clock, 
-  Tag, 
+import {
+  BrainCircuit,
+  Calendar,
+  Clock,
+  Tag,
   ArrowRight,
   Eye,
   Cpu,
@@ -44,10 +44,12 @@ export default function BlogListPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Exploring the Frontiers of <span className="text-primary">Artificial Intelligence</span>
+                Stress-Free AI DevOps
               </h1>
               <p className="text-muted-foreground text-lg md:text-xl">
-                Deep insights into AI, GenAI, Computer Vision, and Deep Learning advancements.
+                LemonCloud provides an integrated service that
+                unifies all DevOps functions, from module selection to
+                integration, cost management, and monitoring.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-primary hover:bg-primary/90">
@@ -95,9 +97,9 @@ export default function BlogListPage() {
                   <Eye className="h-5 w-5" key="eye" />
                 ];
                 return (
-                  <FeaturedCard 
-                    key={post.url} 
-                    post={post} 
+                  <FeaturedCard
+                    key={post.url}
+                    post={post}
                     image={images[index % images.length]}
                     icon={icons[index % icons.length]}
                   />
@@ -111,7 +113,7 @@ export default function BlogListPage() {
         <section className="mb-20">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold">Recent Articles</h2>
-            <Link href="#" className="text-primary hover:text-primary/80 text-sm flex items-center gap-2">
+            <Link href="/blog/all" className="text-primary hover:text-primary/80 text-sm flex items-center gap-2">
               View all <Eye className="h-4 w-4" />
             </Link>
           </div>
@@ -127,9 +129,9 @@ export default function BlogListPage() {
                 "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600&h=400&auto=format&fit=crop"
               ];
               return (
-                <ArticleCard 
-                  key={post.url} 
-                  post={post} 
+                <ArticleCard
+                  key={post.url}
+                  post={post}
                   image={images[index % images.length]}
                 />
               );
@@ -144,7 +146,7 @@ export default function BlogListPage() {
 function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: React.ReactNode }) {
   const publishDate = post.data.created || post.data.updated
   const category = post.data.category || post.data.subCategory || 'AI'
-  
+
   return (
     <Card className="overflow-hidden border hover:shadow-lg transition-all duration-300 hover:border-primary/50">
       <div className="relative h-48">
@@ -164,10 +166,10 @@ function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: R
         <div className="flex items-center gap-1">
           <Clock className="h-4 w-4" />
           <span>
-            {publishDate ? new Date(publishDate).toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'short', 
-              day: 'numeric' 
+            {publishDate ? new Date(publishDate).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
             }) : 'No date'}
           </span>
         </div>
@@ -182,7 +184,7 @@ function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: R
 function ArticleCard({ post, image }: { post: any; image: string }) {
   const publishDate = post.data.created || post.data.updated
   const category = post.data.category || post.data.subCategory || 'AI'
-  
+
   return (
     <Link href={post.url} className="group">
       <Card className="h-full border hover:shadow-lg transition-all duration-300 hover:border-primary/50">
@@ -205,10 +207,10 @@ function ArticleCard({ post, image }: { post: any; image: string }) {
           <div className="flex items-center gap-1 text-xs text-muted-foreground">
             <Clock className="h-3 w-3" />
             <span>
-              {publishDate ? new Date(publishDate).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric' 
+              {publishDate ? new Date(publishDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
               }) : 'No date'}
             </span>
           </div>

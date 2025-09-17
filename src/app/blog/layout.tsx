@@ -1,11 +1,11 @@
-import { HomeLayout } from 'fumadocs-ui/layouts/home';
+import { LemonHomeLayout } from '@/components/lemon-home-layout';
 import { baseOptions } from '@/lib/layout.shared';
 import type { ReactNode } from 'react';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <HomeLayout {...baseOptions()}>
+    <LemonHomeLayout {...baseOptions()}>
       {children}
-    </HomeLayout>
+    </LemonHomeLayout>
   );
 }
