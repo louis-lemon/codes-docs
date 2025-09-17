@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import { blog } from '@/lib/source'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -15,8 +14,11 @@ import {
   Mail
 } from "lucide-react"
 
-export default function BlogListPage() {
-  const blogPosts = blog.getPages()
+interface BlogListPageProps {
+  blogPosts: any[];
+}
+
+export default function BlogListPage({ blogPosts }: BlogListPageProps) {
 
   // Filter and sort posts (show all posts including drafts for development)
   const allPosts = blogPosts

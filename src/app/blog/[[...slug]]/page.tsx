@@ -14,14 +14,29 @@ export default async function Page(props: PageProps) {
   
   // If no slug, show blog list page
   if (!params.slug || params.slug.length === 0) {
-    return <BlogListPage />;
+    const allBlogPosts = blog.getPages();
+    return <BlogListPage blogPosts={allBlogPosts} />;
   }
   
   // Get individual blog post
   const page = blog.getPage(params.slug);
   if (!page) notFound();
 
-  return <BlogPostPage page={page} />;
+  // Get related posts for the blog post page
+  const allBlogPosts = blog.getPages();
+  const relatedPosts = allBlogPosts
+    .filter(post =>
+      post.url !== page.url &&
+      (post.data.category === page.data.category || post.data.subCategory === page.data.subCategory)
+    )
+    .slice(0, 2);
+
+  return (
+    <BlogPostPage 
+      page={page} 
+      relatedPosts={relatedPosts} 
+    />
+  );
 }
 
 export async function generateStaticParams() {

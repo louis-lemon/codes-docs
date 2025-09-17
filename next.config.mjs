@@ -24,6 +24,18 @@ const config = {
   // GitHub Pages 배포시 저장소 이름이 서브패스가 됩니다
   basePath: process.env.NODE_ENV === 'production' ? '/codes-docs' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/codes-docs' : '',
+  // Fix fs module error for client components
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+      };
+    }
+    return config;
+  },
 };
 
 export default withMDX(config);

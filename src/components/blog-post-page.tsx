@@ -5,26 +5,19 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
 import { getMDXComponents } from '@/mdx-components';
-import { blog } from '@/lib/source';
 import BlogToc from '@/components/blog-toc';
 
 interface BlogPostPageProps {
   page: any;
+  relatedPosts: any[];
 }
 
-export default function BlogPostPage({ page }: BlogPostPageProps) {
+export default function BlogPostPage({ page, relatedPosts }: BlogPostPageProps) {
   const MDXContent = page.data.body;
   const publishDate = page.data.created || page.data.updated;
   const category = page.data.category || page.data.subCategory || 'AI';
 
-  // Get related posts (same category, excluding current post)
-  const relatedPosts = blog.getPages()
-    .filter(post =>
-      // !post.data.draft &&  // Show drafts for now
-      post.url !== page.url &&
-      (post.data.category === page.data.category || post.data.subCategory === page.data.subCategory)
-    )
-    .slice(0, 2);
+  // Use related posts passed from server component
 
   // Calculate reading time (rough estimation)
   const readingTime = Math.max(1, Math.round((page.data.description || '').length / 1000 * 5));
