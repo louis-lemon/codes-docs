@@ -184,7 +184,7 @@ function RelatedArticleCard({ post }: { post: any }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-1">
-        <p className="text-muted-foreground text-sm line-clamp-2">
+        <p className="text-muted-foreground text-sm line-clamp-3">
           {post.data.description}
         </p>
       </CardContent>

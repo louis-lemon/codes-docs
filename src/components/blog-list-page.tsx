@@ -174,7 +174,7 @@ function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: R
             {post.data.title}
           </h2>
           <div className="mt-1 font-normal text-sm leading-6 text-gray-600 dark:text-gray-400 flex-1">
-            <span>{post.data.description}</span>
+            <span className="line-clamp-3">{post.data.description}</span>
           </div>
           {publishDate && (
             <div className="mt-auto pt-3 text-xs text-gray-500 dark:text-gray-500">
@@ -218,7 +218,7 @@ function ArticleCard({ post, image }: { post: any; image: string }) {
             {post.data.title}
           </h2>
           <div className="mt-1 font-normal text-sm leading-6 text-gray-600 dark:text-gray-400 flex-1">
-            <span>{post.data.description}</span>
+            <span className="line-clamp-3">{post.data.description}</span>
           </div>
           {publishDate && (
             <div className="mt-auto pt-3 text-xs text-gray-500 dark:text-gray-500">
