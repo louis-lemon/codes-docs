@@ -22,7 +22,7 @@ interface MockAPIEndpoints {
   Query Parameters:
     - published: boolean (publishedAt이 null이 아닌 문서만)
     - limit: number (default: 2000)
-    - page: number (default: 0)
+    - page__: number (default: 0)
 
   // 단일 문서 상세 조회
   GET /api/documents/:id

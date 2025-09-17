@@ -24,7 +24,7 @@ In the project, you can see:
 
 | Route                     | Description                                            |
 | ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
+| `app/(home)`              | The route group for your landing page__ and other pages. |
 | `app/docs`                | The documentation layout and pages.                    |
 | `app/api/search/route.ts` | The Route Handler for search.                          |
 

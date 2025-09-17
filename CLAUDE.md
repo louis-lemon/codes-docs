@@ -27,7 +27,7 @@ This is a **Fumadocs** documentation site built on **Next.js 15** with **React 1
 - The `source.ts` file creates a loader that provides the content source API to the app
 
 **App Structure**:
-- `/app/(home)/` - Landing page route group
+- `/app/(home)/` - Landing page__ route group
 - `/app/docs/` - Documentation pages with dynamic routing via `[[...slug]]`
 
 **Key Files**:
