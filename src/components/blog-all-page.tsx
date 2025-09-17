@@ -67,86 +67,90 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-12">
-        {/* Header */}
-        <div className="mb-12">
-          <Link 
-            href="/blog" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors group"
-          >
-            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-            Back to blog
-          </Link>
-          
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              {selectedCategory 
-                ? `${categoryInfo[selectedCategory]?.name || selectedCategory} Articles`
-                : 'All Articles'
-              }
-            </h1>
-            <p className="text-muted-foreground text-lg md:text-xl mb-8">
-              {selectedCategory 
-                ? `${categoryInfo[selectedCategory]?.description || 'Articles in this category.'}`
-                : 'Comprehensive collection of AI insights, research, and technical deep-dives.'
-              }
-            </p>
-          </div>
+    <main className="flex flex-1 flex-col">
+      {/* Header */}
+      <section className="my-12 mx-auto max-w-6xl px-5">
+        <Link 
+          href="/blog" 
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors group"
+        >
+          <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+          Back to blog
+        </Link>
+        
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-gray-900 dark:text-gray-200 text-4xl md:text-5xl font-semibold leading-tight mb-6">
+            {selectedCategory 
+              ? `${categoryInfo[selectedCategory]?.name || selectedCategory} Articles`
+              : 'All Articles'
+            }
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 font-normal text-lg md:text-xl mb-8">
+            {selectedCategory 
+              ? `${categoryInfo[selectedCategory]?.description || 'Articles in this category.'}`
+              : 'Comprehensive collection of AI insights, research, and technical deep-dives.'
+            }
+          </p>
         </div>
+      </section>
 
-        {/* Topics Grid - Only show when not filtering by category */}
-        {!selectedCategory && (
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold mb-8">Topics</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Topics Grid - Only show when not filtering by category */}
+      {!selectedCategory && (
+        <section className="my-12 mx-auto max-w-6xl px-5">
+          <p className="text-gray-900 dark:text-gray-200 text-left mt-4 text-2xl mb-4 font-semibold">
+            Topics
+          </p>
+          <div className="not-prose grid gap-4 sm:grid-cols-3">
               {Object.entries(categories).map(([categoryKey, posts]) => {
                 const info = categoryInfo[categoryKey] || categoryInfo['Other']
                 return (
-                  <Card key={categoryKey} className="overflow-hidden border hover:shadow-lg transition-all duration-300 hover:border-primary/50 bg-gradient-to-br from-background to-muted/20 flex flex-col h-full">
-                    <CardHeader>
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2 text-primary">
-                          {info.icon}
-                          <span className="font-semibold">{info.name}</span>
-                        </div>
-                        <Badge variant="secondary" className="bg-primary/10 text-primary">
-                          {posts.length} articles
-                        </Badge>
+                  <Link
+                    key={categoryKey}
+                    href={`/blog/all?category=${encodeURIComponent(categoryKey)}`}
+                    className="card block font-normal group relative my-2 rounded-2xl bg-white dark:bg-fd-card border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 overflow-hidden w-full cursor-pointer transition-all"
+                  >
+                    <div className="px-6 py-5 relative">
+                      <div className="absolute text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary-light top-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                          <path d="M7 7h10v10"></path>
+                          <path d="M7 17 17 7"></path>
+                        </svg>
                       </div>
-                      <CardTitle className="text-xl">{info.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-1">
-                      <CardDescription className="line-clamp-3">{info.description}</CardDescription>
-                    </CardContent>
-                    <CardFooter className="mt-auto">
-                      <Link href={`/blog/all?category=${encodeURIComponent(categoryKey)}`} className="w-full">
-                        <Button variant="ghost" className="w-full justify-between text-primary hover:text-primary/80">
-                          View articles
-                          <ArrowLeft className="h-4 w-4 rotate-180" />
-                        </Button>
-                      </Link>
-                    </CardFooter>
-                  </Card>
+                      <div className="h-6 w-6 mb-3 text-gray-700 dark:text-gray-300">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <div className="text-xs text-primary dark:text-primary-light mb-2 font-medium">
+                          {posts.length} articles
+                        </div>
+                        <h2 className="not-prose font-semibold text-base text-gray-800 dark:text-white mt-2">
+                          {info.name}
+                        </h2>
+                        <div className="mt-1 font-normal text-sm leading-6 text-gray-600 dark:text-gray-400">
+                          <span>{info.description}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
                 )
               })}
-            </div>
-          </section>
-        )}
-
-        {/* All Articles Grid */}
-        <section className="mb-20">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold">
-              {selectedCategory ? `${categoryInfo[selectedCategory]?.name || selectedCategory} Articles` : 'All Articles'}
-            </h2>
-            {selectedCategory && (
-              <Link href="/blog/all" className="text-primary hover:text-primary/80 text-sm flex items-center gap-2">
-                View All Articles <ArrowLeft className="h-4 w-4 rotate-180" />
-              </Link>
-            )}
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        </section>
+      )}
+
+      {/* All Articles Grid */}
+      <section className="my-12 mx-auto max-w-6xl px-5">
+        <div className="flex items-center justify-between mt-10 mb-4">
+          <p className="text-gray-900 dark:text-gray-200 text-2xl font-semibold">
+            {selectedCategory ? `${categoryInfo[selectedCategory]?.name || selectedCategory} Articles` : 'All Articles'}
+          </p>
+          {selectedCategory && (
+            <Link href="/blog/all" className="text-primary dark:text-primary-light text-sm hover:text-primary/80">
+              view all articles
+            </Link>
+          )}
+        </div>
+        <div className="not-prose grid gap-4 sm:grid-cols-3">
             {allPosts.map((post, index) => {
               const images = [
                 "https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=600&h=400&auto=format&fit=crop",
@@ -169,10 +173,9 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
                 />
               );
             })}
-          </div>
-        </section>
-      </div>
-    </div>
+        </div>
+      </section>
+    </main>
   )
 }
 
@@ -181,37 +184,41 @@ function AllArticleCard({ post, image }: { post: any; image: string }) {
   const category = post.data.category || post.data.subCategory || 'AI'
   
   return (
-    <Link href={post.url} className="group">
-      <Card className="h-full border hover:shadow-lg transition-all duration-300 hover:border-primary/50 hover:scale-[1.02]">
-        <div className="relative h-40 rounded-t-lg overflow-hidden">
-          <Image src={image} alt={post.data.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
-          <div className="absolute top-2 left-2">
-            <Badge variant="secondary" className="bg-primary/90 text-primary-foreground backdrop-blur-sm">
-              {category}
-            </Badge>
-          </div>
+    <Link
+      href={post.url}
+      className="card block font-normal group relative my-2 rounded-2xl bg-white dark:bg-fd-card border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 overflow-hidden w-full cursor-pointer transition-all h-full"
+    >
+      <div className="px-5 py-4 relative h-full flex flex-col">
+        <div className="absolute text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary-light top-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
         </div>
-        <CardHeader className="pb-2">
-          <CardTitle className="text-base group-hover:text-primary transition-colors line-clamp-2 leading-tight">
+        <div className="h-6 w-6 mb-3 text-gray-700 dark:text-gray-300">
+          <BrainCircuit className="w-6 h-6" />
+        </div>
+        <div className="flex-1 flex flex-col">
+          <div className="text-xs text-primary dark:text-primary-light mb-2 font-medium">
+            {category.toUpperCase()}
+          </div>
+          <h2 className="not-prose font-semibold text-base text-gray-800 dark:text-white mt-2">
             {post.data.title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="flex-1 pt-0">
-          <CardDescription className="line-clamp-2 text-sm">{post.data.description}</CardDescription>
-        </CardContent>
-        <CardFooter className="pt-2">
-          <div className="flex items-center gap-1 text-xs text-muted-foreground">
-            <Clock className="h-3 w-3" />
-            <span>
-              {publishDate ? new Date(publishDate).toLocaleDateString('en-US', { 
+          </h2>
+          <div className="mt-1 font-normal text-sm leading-6 text-gray-600 dark:text-gray-400 flex-1">
+            <span>{post.data.description}</span>
+          </div>
+          {publishDate && (
+            <div className="mt-auto pt-3 text-xs text-gray-500 dark:text-gray-500">
+              {new Date(publishDate).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'short', 
                 day: 'numeric' 
-              }) : 'No date'}
-            </span>
-          </div>
-        </CardFooter>
-      </Card>
+              })}
+            </div>
+          )}
+        </div>
+      </div>
     </Link>
   )
 }

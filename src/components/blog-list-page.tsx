@@ -37,54 +37,42 @@ export default function BlogListPage() {
   const recentPosts = allPosts
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <section className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Stress-Free AI DevOps
+    <main className="flex flex-1 flex-col">
+        {/* Hero Section - Following home page style */}
+        <section className="relative mb-12" style={{ height: '24rem' }}>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          
+          <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
+            <div className="text-center">
+              <h1 className="text-white font-semibold" style={{ fontSize: '28px', margin: 0 }}>
+                Stress-Free AI{' '}
+                <span
+                  style={{
+                    background: 'linear-gradient(102deg, rgb(255, 212, 95) -3.17%, rgb(255, 164, 90) 40.51%, rgb(255, 98, 0) 89.47%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    color: 'transparent'
+                  }}
+                >
+                  DevOps
+                </span>
               </h1>
-              <p className="text-muted-foreground text-lg md:text-xl">
-                LemonCloud provides an integrated service that
-                unifies all DevOps functions, from module selection to
-                integration, cost management, and monitoring.
+              <p className="text-white font-normal mt-4 max-w-2xl mx-auto" style={{ fontSize: '16px' }}>
+                LemonCloud provides an integrated service that unifies all DevOps functions, from module selection to integration, cost management, and monitoring.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-primary hover:bg-primary/90">
-                  Latest Articles
-                </Button>
-                <Button variant="outline" className="border-border hover:bg-muted">
-                  <Mail className="h-4 w-4 mr-2" />
-                  Join Newsletter
-                </Button>
-              </div>
-            </div>
-            <div className="relative h-[400px] rounded-xl overflow-hidden border border-border">
-              <Image
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&h=800&auto=format&fit=crop"
-                alt="AI visualization showing neural network connections"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
             </div>
           </div>
         </section>
 
-        {/* Featured Posts */}
-        {featuredPosts.length > 0 && (
-          <section className="mb-20">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-2xl font-bold">추천 포스트</h2>
-              <Badge variant="secondary" className="bg-primary/10 text-primary">
-                Featured
-              </Badge>
-            </div>
+      {/* Featured Posts */}
+      <section className="my-12 mx-auto max-w-6xl px-5">
+        <p className="text-gray-900 dark:text-gray-200 text-left mt-4 text-2xl mb-4 font-semibold">
+          추천 포스트
+        </p>
 
-            <div className="grid md:grid-cols-3 gap-6">
+        <div className="not-prose grid gap-4 sm:grid-cols-3">
               {featuredPosts.map((post, index) => {
                 const images = [
                   "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=600&h=400&auto=format&fit=crop",
@@ -105,20 +93,21 @@ export default function BlogListPage() {
                   />
                 );
               })}
-            </div>
-          </section>
-        )}
+        </div>
+      </section>
 
-        {/* Recent Posts */}
-        <section className="mb-20">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold">Recent Articles</h2>
-            <Link href="/blog/all" className="text-primary hover:text-primary/80 text-sm flex items-center gap-2">
-              View All <Eye className="h-4 w-4" />
-            </Link>
-          </div>
+      {/* Recent Articles */}
+      <section className="my-12 mx-auto max-w-6xl px-5">
+        <div className="flex items-center justify-between mt-10 mb-4">
+          <p className="text-gray-900 dark:text-gray-200 text-2xl font-semibold">
+            Recent Articles
+          </p>
+          <Link href="/blog/all" className="text-primary dark:text-primary-light text-sm hover:text-primary/80">
+            view all articles
+          </Link>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="not-prose grid gap-4 sm:grid-cols-3">
             {recentPosts.map((post, index) => {
               const images = [
                 "https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=600&h=400&auto=format&fit=crop",
@@ -136,10 +125,9 @@ export default function BlogListPage() {
                 />
               );
             })}
-          </div>
-        </section>
-      </div>
-    </div>
+        </div>
+      </section>
+    </main>
   )
 }
 
@@ -148,36 +136,42 @@ function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: R
   const category = post.data.category || post.data.subCategory || 'AI'
 
   return (
-    <Card className="overflow-hidden border hover:shadow-lg transition-all duration-300 hover:border-primary/50 flex flex-col h-full">
-      <div className="relative h-48">
-        <Image src={image} alt={post.data.title} fill className="object-cover" />
-      </div>
-      <CardHeader>
-        <div className="flex items-center gap-2 text-sm text-primary mb-2">
+    <Link
+      href={post.url}
+      className="card block font-normal group relative my-2 rounded-2xl bg-white dark:bg-fd-card border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 overflow-hidden w-full cursor-pointer transition-all h-full"
+    >
+      <div className="px-5 py-4 relative h-full flex flex-col">
+        <div className="absolute text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary-light top-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
+        </div>
+        <div className="h-6 w-6 mb-3 text-gray-700 dark:text-gray-300">
           {icon}
-          <span>{category.toUpperCase()}</span>
         </div>
-        <CardTitle className="text-xl line-clamp-2">{post.data.title}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-1">
-        <CardDescription className="line-clamp-3">{post.data.description}</CardDescription>
-      </CardContent>
-      <CardFooter className="flex justify-between text-sm text-muted-foreground mt-auto">
-        <div className="flex items-center gap-1">
-          <Clock className="h-4 w-4" />
-          <span>
-            {publishDate ? new Date(publishDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric'
-            }) : 'No date'}
-          </span>
+        <div className="flex-1 flex flex-col">
+          <div className="text-xs text-primary dark:text-primary-light mb-2 font-medium">
+            {category.toUpperCase()}
+          </div>
+          <h2 className="not-prose font-semibold text-base text-gray-800 dark:text-white mt-2">
+            {post.data.title}
+          </h2>
+          <div className="mt-1 font-normal text-sm leading-6 text-gray-600 dark:text-gray-400 flex-1">
+            <span>{post.data.description}</span>
+          </div>
+          {publishDate && (
+            <div className="mt-auto pt-3 text-xs text-gray-500 dark:text-gray-500">
+              {new Date(publishDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}
+            </div>
+          )}
         </div>
-        <Link href={post.url} className="text-primary hover:text-primary/80 font-medium">
-          Read more →
-        </Link>
-      </CardFooter>
-    </Card>
+      </div>
+    </Link>
   )
 }
 
@@ -186,37 +180,41 @@ function ArticleCard({ post, image }: { post: any; image: string }) {
   const category = post.data.category || post.data.subCategory || 'AI'
 
   return (
-    <Card className="h-full border hover:shadow-lg transition-all duration-300 hover:border-primary/50 flex flex-col group">
-      <div className="relative h-48 rounded-t-lg overflow-hidden">
-        <Image src={image} alt={post.data.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+    <Link
+      href={post.url}
+      className="card block font-normal group relative my-2 rounded-2xl bg-white dark:bg-fd-card border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 overflow-hidden w-full cursor-pointer transition-all h-full"
+    >
+      <div className="px-5 py-4 relative h-full flex flex-col">
+        <div className="absolute text-gray-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary-light top-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
+        </div>
+        <div className="h-6 w-6 mb-3 text-gray-700 dark:text-gray-300">
+          <BrainCircuit className="w-6 h-6" />
+        </div>
+        <div className="flex-1 flex flex-col">
+          <div className="text-xs text-primary dark:text-primary-light mb-2 font-medium">
+            {category.toUpperCase()}
+          </div>
+          <h2 className="not-prose font-semibold text-base text-gray-800 dark:text-white mt-2">
+            {post.data.title}
+          </h2>
+          <div className="mt-1 font-normal text-sm leading-6 text-gray-600 dark:text-gray-400 flex-1">
+            <span>{post.data.description}</span>
+          </div>
+          {publishDate && (
+            <div className="mt-auto pt-3 text-xs text-gray-500 dark:text-gray-500">
+              {new Date(publishDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}
+            </div>
+          )}
+        </div>
       </div>
-      <CardHeader>
-        <div className="flex items-center gap-2 text-xs text-primary mb-2">
-          <BrainCircuit className="h-4 w-4" />
-          <span>{category.toUpperCase()}</span>
-        </div>
-        <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
-          {post.data.title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="flex-1">
-        <CardDescription className="line-clamp-3">{post.data.description}</CardDescription>
-      </CardContent>
-      <CardFooter className="flex justify-between text-xs text-muted-foreground mt-auto">
-        <div className="flex items-center gap-1">
-          <Clock className="h-3 w-3" />
-          <span>
-            {publishDate ? new Date(publishDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric'
-            }) : 'No date'}
-          </span>
-        </div>
-        <Link href={post.url} className="text-primary hover:text-primary/80 font-medium text-xs">
-          Read more →
-        </Link>
-      </CardFooter>
-    </Card>
+    </Link>
   )
 }
