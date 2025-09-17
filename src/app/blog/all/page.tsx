@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import BlogAllPage from '@/components/blog-all-page';
+import BlogSkeletonLoader from '@/components/blog-skeleton-loader';
 import { blog } from '@/lib/source';
 import { Suspense } from 'react';
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function AllArticlesPage() {
   const blogPosts = blog.getPages();
-  
+
   // Serialize only necessary data for client component
   const serializedPosts = blogPosts.map(post => ({
     url: post.url,
@@ -38,9 +39,9 @@ export default function AllArticlesPage() {
       featured: post.data.featured,
     }
   }));
-  
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<BlogSkeletonLoader />}>
       <BlogAllPage blogPosts={serializedPosts} />
     </Suspense>
   );
