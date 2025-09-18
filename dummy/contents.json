@@ -3,395 +3,689 @@
   "page": 0,
   "list": [
     {
-      "id": "C345",
-      "createdAt": 1758160964681,
-      "updatedAt": 1758161232549,
+      "id": "C348",
+      "createdAt": 1758167746373,
+      "updatedAt": 1758168544707,
       "deletedAt": 0,
-      "title": "ENG VER",
-      "description": "Eureka Codes User Guide",
-      "readme": "# Eureka Codes User Guide: Using the Pro Plan and Chat App\n\n\n\n### 1. Login\n\n![file](https://image.lemoncloud.io/328fcf6a-8f59-451a-bb7d-ceed231716a4?width=1024)\n\n- Please log in with your Google account.\n\n\n---\n\n\n\n### 2. Getting Started with Workspace\n\n![file](https://image.lemoncloud.io/6caacd84-7db1-40f2-83d8-5f4aad670e11)\n\n- Workspaces serve as the basic unit for managing your projects.\n- When you log in, a default workspace is already created for you, so you can start using it right away without any additional setup\n- If you'd like to add a new workspace, you can simply click the \"Add Workspace\" button on the right side.\n\n\n---\n\n\n\n### 3. Create a New Workspace\n\n![file](https://image.lemoncloud.io/bd1ebd73-5152-4fff-a26e-bdce508a65d3?width=1024)\n\n- There are three types of workspace plans: Basic, Pro, and Advanced.\n- \n\n\n![file](https://image.lemoncloud.io/62cdfdd0-3a61-4a95-bbfd-d2a7f8d4ba97)\n\n- Please add a payment method before creating a Pro Plan workspace.\n- When you click the \"Add Card\" button, it will take you to the card registration screen.\n\n\n![file](https://image.lemoncloud.io/9569c9d7-422c-48c4-b2ac-0c6c9301ca1f)\n\n- Enter your email, card number, and other information to complete the registration.\n\n\n![file](https://image.lemoncloud.io/8b807883-72e3-41cf-8e6b-e1a4261cce62)\n\n- Go back to the workspace registration screen and enter the required information.\n- You need to specify the workspace name and AWS region, and email verification is required.\n- \n\n\n![file](https://image.lemoncloud.io/a1b73197-c331-4fb4-b7aa-f2d8f7801656)\n\n- Please verify your email address (a valid email is required).\n\n\n![file](https://image.lemoncloud.io/cbabf253-cb09-41e7-a207-1752bc2e9259)\n\n- After you complete email verification, please select a region.\n\n\n![file](https://image.lemoncloud.io/3418fb0f-750e-4ad9-a79f-e5272f760abd)\n\n- All the information must be entered, and if you select \"Agree to the Terms of Service\", the button below will be enabled.\n- Click the activated button to complete the workspace creation.\n\n\n![file](https://image.lemoncloud.io/720d9b18-7bc3-4a3a-8ef5-f36d4c0d097d)\n\n- Please check the workspace information you created.\n\n\n---\n\n\n\n### 4. Create Project\n\n![file](https://image.lemoncloud.io/d9c12256-d401-4647-9b8e-bf6a47e4899a)\n\n- To use the service, please create a project.\n- Please click the “Add Project” button.\n\n\n![file](https://image.lemoncloud.io/0e11e8b1-a368-4d8c-af38-9a6672718f8a)\n\n- Check the details entered during workspace creation, choose a stage (development or production), and proceed to create your project.\n\n\n---\n\n\n\n### 6. Apply for Chat App Service\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- Once you have created a project, please click the “Add Service” button.\n- When you click the “Add Service” button, you will be redirected to the catalog service screen.\n\n\n![file](https://image.lemoncloud.io/756d52fe-f5d1-4bc9-9cb5-a289d2d6022c)\n\n- From the catalog screen, please select the “eureka chats front” service.\n\n\n![file](https://image.lemoncloud.io/0d3221b4-03de-4193-a36c-002f51ed0b6f?width=1024)\n\n- Review the details on the page and click the “Add Service” button at the bottom to finish applying.\n\n\n![file](https://image.lemoncloud.io/4a61bf7d-7fdd-4735-8b13-25b555f85dd5)\n\n- In the service application completion popup, review the service information.",
-      "parentId": "C340",
+      "title": "ENG",
+      "description": "EurekaCodes Chat App Application Guide",
+      "readme": "## EurekaCodes Chat APP Sevice Application Guide\n\n- To apply for services, you'll need to set up your project first.\n- For detailed instructions, please go through [EurekaCodes_Getting Started] first.\n\n\n### 1.\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- Within your project, you can apply for and use various services.\n- When you click the \"Add Service\" button, it will take you to the service catalog screen.\n![file](https://image.lemoncloud.io/756d52fe-f5d1-4bc9-9cb5-a289d2d6022c)\n\n- You can apply for the services you need from the catalog list.\n- For this example, please select the \"eureka-chats-front\" service, which is a chat app service.\n![file](https://image.lemoncloud.io/0d3221b4-03de-4193-a36c-002f51ed0b6f?width=1024)\n\n- You can review detailed information about the catalog (service).\n- Click the \"Add Service\" button at the bottom to submit your service application.\n![file](https://image.lemoncloud.io/4a61bf7d-7fdd-4735-8b13-25b555f85dd5)\n\n- You can review your service application information.\n\n\n## 2. Checking Applied Projects\n\n![file](https://image.lemoncloud.io/8785342f-ca01-4910-bcb6-87dfa58c0d01)\n\n- You can check the services that have been added to your project.\n- Depending on the service you applied for, additional services may be installed.\n- Deployment begins as soon as you apply, and it may take about 3-5 minutes to complete.\n![file](https://image.lemoncloud.io/ff3f3667-4a16-42fc-a62e-fd868b809d65)\n\n- Once deployment is complete, the status will change to \"in-use.\"\n- An \"Open Service\" button will appear on the right side of the \"eureka-chats-front\" service.\n- Click the \"Open Service\" button to access the chat service.\n\n\n![file](https://image.lemoncloud.io/d4eba83e-dc98-42f8-985a-99d48a89e925)\n\n- This service runs in your own separate cloud environment.",
+      "parentId": "C347",
       "parent$": {
-        "id": "C340"
+        "id": "C347"
       },
-      "no": 345,
-      "noOfElement": 72,
+      "no": 348,
+      "noOfElement": 30,
       "category": "Blog",
       "subCategory": "User Guide",
       "tags": [
         "en"
       ],
       "elementIds": [
-        "C345.E001",
-        "C345.E047",
-        "C345.E002",
-        "C345.E051",
-        "C345.E028",
-        "C345.E004",
-        "C345.E024",
-        "C345.E027",
-        "C345.E052",
-        "C345.E053",
-        "C345.E061",
-        "C345.E042",
-        "C345.E040",
-        "C345.E037",
-        "C345.E030",
-        "C345.E057",
-        "C345.E034",
-        "C345.E007",
-        "C345.E068",
-        "C345.E067",
-        "C345.E022",
-        "C345.E009",
-        "C345.E039",
-        "C345.E060",
-        "C345.E026",
-        "C345.E025",
-        "C345.E021",
-        "C345.E035",
-        "C345.E041",
-        "C345.E048",
-        "C345.E065",
-        "C345.E059",
-        "C345.E070",
-        "C345.E045",
-        "C345.E010",
-        "C345.E056",
-        "C345.E020",
-        "C345.E063",
-        "C345.E017",
-        "C345.E029",
-        "C345.E011",
-        "C345.E032",
-        "C345.E016",
-        "C345.E050",
-        "C345.E062",
-        "C345.E014",
-        "C345.E069",
-        "C345.E055",
-        "C345.E013",
-        "C345.E043",
-        "C345.E049",
-        "C345.E038",
-        "C345.E015",
-        "C345.E012",
-        "C345.E006",
-        "C345.E005",
-        "C345.E044",
-        "C345.E046",
-        "C345.E036",
-        "C345.E018",
-        "C345.E058",
-        "C345.E054",
-        "C345.E003",
-        "C345.E031",
-        "C345.E023",
-        "C345.E064",
-        "C345.E008",
-        "C345.E066",
-        "C345.E071",
-        "C345.E019",
-        "C345.E033"
+        "C348.E018",
+        "C348.E025",
+        "C348.E030",
+        "C348.E028",
+        "C348.E006",
+        "C348.E007",
+        "C348.E027",
+        "C348.E015",
+        "C348.E024",
+        "C348.E001",
+        "C348.E022",
+        "C348.E011",
+        "C348.E016",
+        "C348.E008",
+        "C348.E013",
+        "C348.E003",
+        "C348.E019",
+        "C348.E026",
+        "C348.E017",
+        "C348.E021",
+        "C348.E023",
+        "C348.E020",
+        "C348.E029",
+        "C348.E014",
+        "C348.E004",
+        "C348.E002",
+        "C348.E005",
+        "C348.E009",
+        "C348.E012",
+        "C348.E010"
       ],
       "element$$": [
         {
-          "id": "C345.E001",
+          "id": "C348.E018",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C348.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E030",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C348.E006",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C348.E007",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E027",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E015",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E024",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E001",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E022",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E011",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E016",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E008",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E013",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E003",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E019",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C348.E026",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C348.E017",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E021",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E023",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E020",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E029",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E014",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C348.E009",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E010",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C347",
+      "createdAt": 1758165238876,
+      "updatedAt": 1758168992660,
+      "deletedAt": 0,
+      "title": "유레카코즈 채팅앱 서비스 신청 가이드",
+      "description": "유레카코즈 채팅앱 신청 가이드",
+      "readme": "- 서비스 신청을 위해서는 먼저 프로젝트 셋업이 필요합니다.\n- 자세한 내용은 [유레카코즈_사용자_가이]를 먼저 진행해주세요.\n\n\n### 1.서비스 신청하기\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- 프로젝트 내에서 서비스를 신청하고 이용할 수  있습니다.\n- \"Add Service\" 버튼을 클릭하면 카탈로그 서비스 화면으로 이동합니다.\n\n\n![file](https://image.lemoncloud.io/756d52fe-f5d1-4bc9-9cb5-a289d2d6022c)\n\n- 카탈로그 목록에서 필요한 서비스를 신청할 수 있습니다.\n- 예시로 채팅앱 서비스인 “eureka chats front”서비스를 선택해 주세요.\n\n\n![file](https://image.lemoncloud.io/0d3221b4-03de-4193-a36c-002f51ed0b6f?width=1024)\n\n- 카탈로그(서비스)에 대한 상세 정보를 확인할 수 있습니다.\n- 하단의 “Add Service” 버튼을 클릭하여 서비스 신청을 등록합니다.\n\n\n![file](https://image.lemoncloud.io/4a61bf7d-7fdd-4735-8b13-25b555f85dd5)\n\n- 신청 정보를 확인합니다.\n\n\n## 2. 신청된 프로젝트 확인\n\n![file](https://image.lemoncloud.io/8785342f-ca01-4910-bcb6-87dfa58c0d01)\n\n- 프로젝트에 추가된 서비스를 확인합니다.\n- 신청한 서비스에 따라 추가 서비스가 설치될 수 있습니다.\n- 신청과 동시에 배포가 진행되며 3~5분 정도의 시간이 소요될 수 있습니다.\n![file](https://image.lemoncloud.io/ff3f3667-4a16-42fc-a62e-fd868b809d65)\n\n- 배포가 완료되면 in-use 상태로 변경됩니다.\n- \"eureka-chats-front\" 서비스 우측에 \"Open Service\" 버튼이 노출됩니다.\n- \"Open Service\"버튼을 클릭하여 채팅 서비스로 접속합니다.\n\n\n![file](https://image.lemoncloud.io/d4eba83e-dc98-42f8-985a-99d48a89e925)\n\n- 해당 서비스는 고객님의 별도 클라우드 환경에서 실행됩니다.",
+      "no": 347,
+      "noOfElement": 32,
+      "category": "Technology",
+      "subCategory": "User Guide",
+      "tags": [
+        "ko"
+      ],
+      "elementIds": [
+        "C347.E012",
+        "C347.E032",
+        "C347.E021",
+        "C347.E029",
+        "C347.E006",
+        "C347.E004",
+        "C347.E009",
+        "C347.E028",
+        "C347.E007",
+        "C347.E018",
+        "C347.E019",
+        "C347.E010",
+        "C347.E020",
+        "C347.E005",
+        "C347.E001",
+        "C347.E011",
+        "C347.E008",
+        "C347.E002",
+        "C347.E027",
+        "C347.E023",
+        "C347.E015",
+        "C347.E025",
+        "C347.E014",
+        "C347.E016",
+        "C347.E017",
+        "C347.E030",
+        "C347.E013",
+        "C347.E022",
+        "C347.E003",
+        "C347.E026",
+        "C347.E024",
+        "C347.E031"
+      ],
+      "element$$": [
+        {
+          "id": "C347.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E032",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E029",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C347.E006",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E009",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E007",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E018",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E019",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E020",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E005",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E001",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E008",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E023",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C347.E015",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E014",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E016",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E017",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E030",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E013",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E022",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E026",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E024",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E031",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C346",
+      "createdAt": 1758161309006,
+      "updatedAt": 1758167696413,
+      "deletedAt": 0,
+      "title": "ENG",
+      "description": "Eureka Codes User Guide",
+      "readme": "# Eureka Codes User Guide: Using the Pro Plan\n\n\n\n### 1. Login\n\n![file](https://image.lemoncloud.io/328fcf6a-8f59-451a-bb7d-ceed231716a4?width=1024)\n\n- Please log in with your Google account.\n\n\n---\n\n\n\n### 2. Getting Started with Workspace\n\n![file](https://image.lemoncloud.io/6caacd84-7db1-40f2-83d8-5f4aad670e11)\n\n- Workspaces serve as the basic unit for managing your projects.\n- When you log in, a default workspace is already created for you, so you can start using it right away without any additional setup\n- If you'd like to add a new workspace, you can simply click the \"Add Workspace\" button on the right side.\n\n\n---\n\n\n\n### 3. Create a New Workspace\n\n![file](https://image.lemoncloud.io/bd1ebd73-5152-4fff-a26e-bdce508a65d3?width=1024)\n\n- There are three types of workspace plans: Basic, Pro, and Advanced.\n- \n\n\n![file](https://image.lemoncloud.io/62cdfdd0-3a61-4a95-bbfd-d2a7f8d4ba97)\n\n- Please add a payment method before creating a Pro Plan workspace.\n- When you click the \"Add Card\" button, it will take you to the card registration screen.\n\n\n![file](https://image.lemoncloud.io/9569c9d7-422c-48c4-b2ac-0c6c9301ca1f)\n\n- Enter your email, card number, and other information to complete the registration.\n\n\n![file](https://image.lemoncloud.io/8b807883-72e3-41cf-8e6b-e1a4261cce62)\n\n- Go back to the workspace registration screen and enter the required information.\n- You need to specify the workspace name and AWS region, and email verification is required.\n- \n\n\n![file](https://image.lemoncloud.io/a1b73197-c331-4fb4-b7aa-f2d8f7801656)\n\n- Please verify your email address (a valid email is required).\n\n\n![file](https://image.lemoncloud.io/cbabf253-cb09-41e7-a207-1752bc2e9259)\n\n- After you complete email verification, please select a region.\n\n\n![file](https://image.lemoncloud.io/3418fb0f-750e-4ad9-a79f-e5272f760abd)\n\n- All the information must be entered, and if you select \"Agree to the Terms of Service\", the button below will be enabled.\n- Click the activated button to complete the workspace creation.\n\n\n![file](https://image.lemoncloud.io/720d9b18-7bc3-4a3a-8ef5-f36d4c0d097d)\n\n- Please check the workspace information you created.\n\n\n---\n\n\n\n### 4. Create Project\n\n![file](https://image.lemoncloud.io/d9c12256-d401-4647-9b8e-bf6a47e4899a)\n\n- To use the service, please create a project.\n- Please click the “Add Project” button.\n\n\n![file](https://image.lemoncloud.io/0e11e8b1-a368-4d8c-af38-9a6672718f8a)\n\n- Check the details entered during workspace creation, choose a stage (development or production), and proceed to create your project.\n\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- You can request the services you need from the catalog list.\n---",
+      "parentId": "C340",
+      "parent$": {
+        "id": "C340"
+      },
+      "no": 346,
+      "noOfElement": 73,
+      "category": "Technology",
+      "subCategory": "User Guide",
+      "tags": [
+        "en"
+      ],
+      "elementIds": [
+        "C346.E069",
+        "C346.E060",
+        "C346.E061",
+        "C346.E062",
+        "C346.E066",
+        "C346.E047",
+        "C346.E045",
+        "C346.E059",
+        "C346.E063",
+        "C346.E001",
+        "C346.E065",
+        "C346.E003",
+        "C346.E004",
+        "C346.E002",
+        "C346.E064",
+        "C346.E035",
+        "C346.E058",
+        "C346.E009",
+        "C346.E054",
+        "C346.E052",
+        "C346.E055",
+        "C346.E046",
+        "C346.E073",
+        "C346.E025",
+        "C346.E057",
+        "C346.E072",
+        "C346.E053",
+        "C346.E042",
+        "C346.E010",
+        "C346.E049",
+        "C346.E021",
+        "C346.E050",
+        "C346.E011",
+        "C346.E039",
+        "C346.E036",
+        "C346.E028",
+        "C346.E012",
+        "C346.E048",
+        "C346.E044",
+        "C346.E020",
+        "C346.E005",
+        "C346.E018",
+        "C346.E029",
+        "C346.E031",
+        "C346.E027",
+        "C346.E033",
+        "C346.E013",
+        "C346.E038",
+        "C346.E056",
+        "C346.E032",
+        "C346.E051",
+        "C346.E070",
+        "C346.E034",
+        "C346.E016",
+        "C346.E071",
+        "C346.E067",
+        "C346.E043",
+        "C346.E019",
+        "C346.E023"
+      ],
+      "element$$": [
+        {
+          "id": "C346.E069",
           "name": "HeadingOne"
         },
         {
-          "id": "C345.E047",
+          "id": "C346.E060",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E002",
+          "id": "C346.E061",
           "name": "HeadingThree"
         },
         {
-          "id": "C345.E051",
+          "id": "C346.E062",
           "name": "Image"
         },
         {
-          "id": "C345.E028",
+          "id": "C346.E066",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E004",
+          "id": "C346.E047",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E024",
+          "id": "C346.E045",
           "name": "Divider"
         },
         {
-          "id": "C345.E027",
+          "id": "C346.E059",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E052",
+          "id": "C346.E063",
           "name": "HeadingThree"
         },
         {
-          "id": "C345.E053",
+          "id": "C346.E001",
           "name": "Image"
         },
         {
-          "id": "C345.E061",
+          "id": "C346.E065",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E042",
+          "id": "C346.E003",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E040",
+          "id": "C346.E004",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E037",
+          "id": "C346.E002",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E030",
+          "id": "C346.E064",
           "name": "Divider"
         },
         {
-          "id": "C345.E057",
+          "id": "C346.E035",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E034",
+          "id": "C346.E058",
           "name": "HeadingThree"
         },
         {
-          "id": "C345.E007",
+          "id": "C346.E009",
           "name": "Image"
         },
         {
-          "id": "C345.E068",
+          "id": "C346.E054",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E067",
+          "id": "C346.E052",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E022",
+          "id": "C346.E055",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E009",
+          "id": "C346.E046",
           "name": "Image"
         },
         {
-          "id": "C345.E039",
+          "id": "C346.E073",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E060",
+          "id": "C346.E025",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E026",
+          "id": "C346.E057",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E025",
+          "id": "C346.E072",
           "name": "Image"
         },
         {
-          "id": "C345.E021",
+          "id": "C346.E053",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E035",
+          "id": "C346.E042",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E041",
+          "id": "C346.E010",
           "name": "Image"
         },
         {
-          "id": "C345.E048",
+          "id": "C346.E049",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E065",
+          "id": "C346.E021",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E059",
+          "id": "C346.E050",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E070",
+          "id": "C346.E011",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E045",
+          "id": "C346.E039",
           "name": "Image"
         },
         {
-          "id": "C345.E010",
+          "id": "C346.E036",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E056",
+          "id": "C346.E028",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E020",
+          "id": "C346.E012",
           "name": "Image"
         },
         {
-          "id": "C345.E063",
+          "id": "C346.E048",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E017",
+          "id": "C346.E044",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E029",
+          "id": "C346.E020",
           "name": "Image"
         },
         {
-          "id": "C345.E011",
+          "id": "C346.E005",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E032",
+          "id": "C346.E018",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E016",
+          "id": "C346.E029",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E050",
+          "id": "C346.E031",
           "name": "Image"
         },
         {
-          "id": "C345.E062",
+          "id": "C346.E027",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E014",
+          "id": "C346.E033",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E069",
+          "id": "C346.E013",
           "name": "Divider"
         },
         {
-          "id": "C345.E055",
+          "id": "C346.E038",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E013",
+          "id": "C346.E056",
           "name": "HeadingThree"
         },
         {
-          "id": "C345.E043",
+          "id": "C346.E032",
           "name": "Image"
         },
         {
-          "id": "C345.E049",
+          "id": "C346.E051",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E038",
+          "id": "C346.E070",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E015",
+          "id": "C346.E034",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E012",
+          "id": "C346.E016",
           "name": "Image"
         },
         {
-          "id": "C345.E006",
+          "id": "C346.E071",
           "name": "BulletedList"
         },
         {
-          "id": "C345.E005",
+          "id": "C346.E067",
           "name": "Paragraph"
         },
         {
-          "id": "C345.E044",
+          "id": "C346.E043",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E019",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E023",
           "name": "Divider"
-        },
-        {
-          "id": "C345.E046",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C345.E036",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C345.E018",
-          "name": "Image"
-        },
-        {
-          "id": "C345.E058",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C345.E054",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C345.E003",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C345.E031",
-          "name": "Image"
-        },
-        {
-          "id": "C345.E023",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C345.E064",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C345.E008",
-          "name": "Image"
-        },
-        {
-          "id": "C345.E066",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C345.E071",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C345.E019",
-          "name": "Image"
-        },
-        {
-          "id": "C345.E033",
-          "name": "BulletedList"
         }
       ]
     },
     {
       "id": "C340",
       "createdAt": 1758007306214,
-      "updatedAt": 1758160908178,
+      "updatedAt": 1758168848096,
       "deletedAt": 0,
-      "title": "유레카코즈 사용자 가이드 With Pro Paln & 채팅앱",
+      "title": "유레카코즈 사용자 가이드",
       "description": "유레카코즈 사용자 가이드",
-      "readme": "### 1. 로그인\n\n![file](https://image.lemoncloud.io/328fcf6a-8f59-451a-bb7d-ceed231716a4?width=1024)\n\n- 구글 소셜 계정으로 로그인을 해주세요.\n\n\n---\n\n\n\n### 2. 워크스페이스 시작하기\n\n![file](https://image.lemoncloud.io/6caacd84-7db1-40f2-83d8-5f4aad670e11)\n\n- 워크스페이스는 프로젝트 관리의 기본 단위입니다. \n- 로그인 시 기본으로 제공하는 워크스페이스가 생성되어 있어서 추가 설정 없이 바로 사용이 가능합니다.\n- 새로운 워크스페이스를 추가할 경우 우측에 “워크스페이스 추가” 버튼을 클릭해 주세요.\n\n\n---\n\n\n\n### 3. 새로운 워크스페이스 생성하기\n\n![file](https://image.lemoncloud.io/bd1ebd73-5152-4fff-a26e-bdce508a65d3?width=1024)\n\n- 워크스페이스 플랜은 베이직, 프로, 어드밴스 3가지가 있습니다.\n\n\n![file](https://image.lemoncloud.io/62cdfdd0-3a61-4a95-bbfd-d2a7f8d4ba97)\n\n- 프로 플랜 워크스페이스를 생성하기 전 결제수단을 먼저 추가해 주세요.\n- “카드 추가” 버튼을 선택하면 카드 등록 화면으로 이동합니다.\n\n\n![file](https://image.lemoncloud.io/9569c9d7-422c-48c4-b2ac-0c6c9301ca1f)\n\n- 이메일, 카드번호 등 정보를 입력하여 등록을 완료합니다.\n\n\n![file](https://image.lemoncloud.io/8b807883-72e3-41cf-8e6b-e1a4261cce62)\n\n- 워크스페이스 등록 화면으로 돌아와서 워크스페이스 생성에 필요한 정보들을 입력합니다.\n- 워크스페이스명, AWS 리전 지정이 필요하며, 이메일 인증을 진행해야 합니다.\n\n\n![file](https://image.lemoncloud.io/a1b73197-c331-4fb4-b7aa-f2d8f7801656)\n\n- 이메일 인증을 진행해주세요 (실제 이메일 주소가 필요합니다.)\n\n\n![file](https://image.lemoncloud.io/cbabf253-cb09-41e7-a207-1752bc2e9259)\n\n- 이메일 인증 완료 후 리전을 선택해 주세요.\n\n\n![file](https://image.lemoncloud.io/3418fb0f-750e-4ad9-a79f-e5272f760abd)\n\n- 모든 정보를 입력하고, \"서비스 이용약관 동의\"를 선택하시면 하단 버튼이 활성화 됩니다.\n- 활성화된 버튼을 클릭하여 워크스페이스 생성을 마무리 해주세요.\n\n\n![file](https://image.lemoncloud.io/720d9b18-7bc3-4a3a-8ef5-f36d4c0d097d)\n\n- 생성한 워크스페이스 정보를 확인해 주세요.\n\n\n---\n\n\n\n### 4. 프로젝트 생성하기\n\n![file](https://image.lemoncloud.io/d9c12256-d401-4647-9b8e-bf6a47e4899a)\n\n- 서비스 이용을 위해 프로젝트를 생성해야 합니다.\n- 프로젝트는 워크스페이스 하위에 얼마든지 생성할 수 있습니다.\n- “Add Project” 버튼을 클릭해 주세요.\n\n\n![file](https://image.lemoncloud.io/0e11e8b1-a368-4d8c-af38-9a6672718f8a)\n\n- 프로젝트 생성에 필요한 정보를 입력합니다.\n- 프로젝트명, 배포할 AWS 리전, 스테이지를 입력하여 프로젝트를 생성합니다.\n\n\n---\n\n\n\n### 6. \"채팅 앱\" 서비스 신청하기\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- 프로젝트 내에서 서비스를 신청하고 이용할 수  있습니다.\n- \"Add Service\" 버튼을 클릭하면 카탈로그 서비스 화면으로 이동합니다.\n\n\n![file](https://image.lemoncloud.io/756d52fe-f5d1-4bc9-9cb5-a289d2d6022c)\n\n- 카탈로그 목록에서 필요한 서비스를 신청할 수 있습니다.\n- 예시로 채팅앱 서비스인 “eureka chats front”서비스를 선택해 주세요.\n\n\n![file](https://image.lemoncloud.io/0d3221b4-03de-4193-a36c-002f51ed0b6f?width=1024)\n\n- 카탈로그(서비스)에 대한 상세 정보를 확인할 수 있습니다.\n- 하단의 “Add Service” 버튼을 클릭하여 서비스 신청을 등록합니다.\n\n\n![file](https://image.lemoncloud.io/4a61bf7d-7fdd-4735-8b13-25b555f85dd5)\n\n- 신청 정보를 확인합니다.",
+      "readme": "### 1. 로그인\n\n![file](https://image.lemoncloud.io/328fcf6a-8f59-451a-bb7d-ceed231716a4?width=1024)\n\n- 구글 소셜 계정으로 로그인을 해주세요.\n\n\n---\n\n\n\n### 2. 워크스페이스 시작하기\n\n![file](https://image.lemoncloud.io/6caacd84-7db1-40f2-83d8-5f4aad670e11)\n\n- 워크스페이스는 프로젝트 관리의 기본 단위입니다.\n- 로그인 시 기본으로 제공하는 워크스페이스가 생성되어 있어서 추가 설정 없이 바로 사용이 가능합니다.\n- 새로운 워크스페이스를 추가할 경우 우측에 “워크스페이스 추가” 버튼을 클릭해 주세요.\n\n\n---\n\n\n\n### 3. 새로운 워크스페이스 생성하기\n\n![file](https://image.lemoncloud.io/bd1ebd73-5152-4fff-a26e-bdce508a65d3?width=1024)\n\n- 워크스페이스 플랜은 베이직, 프로, 어드밴스 3가지가 있습니다.\n\n\n![file](https://image.lemoncloud.io/62cdfdd0-3a61-4a95-bbfd-d2a7f8d4ba97)\n\n- 프로 플랜 워크스페이스를 생성하기 전 결제수단을 먼저 추가해 주세요.\n- “카드 추가” 버튼을 선택하면 카드 등록 화면으로 이동합니다.\n\n\n![file](https://image.lemoncloud.io/9569c9d7-422c-48c4-b2ac-0c6c9301ca1f)\n\n- 이메일, 카드번호 등 정보를 입력하여 등록을 완료합니다.\n\n\n![file](https://image.lemoncloud.io/8b807883-72e3-41cf-8e6b-e1a4261cce62)\n\n- 워크스페이스 등록 화면으로 돌아와서 워크스페이스 생성에 필요한 정보들을 입력합니다.\n- 워크스페이스명, AWS 리전 지정이 필요하며, 이메일 인증을 진행해야 합니다.\n\n\n![file](https://image.lemoncloud.io/a1b73197-c331-4fb4-b7aa-f2d8f7801656)\n\n- 이메일 인증을 진행해주세요 (실제 이메일 주소가 필요합니다.)\n\n\n![file](https://image.lemoncloud.io/cbabf253-cb09-41e7-a207-1752bc2e9259)\n\n- 이메일 인증 완료 후 리전을 선택해 주세요.\n\n\n![file](https://image.lemoncloud.io/3418fb0f-750e-4ad9-a79f-e5272f760abd)\n\n- 모든 정보를 입력하고, \"서비스 이용약관 동의\"를 선택하시면 하단 버튼이 활성화 됩니다.\n- 활성화된 버튼을 클릭하여 워크스페이스 생성을 마무리 해주세요.\n\n\n![file](https://image.lemoncloud.io/720d9b18-7bc3-4a3a-8ef5-f36d4c0d097d)\n\n- 생성한 워크스페이스 정보를 확인해 주세요.\n\n\n---\n\n\n\n### 4. 프로젝트 생성하기\n\n![file](https://image.lemoncloud.io/d9c12256-d401-4647-9b8e-bf6a47e4899a)\n\n- 서비스 이용을 위해 프로젝트를 생성해야 합니다.\n- 프로젝트는 워크스페이스 하위에 얼마든지 생성할 수 있습니다.\n- “Add Project” 버튼을 클릭해 주세요.\n\n\n![file](https://image.lemoncloud.io/0e11e8b1-a368-4d8c-af38-9a6672718f8a)\n\n- 프로젝트 생성에 필요한 정보를 입력합니다.\n- 프로젝트명, 배포할 AWS 리전, 스테이지를 입력하여 프로젝트를 생성합니다.\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- 프로젝트 내에서 서비스를 신청할 수 있습니다.\n---",
       "no": 340,
-      "noOfElement": 183,
-      "category": "Blog",
+      "noOfElement": 184,
+      "category": "Technology",
       "subCategory": "User Guide",
       "tags": [
         "ko"
@@ -450,25 +744,10 @@
         "C340.E120",
         "C340.E114",
         "C340.E176",
-        "C340.E159",
-        "C340.E153",
-        "C340.E109",
-        "C340.E144",
         "C340.E171",
-        "C340.E152",
-        "C340.E134",
-        "C340.E170",
-        "C340.E139",
-        "C340.E181",
-        "C340.E180",
-        "C340.E150",
-        "C340.E166",
-        "C340.E182",
-        "C340.E179",
-        "C340.E107",
-        "C340.E122",
-        "C340.E101",
-        "C340.E113"
+        "C340.E144",
+        "C340.E153",
+        "C340.E184"
       ],
       "element$$": [
         {
@@ -684,79 +963,19 @@
           "name": "BulletedList"
         },
         {
-          "id": "C340.E159",
-          "name": "Paragraph"
+          "id": "C340.E171",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E144",
+          "name": "BulletedList"
         },
         {
           "id": "C340.E153",
           "name": "Divider"
         },
         {
-          "id": "C340.E109",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C340.E144",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C340.E171",
-          "name": "Image"
-        },
-        {
-          "id": "C340.E152",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C340.E134",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C340.E170",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C340.E139",
-          "name": "Image"
-        },
-        {
-          "id": "C340.E181",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C340.E180",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C340.E150",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C340.E166",
-          "name": "Image"
-        },
-        {
-          "id": "C340.E182",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C340.E179",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C340.E107",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C340.E122",
-          "name": "Image"
-        },
-        {
-          "id": "C340.E101",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C340.E113",
+          "id": "C340.E184",
           "name": "Paragraph"
         }
       ]
@@ -764,16 +983,18 @@
     {
       "id": "C338",
       "createdAt": 1757983002105,
-      "updatedAt": 1757984830838,
+      "updatedAt": 1758169411705,
       "deletedAt": 0,
       "title": "MCP 활용: LangChain & LangGraph",
       "description": null,
-      "readme": "### \nLangChain\n\n- 대규모 언어 모델(LLM)을 기반으로 애플리케이션을 개발하기 위한 프레임워크입니다.\n- 특징\n  - 다양한 LLM, Tool, Memory를 체인 형태로 연결합니다.\n  - 외부 데이터 소스와의 통합을 지원합니다.\n  - 정해진 워크플로의 순서대로 실행되는 선형적인 체인 구조입니다.\n- 기존 LLM과의 차이점\n  - 기존 LLM은 텍스트 생성과 질문 및 답변에 중점적이지만, LangChain은 외부 데이터와 통합하여 복잡하고 실용적인 애플리케이션 구축이 가능합니다.\n\n\n### LangGraph\n\n- 그래프 구조를 활용하여 유연하고 동적인 워크플로를 구현할 수 있는 프레임워크 입니다.\n- 핵심 구성 요소\n  - **노드(Node)**\n    - 워크플로에서 실행되는 개별 작업 단위입니다.\n    - LLM 호출, Tool 사용, 데이터 처리 등의 기능을 실행할 수 있습니다.\n  - **엣지(Edge)**\n    - 노드간의 연결을 의미하며, 작업 흐름을 결정합니다.\n  - **상태(State)**\n    - 모든 노드가 공유하는 데이터 저장소입니다.\n    - 여러 에이전트는 state를 통해 정보를 공유하고 워크플로의 문맥을 유지합니다.\n  - **에이전트(Agent)**\n    - LLM이 어떤 노드를 실행할지 판단하는 '에이전트' 역할을 수행할 수 있습니다.\n- 특징\n  - 내부적으로 state를 추적하고 적절한 MCP를 자유롭게 호출할 수 있습니다.",
+      "readme": "###  LangChain\n\n- 대규모 언어 모델(LLM)을 기반으로 애플리케이션을 개발하기 위한 프레임워크입니다.\n- 특징\n  - 다양한 LLM, Tool, Memory를 체인 형태로 연결합니다.\n  - 외부 데이터 소스와의 통합을 지원합니다.\n  - 정해진 워크플로의 순서대로 실행되는 선형적인 체인 구조입니다.\n- 기존 LLM과의 차이점\n  - 기존 LLM은 텍스트 생성과 질문 및 답변에 중점적이지만, LangChain은 외부 데이터와 통합하여 복잡하고 실용적인 애플리케이션 구축이 가능합니다.\n\n\n### LangGraph\n\n- 그래프 구조를 활용하여 유연하고 동적인 워크플로를 구현할 수 있는 프레임워크 입니다.\n- 핵심 구성 요소\n  - 노드(Node)\n    - 워크플로에서 실행되는 개별 작업 단위입니다.\n    - LLM 호출, Tool 사용, 데이터 처리 등의 기능을 실행할 수 있습니다.\n  - 엣지(Edge)\n    - 노드간의 연결을 의미하며, 작업 흐름을 결정합니다.\n  - 상태(State)\n    - 모든 노드가 공유하는 데이터 저장소입니다.\n    - 여러 에이전트는 state를 통해 정보를 공유하고 워크플로의 문맥을 유지합니다.\n  - 에이전트(Agent)\n    - LLM이 어떤 노드를 실행할지 판단하는 '에이전트' 역할을 수행할 수 있습니다.\n- 특징\n  - 내부적으로 state를 추적하고 적절한 MCP를 자유롭게 호출할 수 있습니다.",
       "no": 338,
       "noOfElement": 26,
-      "category": "AI",
+      "category": "Research",
       "subCategory": null,
-      "tags": ["ko"],
+      "tags": [
+        "ko"
+      ],
       "elementIds": [
         "C338.E010",
         "C338.E019",
@@ -799,8 +1020,7 @@
         "C338.E022",
         "C338.E007",
         "C338.E014",
-        "C338.E016",
-        "C338.E024"
+        "C338.E016"
       ],
       "element$$": [
         {
@@ -901,921 +1121,6 @@
         },
         {
           "id": "C338.E016",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C338.E024",
-          "name": "Paragraph"
-        }
-      ]
-    },
-    {
-      "id": "C337",
-      "createdAt": 1757982947595,
-      "updatedAt": 1757982947595,
-      "deletedAt": 0,
-      "no": 337
-    },
-    {
-      "id": "C335",
-      "createdAt": 1757898176370,
-      "updatedAt": 1757898977256,
-      "deletedAt": 0,
-      "title": "ENG",
-      "description": null,
-      "readme": "## Overview\n\nThis is a simple guide for applying and deploying the chat service on EurekaCode in just 5 minutes.\n\nYou can get started quickly by using the default settings.\n\n\n\n##  Quick Start (5 Steps) \n\n\n\n### Step 1: Log In\n\n- Go to the EurekaCodes homepage\n- Click the social login button (Google)\n- Complete the account linking\n![file](https://image.lemoncloud.io/ce2eaa41-6110-4775-a51e-7e14cf93644f)\n\n\n\n### Step 2: Check the Default Workspace\n\n- A default workspace is automatically created when you log in\n- You can use it immediately without any additional setup\n- Workspace name:default\n![file](https://image.lemoncloud.io/b4aac70a-98b7-4ee6-90bd-4274fad4063f)\n\n\n\n### Step 3: Create a Project\n\n- Click the “Add Project” button\n![file](https://image.lemoncloud.io/f9aaec70-f09b-4c36-ac5e-c8ae4ee9ab0e)\n\n- Configure your project settings\n  - Project name: my-chat-app (example)\n  - Cloud: Free Plan AWS\n  - Region: Asia Pacific (Seoul)\n  - Stage: Develop\n- Click the “Create” button\n![file](https://image.lemoncloud.io/af1ae576-2902-4467-9195-5ba871aa1981)\n\n\n\n### Step 4: Apply for Chat Service\n\n- Click the “Add Service” button\n![file](https://image.lemoncloud.io/71fa7c43-a462-4c97-bda3-90af5ac230a8)\n\n- Select eureka-chat-front from the catalog list\n![file](https://image.lemoncloud.io/3716fced-3e45-4056-aa00-830b87fd55a7)\n\n- Click the “Apply for Service” button\n![file](https://image.lemoncloud.io/58dd0d44-5692-4990-bef8-7892124c2875)\n\n- Agree to the terms and conditions → Application completed\n\n\n### Step 5: Automatic Deployment and Usage\n\n- Admin approval and deployment are processed automatically\n![file](https://image.lemoncloud.io/ed86e63c-445c-4681-a8f7-bcaebb0e2221)\n\n- Wait for deployment to complete (about 3–5 minutes)\n- Deployment is finished\n- Access the chat service using the provided URL\n![file](https://image.lemoncloud.io/b63531a6-d1fc-4722-9797-ba38b977cc96)",
-      "parentId": "C334",
-      "parent$": {
-        "id": "C334"
-      },
-      "no": 335,
-      "noOfElement": 59,
-      "category": "Blog",
-      "subCategory": "User Guide",
-      "tags": [
-        "en"
-      ],
-      "elementIds": [
-        "C335.E027",
-        "C335.E044",
-        "C335.E008",
-        "C335.E002",
-        "C335.E024",
-        "C335.E033",
-        "C335.E011",
-        "C335.E016",
-        "C335.E022",
-        "C335.E031",
-        "C335.E017",
-        "C335.E050",
-        "C335.E030",
-        "C335.E038",
-        "C335.E021",
-        "C335.E013",
-        "C335.E053",
-        "C335.E045",
-        "C335.E057",
-        "C335.E042",
-        "C335.E041",
-        "C335.E015",
-        "C335.E029",
-        "C335.E020",
-        "C335.E026",
-        "C335.E004",
-        "C335.E032",
-        "C335.E009",
-        "C335.E034",
-        "C335.E048",
-        "C335.E055",
-        "C335.E007",
-        "C335.E056",
-        "C335.E006",
-        "C335.E054",
-        "C335.E047",
-        "C335.E046",
-        "C335.E019",
-        "C335.E014",
-        "C335.E043",
-        "C335.E012",
-        "C335.E040",
-        "C335.E037",
-        "C335.E059",
-        "C335.E058",
-        "C335.E010",
-        "C335.E052",
-        "C335.E025",
-        "C335.E003",
-        "C335.E035",
-        "C335.E036",
-        "C335.E023",
-        "C335.E039",
-        "C335.E051",
-        "C335.E028",
-        "C335.E018",
-        "C335.E005",
-        "C335.E049"
-      ],
-      "element$$": [
-        {
-          "id": "C335.E027",
-          "name": "HeadingTwo"
-        },
-        {
-          "id": "C335.E044",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E008",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E002",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E024",
-          "name": "HeadingTwo"
-        },
-        {
-          "id": "C335.E033",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E011",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C335.E016",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E022",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E031",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E017",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E050",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E030",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C335.E038",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E021",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E013",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E053",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E045",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E057",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C335.E042",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E041",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E015",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E029",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C335.E020",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C335.E026",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C335.E004",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C335.E032",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E009",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E034",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E048",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C335.E055",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E007",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E056",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E006",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E054",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E047",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E046",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E019",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E014",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C335.E043",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E012",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E040",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E037",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E059",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C335.E058",
-          "name": "Image"
-        },
-        {
-          "id": "C335.E010",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E052",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E025",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E003",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E035",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E036",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E023",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E039",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E051",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E028",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E018",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E005",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C335.E049",
-          "name": "Paragraph"
-        }
-      ]
-    },
-    {
-      "id": "C334",
-      "createdAt": 1757779083659,
-      "updatedAt": 1757780855914,
-      "deletedAt": 0,
-      "title": "유레카코즈 퀵 스타트 가이드 with 채팅앱",
-      "description": null,
-      "readme": "## 개요\n\n유레카코즈에서 채팅 서비스를 **5분 만에** 신청하고 배포하는 간단한 가이드입니다.\n\n기본 설정만 사용하여 빠르게 시작할 수 있습니다.\n\n\n\n##  빠른 시작 (5단계)\n\n\n\n### 1단계: 로그인\n\n- EurekaCodes 홈페이지 접속\n- 소셜 로그인 버튼 클릭 (Google)\n- 계정 연동 완료\n![file](https://image.lemoncloud.io/ce2eaa41-6110-4775-a51e-7e14cf93644f)\n\n\n\n### 2단계: 기본 워크스페이스 확인\n\n- 로그인 시 기본 워크스페이스가 자동 생성됨\n- 추가 설정 없이 바로 사용 가능\n- 워크스페이스 이름: `default`\n![file](https://image.lemoncloud.io/b4aac70a-98b7-4ee6-90bd-4274fad4063f)\n\n\n\n### 3단계: 프로젝트 생성\n\n- 프로젝트 추가 버튼 클릭\n![file](https://image.lemoncloud.io/f9aaec70-f09b-4c36-ac5e-c8ae4ee9ab0e)\n\n- 프로젝트 설정\n  - 프로젝트명: `my-chat-app` (예시)\n  - 클라우드: `Free Plan AWS`\n  - 리전: `Asia Pacific (Seoul)`\n  - 스테이지: Develop\n- 생성 버튼 클릭\n![file](https://image.lemoncloud.io/af1ae576-2902-4467-9195-5ba871aa1981)\n\n\n\n### 4단계: 채팅 서비스 신청\n\n- 서비스 추가 버튼 클릭\n![file](https://image.lemoncloud.io/71fa7c43-a462-4c97-bda3-90af5ac230a8)\n\n- 카탈로그 목록에서 `eureka-chat-front` 선택\n![file](https://image.lemoncloud.io/3716fced-3e45-4056-aa00-830b87fd55a7)\n\n- 서비스 신청 버튼 클릭\n![file](https://image.lemoncloud.io/58dd0d44-5692-4990-bef8-7892124c2875)\n\n- 이용 약관 동의 → 신청 완료\n\n\n### 5단계: 자동 배포 및 이용\n\n1. **관리자 자동 승인 및 배포**\n\n![file](https://image.lemoncloud.io/ed86e63c-445c-4681-a8f7-bcaebb0e2221)\n\n2. 배포 완료 대기 (약 3-5분)\n\n3. 배포 완료\n\n4. 제공된 URL로 채팅 서비스 접속\n\n![file](https://image.lemoncloud.io/b63531a6-d1fc-4722-9797-ba38b977cc96)",
-      "no": 334,
-      "noOfElement": 121,
-      "category": "Blog",
-      "subCategory": "User Guide",
-      "tags": [
-        "ko"
-      ],
-      "elementIds": [
-        "C334.E002",
-        "C334.E003",
-        "C334.E005",
-        "C334.E006",
-        "C334.E026",
-        "C334.E023",
-        "C334.E066",
-        "C334.E051",
-        "C334.E121",
-        "C334.E054",
-        "C334.E043",
-        "C334.E111",
-        "C334.E056",
-        "C334.E041",
-        "C334.E055",
-        "C334.E067",
-        "C334.E047",
-        "C334.E112",
-        "C334.E045",
-        "C334.E020",
-        "C334.E114",
-        "C334.E025",
-        "C334.E063",
-        "C334.E050",
-        "C334.E021",
-        "C334.E031",
-        "C334.E062",
-        "C334.E036",
-        "C334.E113",
-        "C334.E022",
-        "C334.E038",
-        "C334.E117",
-        "C334.E028",
-        "C334.E075",
-        "C334.E018",
-        "C334.E120",
-        "C334.E057",
-        "C334.E116",
-        "C334.E029",
-        "C334.E014",
-        "C334.E118",
-        "C334.E027",
-        "C334.E069",
-        "C334.E034",
-        "C334.E119",
-        "C334.E044",
-        "C334.E097",
-        "C334.E073",
-        "C334.E088",
-        "C334.E076",
-        "C334.E096",
-        "C334.E099",
-        "C334.E094",
-        "C334.E092",
-        "C334.E085",
-        "C334.E100",
-        "C334.E090",
-        "C334.E106",
-        "C334.E110",
-        "C334.E084",
-        "C334.E086",
-        "C334.E102",
-        "C334.E087",
-        "C334.E091",
-        "C334.E078",
-        "C334.E081",
-        "C334.E082",
-        "C334.E109",
-        "C334.E101",
-        "C334.E103",
-        "C334.E074",
-        "C334.E077",
-        "C334.E107",
-        "C334.E072",
-        "C334.E093",
-        "C334.E089",
-        "C334.E071",
-        "C334.E079",
-        "C334.E095",
-        "C334.E080",
-        "C334.E105",
-        "C334.E098",
-        "C334.E104",
-        "C334.E108",
-        "C334.E083",
-        "C334.E033",
-        "C334.E040",
-        "C334.E049",
-        "C334.E016",
-        "C334.E058",
-        "C334.E060",
-        "C334.E035",
-        "C334.E065",
-        "C334.E039",
-        "C334.E012",
-        "C334.E052",
-        "C334.E048",
-        "C334.E032",
-        "C334.E068",
-        "C334.E010",
-        "C334.E042",
-        "C334.E070",
-        "C334.E037",
-        "C334.E064",
-        "C334.E017",
-        "C334.E053",
-        "C334.E059",
-        "C334.E061",
-        "C334.E009",
-        "C334.E019",
-        "C334.E008",
-        "C334.E011",
-        "C334.E046",
-        "C334.E007"
-      ],
-      "element$$": [
-        {
-          "id": "C334.E002",
-          "name": "HeadingTwo"
-        },
-        {
-          "id": "C334.E003",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E005",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E006",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E026",
-          "name": "HeadingTwo"
-        },
-        {
-          "id": "C334.E023",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E066",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C334.E051",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E121",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E054",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E043",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E111",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E056",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C334.E041",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E055",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E067",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E047",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E112",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E045",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C334.E020",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E114",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E025",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E063",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C334.E050",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C334.E021",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C334.E031",
-          "name": "BulletedList"
-        },
-        {
-          "id": "C334.E062",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E036",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E113",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E022",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C334.E038",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E117",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E028",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E075",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E018",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E120",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E057",
-          "name": "NumberedList"
-        },
-        {
-          "id": "C334.E116",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E029",
-          "name": "HeadingThree"
-        },
-        {
-          "id": "C334.E014",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E118",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E027",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E069",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E034",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E119",
-          "name": "Image"
-        },
-        {
-          "id": "C334.E044",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E097",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E073",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E088",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E076",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E096",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E099",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E094",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E092",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E085",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E100",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E090",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E106",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E110",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E084",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E086",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E102",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E087",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E091",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E078",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E081",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E082",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E109",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E101",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E103",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E074",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E077",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E107",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E072",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E093",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E089",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E071",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E079",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E095",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E080",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E105",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E098",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E104",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E108",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E083",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E033",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E040",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E049",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E016",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E058",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E060",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E035",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E065",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E039",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E012",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E052",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E048",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E032",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E068",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E010",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E042",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E070",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E037",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E064",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E017",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E053",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E059",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E061",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E009",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E019",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E008",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E011",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E046",
-          "name": "Paragraph"
-        },
-        {
-          "id": "C334.E007",
           "name": "Paragraph"
         }
       ]
@@ -5858,15 +5163,16 @@
     {
       "id": "C260",
       "createdAt": 1753259173478,
-      "updatedAt": 1753681404039,
+      "updatedAt": 1758171776323,
       "deletedAt": 0,
       "title": "검색엔진 (ES) 인덱스 생성",
-      "readme": "# 소개\n\n`OpenSearch` 인덱스를 생성하는 세팅 방법을 작성한 문서입니다. (프로젝트 초기 설정 시)\n\n`CloudFormation` 을 통해 AWS 리소스가 생성된 상태여야 합니다. /w `serverless.yml`\n\n---\n\n## 1. Search-API 살펴보기\n\n`search-api.ts` 를 확인합니다.\n\n`SearchAPIController`의 API를 호출하여 해당 프로젝트의 Elastic Search 인덱스 확인 및 생성을 할 수 있습니다.\n\n\n\n각 API endpoint는 다음 기능을 제공합니다.\n\n\n\n\n\n💡 **init-elastic** : 인덱스 생성\n\n**destroy-elastic** : 인덱스 삭제\n\n**desc-elastic** : 인덱스 조회 (상세정보)\n\n\n\n- OpenSearch sse 터널링을 연결해 준 뒤,init-elasticAPI를 호출하여 인덱스를 생성합니다.\n```javascript\n# 인덱스 생성하기\n$ http ':8888/search/init-elastic/hello'\n\n# 인덱스 조회하기\n$ http ':8888/search/desc-elastic/hello'\n\n```\n---\n\n## 2. Mappings 확인하기\n\n- 인덱스에 저장될 문서의 필드와 해당 필드의 데이터 타입의 정의를 확인해야 합니다.\n- 데이터를 생성하고, 리스트 조회가 잘 되는지 확인합니다.\n- mappings를 확인하여 타입이 잘 매핑되어 있는지 확인합니다.\n```javascript\n# 데이터 생성 테스트\n$ echo { \"name\": \"lemon\", \"age\": 10 } http POST ':8888/tests/0'\n\n# 목록 조회 테스트 (동기화가 잘 들어와있는지 확인)\n$ http ':8888/tests'\n\n# 인덱스 조회 후 mappings > properties 확인하기\n$ http ':8888/search/desc-elastic/hello'\n{\n  ...,\n  mappings: {\n    ...,\n    properties: {\n      ...\n    }\n  }\n}\n\n```\n---\n\n## 3. 부록\n\n- Error Handling\n  - 400 MAPPER PARSING - mapper_parsing_exception특정 속성에 대하여 초기에 매핑된 타입과 다른 타입이 들어왔을 경우 발생하는 에러입니다.\n매핑이 잘못된 부분을 찾아, 코드에서 타입 변환에 관한 로직을 수정해야 합니다.\nre-index를 하는 방법도 있지만, 사소한 타입 문제라면 이 방식을 추천합니다.\n  - 400 UNKNOWN - connect ECONNREFUSED ::1:PORT_NUMssh 터널링을 하지 않았을 때 발생하는 에러입니다. 접속 해준 뒤 재시도 하세요.\n132",
+      "description": null,
+      "readme": "# 소개\n\n`OpenSearch` 인덱스를 생성하는 세팅 방법을 작성한 문서입니다. (프로젝트 초기 설정 시)\n\n`CloudFormation` 을 통해 AWS 리소스가 생성된 상태여야 합니다. /w `serverless.yml`\n\n---\n\n## 1. Search-API 살펴보기\n\n`search-api.ts` 를 확인합니다.\n\n`SearchAPIController`의 API를 호출하여 해당 프로젝트의 Elastic Search 인덱스 확인 및 생성을 할 수 있습니다.\n\n\n\n각 API endpoint는 다음 기능을 제공합니다.\n\n\n\n\n\n\n\n\n\n💡 **init-elastic** : 인덱스 생성\n\n**destroy-elastic** : 인덱스 삭제\n\n**desc-elastic** : 인덱스 조회 (상세정보)\n\n\n\n- OpenSearch sse 터널링을 연결해 준 뒤,init-elasticAPI를 호출하여 인덱스를 생성합니다.\n```javascript\n# 인덱스 생성하기\n$ http ':8888/search/init-elastic/hello'\n\n# 인덱스 조회하기\n$ http ':8888/search/desc-elastic/hello'\n\n```\n---\n\n## 2. Mappings 확인하기\n\n- 인덱스에 저장될 문서의 필드와 해당 필드의 데이터 타입의 정의를 확인해야 합니다.\n- 데이터를 생성하고, 리스트 조회가 잘 되는지 확인합니다.\n- mappings를 확인하여 타입이 잘 매핑되어 있는지 확인합니다.\n```javascript\n# 데이터 생성 테스트\n$ echo { \"name\": \"lemon\", \"age\": 10 } http POST ':8888/tests/0'\n\n# 목록 조회 테스트 (동기화가 잘 들어와있는지 확인)\n$ http ':8888/tests'\n\n# 인덱스 조회 후 mappings > properties 확인하기\n$ http ':8888/search/desc-elastic/hello'\n{\n  ...,\n  mappings: {\n    ...,\n    properties: {\n      ...\n    }\n  }\n}\n\n```\n---\n\n## 3. 부록\n\n- Error Handling\n  - 400 MAPPER PARSING - mapper_parsing_exception특정 속성에 대하여 초기에 매핑된 타입과 다른 타입이 들어왔을 경우 발생하는 에러입니다.\n매핑이 잘못된 부분을 찾아, 코드에서 타입 변환에 관한 로직을 수정해야 합니다.\nre-index를 하는 방법도 있지만, 사소한 타입 문제라면 이 방식을 추천합니다.\n  - 400 UNKNOWN - connect ECONNREFUSED ::1:PORT_NUMssh 터널링을 하지 않았을 때 발생하는 에러입니다. 접속 해준 뒤 재시도 하세요.",
+      "no": 260,
+      "noOfElement": 29,
       "category": "Technology",
       "subCategory": "Backend",
       "tags": ["ko"],
-      "no": 260,
-      "noOfElement": 29,
       "elementIds": [
         "C260.E020",
         "C260.E016",
@@ -5877,6 +5183,8 @@
         "C260.E001",
         "C260.E019",
         "C260.E018",
+        "C260.E025",
+        "C260.E025",
         "C260.E025",
         "C260.E025",
         "C260.E007",
@@ -5895,8 +5203,7 @@
         "C260.E027",
         "C260.E024",
         "C260.E013",
-        "C260.E014",
-        "C260.E029"
+        "C260.E014"
       ],
       "element$$": [
         {
@@ -5933,6 +5240,14 @@
         },
         {
           "id": "C260.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E025",
           "name": "Paragraph"
         },
         {
@@ -6010,14 +5325,10 @@
         {
           "id": "C260.E014",
           "name": "BulletedList"
-        },
-        {
-          "id": "C260.E029",
-          "name": "Paragraph"
         }
       ]
     }
   ],
-  "total": 22,
+  "total": 21,
   "aggr": null
 }

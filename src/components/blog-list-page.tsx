@@ -73,7 +73,7 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-background to-muted/20">
               <Image
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&h=600&auto=format&fit=crop"
+                src="https://image.lemoncloud.io/codes/landing_img5.png"
                 alt="AI visualization showing neural network connections and robotic intelligence"
                 fill
                 className="object-cover"
@@ -151,7 +151,10 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
 
 function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: React.ReactNode }) {
   const publishDate = post.data.created || post.data.updated
-  const category = post.data.category || post.data.subCategory || 'AI'
+  // For Blog category, use subCategory as the category display
+  const category = post.data.category === 'Blog'
+    ? (post.data.subCategory || 'Other')
+    : (post.data.category || post.data.subCategory || 'AI')
 
   return (
     <Link
@@ -195,7 +198,10 @@ function FeaturedCard({ post, image, icon }: { post: any; image: string; icon: R
 
 function ArticleCard({ post, image }: { post: any; image: string }) {
   const publishDate = post.data.created || post.data.updated
-  const category = post.data.category || post.data.subCategory || 'AI'
+  // For Blog category, use subCategory as the category display
+  const category = post.data.category === 'Blog'
+    ? (post.data.subCategory || 'Other')
+    : (post.data.category || post.data.subCategory || 'AI')
 
   return (
     <Link

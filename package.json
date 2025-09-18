@@ -10,6 +10,8 @@
     "deploy:local": "yarn build && gh-pages -d out -b gh-pages",
     "postinstall": "fumadocs-mdx",
     "generate": "FORCE_REBUILD=true tsx scripts/generate-md.ts",
+    "generate:en": "FORCE_REBUILD=true tsx scripts/generate-md.ts --lang en",
+    "generate:ko": "FORCE_REBUILD=true tsx scripts/generate-md.ts --lang ko",
     "generate:build": "yarn generate && yarn postinstall && yarn build",
     "generate:dev": "yarn generate && yarn postinstall && yarn dev"
   },

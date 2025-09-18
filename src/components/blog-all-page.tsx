@@ -5,11 +5,11 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  BrainCircuit, 
-  Calendar, 
-  Clock, 
-  Tag, 
+import {
+  BrainCircuit,
+  Calendar,
+  Clock,
+  Tag,
   ArrowLeft,
   Eye,
   Cpu,
@@ -53,7 +53,13 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
       // Show all posts including drafts for now
       // if (post.data.draft) return false
       if (selectedCategory) {
-        const postCategory = post.data.category || post.data.subCategory || 'Other'
+        // For Blog category, use subCategory as the filtering criteria
+        let postCategory: string
+        if (post.data.category === 'Blog') {
+          postCategory = post.data.subCategory || 'Other'
+        } else {
+          postCategory = post.data.category || post.data.subCategory || 'Other'
+        }
         return postCategory === selectedCategory
       }
       return true
@@ -66,7 +72,14 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
 
   // Group posts by category for Topics section
   const categories = allPosts.reduce((acc, post) => {
-    const category = post.data.category || post.data.subCategory || 'Other'
+    // For Blog category, use subCategory as the grouping key (topics)
+    let category: string
+    if (post.data.category === 'Blog') {
+      category = post.data.subCategory || 'Other'
+    } else {
+      category = post.data.category || post.data.subCategory || 'Other'
+    }
+
     if (!acc[category]) {
       acc[category] = []
     }
@@ -81,33 +94,33 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
     'Design': { name: 'Design', icon: <Palette className="h-5 w-5" />, description: 'Design-focused content covering UI/UX, branding, graphics, and prototyping.' },
     'Research': { name: 'Research', icon: <FileSearch className="h-5 w-5" />, description: 'Research articles including user studies, market analysis, competitive research, and academic content.' },
     'Blog': { name: 'Blog', icon: <BookOpen className="h-5 w-5" />, description: 'Personal blog posts including guides, notes, ideas, and learning content.' },
-    
+
     // Technology Subcategories
     'Frontend': { name: 'Frontend', icon: <Monitor className="h-5 w-5" />, description: 'Frontend development topics including React, Vue, Angular, and modern web technologies.' },
     'Backend': { name: 'Backend', icon: <Server className="h-5 w-5" />, description: 'Backend development covering APIs, databases, server architecture, and system design.' },
     'DevOps': { name: 'DevOps', icon: <Settings className="h-5 w-5" />, description: 'DevOps practices including CI/CD, containerization, deployment, and infrastructure automation.' },
     'Mobile': { name: 'Mobile', icon: <Smartphone className="h-5 w-5" />, description: 'Mobile development for iOS, Android, and cross-platform solutions.' },
     'AI/ML': { name: 'AI/ML', icon: <BrainCircuit className="h-5 w-5" />, description: 'Artificial Intelligence and Machine Learning topics, algorithms, and implementations.' },
-    
+
     // Business Subcategories
     'Strategy': { name: 'Strategy', icon: <Target className="h-5 w-5" />, description: 'Business strategy, planning, and strategic decision-making processes.' },
     'Marketing': { name: 'Marketing', icon: <TrendingUp className="h-5 w-5" />, description: 'Marketing strategies, digital marketing, content marketing, and growth tactics.' },
     'Sales': { name: 'Sales', icon: <DollarSign className="h-5 w-5" />, description: 'Sales processes, customer acquisition, and revenue generation strategies.' },
     'Finance': { name: 'Finance', icon: <BarChart3 className="h-5 w-5" />, description: 'Financial planning, budgeting, investment strategies, and financial analysis.' },
     'HR': { name: 'HR', icon: <Users className="h-5 w-5" />, description: 'Human resources, team management, recruitment, and organizational development.' },
-    
+
     // Design Subcategories
     'UI/UX': { name: 'UI/UX', icon: <Layers className="h-5 w-5" />, description: 'User interface and user experience design principles, patterns, and best practices.' },
     'Branding': { name: 'Branding', icon: <Briefcase className="h-5 w-5" />, description: 'Brand identity, visual identity systems, and brand strategy development.' },
     'Graphics': { name: 'Graphics', icon: <Paintbrush className="h-5 w-5" />, description: 'Graphic design, visual communication, and creative design processes.' },
     'Prototype': { name: 'Prototype', icon: <PenTool className="h-5 w-5" />, description: 'Prototyping methods, tools, and iterative design processes.' },
-    
+
     // Research Subcategories
     'User Research': { name: 'User Research', icon: <Users className="h-5 w-5" />, description: 'User research methodologies, usability testing, and user behavior analysis.' },
     'Market Analysis': { name: 'Market Analysis', icon: <BarChart3 className="h-5 w-5" />, description: 'Market research, industry analysis, and market trend identification.' },
     'Competitor Analysis': { name: 'Competitor Analysis', icon: <Target className="h-5 w-5" />, description: 'Competitive analysis, benchmarking, and competitive intelligence gathering.' },
     'Academic': { name: 'Academic', icon: <BookOpen className="h-5 w-5" />, description: 'Academic research, scholarly articles, and theoretical foundations.' },
-    
+
     // Blog Subcategories
     'User Guide': { name: 'User Guide', icon: <BookOpen className="h-5 w-5" />, description: 'Step-by-step guides and tutorials for users and developers.' },
     'Notes': { name: 'Notes', icon: <PenTool className="h-5 w-5" />, description: 'Personal notes, quick thoughts, and informal documentation.' },
@@ -117,7 +130,7 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
     'Learning': { name: 'Learning', icon: <BookOpen className="h-5 w-5" />, description: 'Learning experiences, educational content, and knowledge sharing.' },
     'API': { name: 'API', icon: <GitBranch className="h-5 w-5" />, description: 'API documentation, integration guides, and technical specifications.' },
     'Process': { name: 'Process', icon: <Settings className="h-5 w-5" />, description: 'Process documentation, workflows, and operational procedures.' },
-    
+
     // Fallback
     'Other': { name: 'Other', icon: <BookOpen className="h-5 w-5" />, description: 'Miscellaneous content that doesn\'t fit into other categories.' }
   }
@@ -125,34 +138,30 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
   return (
     <main className="flex flex-1 flex-col">
       {/* Header */}
-      <section className="my-12 mx-auto max-w-6xl px-5">
-        <Link 
-          href="/blog" 
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors group"
-        >
-          <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-          Back to blog
-        </Link>
-        
+      <section className="mt-12 mx-auto max-w-6xl px-5 w-full">
+        <div className="w-full">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors group w-fit"
+          >
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Back to blog
+          </Link>
+        </div>
+
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-gray-900 dark:text-gray-200 text-4xl md:text-5xl font-semibold leading-tight mb-6">
-            {selectedCategory 
+          <h1 className="text-gray-900 dark:text-gray-200 text-4xl md:text-5xl font-semibold leading-tight">
+            {selectedCategory
               ? `${categoryInfo[selectedCategory]?.name || selectedCategory} Articles`
               : 'All Articles'
             }
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 font-normal text-lg md:text-xl mb-8">
-            {selectedCategory 
-              ? `${categoryInfo[selectedCategory]?.description || 'Articles in this category.'}`
-              : 'Comprehensive collection of AI insights, research, and technical deep-dives.'
-            }
-          </p>
         </div>
       </section>
 
       {/* Topics Grid - Only show when not filtering by category */}
       {!selectedCategory && (
-        <section className="my-12 mx-auto max-w-6xl px-5">
+        <section className="my-12 mx-auto max-w-6xl px-5 min-w-80">
           <p className="text-gray-900 dark:text-gray-200 text-left mt-4 text-2xl mb-4 font-semibold">
             Topics
           </p>
@@ -195,14 +204,14 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
       )}
 
       {/* All Articles Grid */}
-      <section className="my-12 mx-auto max-w-6xl px-5">
+      <section className="my-12 mx-auto max-w-6xl px-5 min-w-80">
         <div className="flex items-center justify-between mt-10 mb-4">
           <p className="text-gray-900 dark:text-gray-200 text-2xl font-semibold">
             {selectedCategory ? `${categoryInfo[selectedCategory]?.name || selectedCategory} Articles` : 'All Articles'}
           </p>
           {selectedCategory && (
             <Link href="/blog/all" className="text-primary dark:text-primary-light text-sm hover:text-primary/80">
-              view all articles
+              View all articles
             </Link>
           )}
         </div>
@@ -219,13 +228,17 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
                 "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=600&h=400&auto=format&fit=crop"
               ];
               const publishDate = post.data.created || post.data.updated
-              const category = post.data.category || post.data.subCategory || 'AI'
-              
+              // For Blog category, use subCategory as the category display
+              const category = post.data.category === 'Blog'
+                ? (post.data.subCategory || 'Other')
+                : (post.data.category || post.data.subCategory || 'AI')
+
               return (
-                <AllArticleCard 
-                  key={post.url} 
-                  post={post} 
+                <AllArticleCard
+                  key={post.url}
+                  post={post}
                   image={images[index % images.length]}
+                  categoryInfo={categoryInfo}
                 />
               );
             })}
@@ -235,10 +248,16 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
   )
 }
 
-function AllArticleCard({ post, image }: { post: any; image: string }) {
+function AllArticleCard({ post, image, categoryInfo }: { post: any; image: string; categoryInfo: any }) {
   const publishDate = post.data.created || post.data.updated
-  const category = post.data.category || post.data.subCategory || 'AI'
-  
+  // For Blog category, use subCategory as the category display
+  const category = post.data.category === 'Blog'
+    ? (post.data.subCategory || 'Other')
+    : (post.data.category || post.data.subCategory || 'AI')
+
+  // Get the appropriate icon from categoryInfo
+  const info = categoryInfo[category] || categoryInfo['Other']
+
   return (
     <Link
       href={post.url}
@@ -252,7 +271,7 @@ function AllArticleCard({ post, image }: { post: any; image: string }) {
           </svg>
         </div>
         <div className="h-6 w-6 mb-3 text-gray-700 dark:text-gray-300">
-          <BrainCircuit className="w-6 h-6" />
+          {info.icon}
         </div>
         <div className="flex-1 flex flex-col">
           <div className="text-xs text-primary dark:text-primary-light mb-2 font-medium">
@@ -266,10 +285,10 @@ function AllArticleCard({ post, image }: { post: any; image: string }) {
           </div>
           {publishDate && (
             <div className="mt-auto pt-3 text-xs text-gray-500 dark:text-gray-500">
-              {new Date(publishDate).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric' 
+              {new Date(publishDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
               })}
             </div>
           )}

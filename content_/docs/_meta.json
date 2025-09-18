@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {
+      "name": "ai",
+      "title": "AI"
+    },
+    {
+      "name": "uncategorized",
+      "title": "uncategorized"
+    },
+    {
+      "name": "technology",
+      "title": "Technology"
+    }
+  ]
+}

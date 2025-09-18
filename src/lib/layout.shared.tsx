@@ -14,14 +14,14 @@ export function baseOptions(): BaseLayoutProps {
       title: (
         <>
           <Image
-            src="/codes-logo-black.png"
+            src="https://image.lemoncloud.io/codes/codes-logo-black.png"
             alt="Logo"
             width={24}
             height={24}
             className="dark:hidden"
           />
           <Image
-            src="/codes-logo-white.png"
+            src="https://image.lemoncloud.io/codes/codes-logo-white.png"
             alt="Logo"
             width={24}
             height={24}

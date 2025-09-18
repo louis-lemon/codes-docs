@@ -1,0 +1,216 @@
+---
+title: "[backend] eureka-chats-api"
+description: Serverless real-time chat microservice with WebSocket integration. serverless backend API service for real-time chat applications.
+id: C322
+"no": 322
+order: 322
+category: Technology
+subCategory: Backend
+tags: []
+created: "2025-09-11T03:16:29.991Z"
+updated: "2025-09-11T05:53:24.821Z"
+published: null
+featured: false
+draft: true
+hasChildren: false
+elementCount: 66
+childCount: 0
+slug: eureka-chats-api
+---
+
+# eureka-chats-api
+
+Serverless real-time chat microservice with WebSocket integration.
+
+
+
+## Summary
+
+- serverless backend API service for real-time chat applications.
+- This project is a sample chat boilerplate based on AWS Lambda and Node.js.
+- Key features include WebSocket-based real-time messaging through integration with the `eureka-sockets-api` microservice, chat room management, and user session handling.
+- **Note**: To use this project, you must first deploy the `eureka-sockets-api` microservice to the cloud.
+
+
+## Getting Started
+
+- Pre requirements (or installations) before starting.
+- 1. [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) with api-key
+- 2. [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- 3. [nodejs22](https://nodejs.org/en/blog/release/v22.15.1)
+- 4. (optional) [httpie](https://httpie.io/docs/cli/installation)
+- 5. (optional) [wscat](https://www.npmjs.com/package/wscat)
+- - Fork(or clone), develop and deploy the serverless api.
+```javascript
+# clone the code.
+$ git clone https://github.com/lemoncloud-io/eureka-sockets-api.git
+
+# STEP.1 install the dependecies.
+$ npm ci
+
+# STEP.2 run the server locally.
+$ npm run express
+
+# STEP.3 make request and develop locally.
+$ http :8832/hello
+
+# STEP.4 deploy into your AWS cloud (`AWS-Key` is required).
+$ npm run deploy
+
+# (example) try to connect to a WebSocket
+$ wscat -c wss://a5jxmksfa2.execute-api.ap-northeast-2.amazonaws.com/dev
+
+# STEP.5 check the deploy info
+$ npm run info
+
+# STEP.6 remove(or uninstall)
+$ npm run remove
+```text
+
+
+## Architecture and Modeling
+
+### Infrastructure Components
+
+![[backend] eureka-chats-api image](https://image.lemoncloud.io/820f91f7-411c-4973-9e93-92a36683979d)
+
+
+
+### Data Modeling
+
+![[backend] eureka-chats-api image](https://image.lemoncloud.io/074d7c29-0ef2-41e7-b655-e20f1849a781)
+
+
+
+### Chat Flow Architecture
+
+```javascript
+<Mermaid chart={"sequenceDiagram\n    participant C as Client\n    participant AG as API Gateway\n    participant CL as eureka-chat-api\n    participant SL as eureka-sockets-api\n    participant WS as WebSocket Gateway\n    participant CDB as DynamoDB (Chats)\n    participant SDB as DynamoDB (Sockets)\n    \n    Note over C,SDB: 1. Access to the chat room (Web)\n    \n    Note over C,SDB: 2. Enter the chat room\n    C->>+AG: POST /chats/0/start-chat\n    AG->>+CL: HTTP Request\n    CL->>+CDB: Create NodeModel\n    CL->>CDB: Connect to Channel (#)\n    CDB-->>-CL: NodeView.channelId\n    CL-->>-AG: Return NodeView\n    AG-->>-C: NodeView.channelId\n    \n    C->>+WS: WebSocket Connect w/ channelId\n    WS->>+SL: Connection Request\n    SL->>SDB: Store Connection Info\n    SL-->>-WS: Connection Established\n    WS-->>-C: Connected\n    \n    C->>+WS: action=info\n    WS->>+SL: Get Connection Info\n    SL->>SDB: Query Connection\n    SL-->>-WS: Connection Details\n    WS-->>-C: Connection Info\n    \n    C->>+AG: Update Node w/ Connection ID\n    AG->>+CL: PUT Request\n    CL->>+CDB: Update NodeModel\n    CDB-->>-CL: Updated\n    CL-->>-AG: Success\n    AG-->>-C: Updated\n    \n    Note over C,SDB: 3. Send and receive messages\n    C->>+AG: POST /chats/0/chat\n    AG->>+CL: Send Message\n    CL->>+CDB: Store Message\n    CDB-->>-CL: Stored\n    CL->>+SL: Broadcast Request (HTTP)\n    SL->>SDB: Get Channel Connections\n    SL->>WS: Broadcast to Connections\n    SL-->>-CL: Broadcast Complete\n    CL-->>-AG: Message Sent\n    AG-->>-C: Success\n    \n    WS-->>C: Real-time Message"} />text
+```text
+
+
+## Module Structure
+
+```javascript
+src/
+├── cores/                  # Common architecture
+│   ├── abstract-controllers.ts  # CRUD controller base
+│   ├── abstract-services.ts     # Service layer base
+│   └── types.ts                 # Common types
+├── modules/                # Business modules
+│   ├── chats/             # Chat service (core module)
+│   │   ├── api-chats.ts   # Chat API controller
+│   │   ├── api-rooms.ts   # Chat room API controller
+│   │   ├── model.ts       # Chat data model
+│   │   ├── service.ts     # Chat business logic
+│   │   ├── proxy.ts       # Chat data access
+│   │   ├── transformer.ts # Data transformation
+│   │   ├── types.ts       # Chat type definitions
+│   │   └── views.ts       # Chat view models
+│   ├── callback/          # External callback handling
+│   │   ├── api-callback.ts
+│   │   ├── model.ts
+│   │   ├── service.ts
+│   │   └── ...
+│   ├── mock/              # Test mock data
+│   │   ├── api-mocks.ts
+│   │   ├── api-tests.ts
+│   │   └── ...
+│   └── search/            # Search functionality
+│       ├── api-search.ts
+│       ├── model.ts
+│       └── service.ts
+├── service/               # Core services
+│   ├── backend-service.ts # Main service
+│   ├── backend-proxy.ts   # Data access layer
+│   └── backend-model.ts   # Data models
+└── api/                   # API endpoints
+    ├── hello-api.ts       # Health check
+    └── crons-api.ts       # Scheduled tasks
+```text
+
+
+---
+
+
+
+## Key Features
+
+### Chat Service Support
+
+- Chat Room Management (Rooms)
+```javascript
+- `GET /rooms` - List chat rooms
+- `GET /rooms/{id}` - Get room details
+- `POST /rooms/0` - Create new chat room
+- `PUT /rooms/{id}` - Update room information
+- `DELETE /rooms/{id}` - Delete chat room
+```text
+- Chat Messages (Chats)
+```javascript
+- `GET /chats` - List messages (with pagination)
+- `GET /chats/{id}` - Get message details
+- `POST /chats/0/start-chat` - Join chat room
+- `POST /chats/0/chat` - Send message
+- `POST /chats/{nodeId}/leave-chat` - Leave chat room
+```text
+
+
+### Usage Examples
+
+### 
+
+```javascript
+# Create chat room
+POST /rooms/0 
+{
+  "name": "ChatRoom 1",
+  "isPrivate": false
+}
+
+# Join chat room
+POST /chats/0/start-chat
+{
+  "roomId": "room123",
+  "name": "guest",
+  "connectionId": "QXaagd6MIE0CFtw="
+}
+
+# Send new message
+POST /chats/0/chat
+{
+  "roomId": "room123",
+  "nodeId": "node123",
+  "message": "hello world"
+}
+
+# Leave chat room
+POST /chats/<node-id>/leave-chat
+```text
+
+
+## Related Repositories
+
+- **[eureka-sockets-api](https://github.com/lemoncloud-io/eureka-sockets-api)** - WebSocket real-time messaging service (required)
+- **[lemon-core](https://github.com/lemoncloud-io/lemon-core)** - Common utility library
+- **[eureka-hello-api](https://github.com/lemoncloud-io/eureka-hello-api)** - Serverless API boilerplate
+- **[lemon-model](https://github.com/lemoncloud-io/lemon-model)** - DynamoDB modeling framework
+
+
+## LICENSE
+
+[MIT](http://opensource.org/licenses/MIT)
+
+
+
+## VERSION INFO
+
+Version History
+
+| Version   | Description
+
+|--         |--
+
+| 0.25.818  | implements chat-service.
+
+| 0.25.808  | optimized `lemon-core@4.0.6` initially.

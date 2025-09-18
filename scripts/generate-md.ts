@@ -7,6 +7,30 @@ import yaml from 'js-yaml';
 import { fetchDocuments, fetchDocument, fetchCategories, fetchChangedDocuments } from '../src/lib/mock-api';
 import type { EurekaDocument, EurekaApiResponse } from '../src/types/eureka';
 
+// 명령행 인수 파싱
+const args = process.argv.slice(2);
+const langIndex = args.findIndex(arg => arg === '--lang' || arg === '-l');
+const FILTER_LANGUAGE = langIndex !== -1 && args[langIndex + 1] ? args[langIndex + 1] : null;
+
+console.log(FILTER_LANGUAGE ? `🌐 Language filter: ${FILTER_LANGUAGE}` : '🌐 No language filter - processing all documents');
+
+// 언어별 문서 필터링 함수
+function filterDocumentsByLanguage(documents: EurekaDocument[], language?: string | null): EurekaDocument[] {
+  if (!language) {
+    return documents; // 언어 필터가 없으면 모든 문서 반환
+  }
+
+  return documents.filter(doc => {
+    // tags가 없거나 빈 배열인 경우 포함 (언어 태그가 없는 문서)
+    if (!doc.tags || doc.tags.length === 0) {
+      return true;
+    }
+
+    // 지정된 언어 태그가 포함된 문서만 필터링
+    return doc.tags.includes(language);
+  });
+}
+
 interface MDFrontmatter {
   title: string;
   description: string;
@@ -42,7 +66,8 @@ interface ProcessingContext {
   errors: Array<{ docId: string; error: string }>;
 }
 
-const CONTENT_DIR = path.join(process.cwd(), 'content', 'docs');
+const CONTENT_DOCS_DIR = path.join(process.cwd(), 'content', 'docs');
+const CONTENT_BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 const CACHE_DIR = path.join(process.cwd(), '.build-cache');
 const CACHE_VERSION = '2.0.0';
 const BATCH_SIZE = 10;
@@ -318,7 +343,7 @@ function createFrontmatter(
     order: doc.order || doc.no,
     category: doc.category || null,
     subCategory: doc.subCategory || null,
-    tags: doc.keywords || [],
+    tags: doc.tags || [],
     created: new Date(doc.createdAt).toISOString(),
     updated: new Date(doc.updatedAt).toISOString(),
     published: doc.publishedAt ? new Date(doc.publishedAt).toISOString() : null,
@@ -375,17 +400,24 @@ function getDocumentPath(
 ): string {
   // 파일명은 항상 ID 사용, mermaid가 있으면 .mdx 확장자 사용
   const fileName = `${doc.id}.${hasMermaid ? 'mdx' : 'md'}`;
+  const category = doc.category || 'uncategorized';
 
+  // Blog 카테고리는 단일 구조로 content/blog에 저장
+  if (category.toLowerCase() === 'blog') {
+    return path.join(CONTENT_BLOG_DIR, fileName);
+  }
+
+  // 나머지 카테고리는 기존 nested 구조 유지
   if (parentDoc) {
     const parentCategory = sanitizePath(parentDoc.category || 'uncategorized');
     const parentSubCategory = sanitizePath(parentDoc.subCategory || 'general');
     // 부모 폴더도 ID 사용
-    return path.join(CONTENT_DIR, parentCategory, parentSubCategory, parentDoc.id, fileName);
+    return path.join(CONTENT_DOCS_DIR, parentCategory, parentSubCategory, parentDoc.id, fileName);
   }
 
-  const category = sanitizePath(doc.category || 'uncategorized');
+  const sanitizedCategory = sanitizePath(category);
   const subCategory = sanitizePath(doc.subCategory || 'general');
-  return path.join(CONTENT_DIR, category, subCategory, fileName);
+  return path.join(CONTENT_DOCS_DIR, sanitizedCategory, subCategory, fileName);
 }
 
 function sanitizePath(str: string): string {
@@ -458,7 +490,7 @@ async function processBatch(
   }
 }
 
-// 카테고리 구조 생성
+// 카테고리 구조 생성 (Blog 제외)
 function generateCategoryStructure(
     documents: EurekaDocument[],
     context: ProcessingContext
@@ -467,8 +499,12 @@ function generateCategoryStructure(
 
   documents.forEach(doc => {
     if (doc.parentId) return; // 자식 문서는 스킵
-
+    
     const category = doc.category || 'uncategorized';
+    
+    // Blog 카테고리는 별도 처리하므로 제외
+    if (category.toLowerCase() === 'blog') return;
+
     const subCategory = doc.subCategory || 'general';
 
     if (!structure.has(category)) {
@@ -486,6 +522,17 @@ function generateCategoryStructure(
   return structure;
 }
 
+// Blog 문서 구조 생성
+function generateBlogStructure(
+    documents: EurekaDocument[],
+    context: ProcessingContext
+): EurekaDocument[] {
+  return documents.filter(doc => {
+    const category = doc.category || 'uncategorized';
+    return category.toLowerCase() === 'blog' && !doc.parentId; // 부모 문서만
+  });
+}
+
 async function generateMarkdown(): Promise<void> {
   console.log('🚀 Starting Markdown generation...\n');
 
@@ -496,17 +543,24 @@ async function generateMarkdown(): Promise<void> {
 
   // 컨텐츠 디렉토리 정리 또는 생성
   // docs/index.md 파일 백업
-  const indexMdPath = path.join(CONTENT_DIR, 'index.md');
+  const indexMdPath = path.join(CONTENT_DOCS_DIR, 'index.md');
   let indexMdContent: string | null = null;
   if (fs.existsSync(indexMdPath)) {
     indexMdContent = fs.readFileSync(indexMdPath, 'utf-8');
     console.log('📝 Backing up docs/index.md');
   }
 
-  if (fs.existsSync(CONTENT_DIR)) {
-    fs.rmSync(CONTENT_DIR, { recursive: true, force: true });
+  // docs 디렉토리 정리
+  if (fs.existsSync(CONTENT_DOCS_DIR)) {
+    fs.rmSync(CONTENT_DOCS_DIR, { recursive: true, force: true });
   }
-  fs.mkdirSync(CONTENT_DIR, { recursive: true });
+  fs.mkdirSync(CONTENT_DOCS_DIR, { recursive: true });
+
+  // blog 디렉토리 정리
+  if (fs.existsSync(CONTENT_BLOG_DIR)) {
+    fs.rmSync(CONTENT_BLOG_DIR, { recursive: true, force: true });
+  }
+  fs.mkdirSync(CONTENT_BLOG_DIR, { recursive: true });
 
   // docs/index.md 파일 복원
   if (indexMdContent) {
@@ -519,11 +573,20 @@ async function generateMarkdown(): Promise<void> {
 
   // 문서 페치
   const response = await fetchDocuments(true);
-  const documents = response.list;
-  console.log(`📚 Fetched ${documents.length} documents\n`);
+  const allDocuments = response.list;
+  console.log(`📚 Fetched ${allDocuments.length} documents`);
+
+  // 언어별 필터링 적용
+  const documents = filterDocumentsByLanguage(allDocuments, FILTER_LANGUAGE);
+  
+  if (FILTER_LANGUAGE) {
+    console.log(`🔍 Filtered to ${documents.length} documents for language: ${FILTER_LANGUAGE}\n`);
+  } else {
+    console.log(`📝 Processing all ${documents.length} documents\n`);
+  }
 
   if (documents.length === 0) {
-    console.error('❌ No documents fetched!');
+    console.error('❌ No documents found after filtering!');
     return;
   }
 
@@ -592,11 +655,27 @@ async function generateMarkdown(): Promise<void> {
 
   // 카테고리 구조 및 메타 파일 생성
   const categoryStructure = generateCategoryStructure(documents, context);
+  const blogDocuments = generateBlogStructure(documents, context);
 
-  // 각 카테고리와 서브카테고리에 대한 _meta.json 생성
+  // Blog 문서들을 content/blog에 단일 구조로 생성
+  if (blogDocuments.length > 0) {
+    console.log(`📝 Processing ${blogDocuments.length} blog documents`);
+    
+    // Blog 문서들의 _meta.json 생성
+    const blogItems = blogDocuments.map(doc => ({
+      slug: doc.id,
+      title: doc.title || `Document ${doc.no}`,
+      order: doc.order || doc.no
+    }));
+    
+    createMetaJson(CONTENT_BLOG_DIR, blogItems);
+    console.log('✅ Created blog _meta.json');
+  }
+
+  // 각 카테고리와 서브카테고리에 대한 _meta.json 생성 (Blog 제외)
 // generateMarkdown 함수 내의 카테고리 구조 생성 부분 수정
   categoryStructure.forEach((subCategories, category) => {
-    const categoryDir = path.join(CONTENT_DIR, sanitizePath(category));
+    const categoryDir = path.join(CONTENT_DOCS_DIR, sanitizePath(category));
 
     if (!fs.existsSync(categoryDir)) {
       fs.mkdirSync(categoryDir, { recursive: true });
@@ -675,7 +754,7 @@ async function generateMarkdown(): Promise<void> {
     }
   });
 
-// 루트 메타 파일
+// 루트 메타 파일 (docs 디렉토리용, Blog 제외)
   const rootCategories = Array.from(categoryStructure.keys()).map(cat => ({
     slug: sanitizePath(cat),
     title: cat, // 원본 카테고리명 표시
@@ -683,7 +762,7 @@ async function generateMarkdown(): Promise<void> {
   }));
 
   if (rootCategories.length > 0) {
-    createMetaJson(CONTENT_DIR, rootCategories);
+    createMetaJson(CONTENT_DOCS_DIR, rootCategories);
   }
 
   // 캐시 저장
