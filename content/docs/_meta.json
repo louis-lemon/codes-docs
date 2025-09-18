@@ -1,20 +1,8 @@
 {
   "pages": [
     {
-      "name": "overview",
-      "title": "Overview"
-    },
-    {
       "name": "user-guides",
       "title": "User guides"
-    },
-    {
-      "name": "quick-start",
-      "title": "Quick start"
-    },
-    {
-      "name": "research",
-      "title": "Research"
     },
     {
       "name": "technology",
