@@ -8,7 +8,7 @@ import {
   Zap,
   Lightbulb,
   Search,
-  Compass
+  Compass, Monitor, Server, BrainCircuit, Smartphone
 } from 'lucide-react';
 import ShaderBackground from "@/components/shader-background";
 import { SearchButton } from "@/components/search-button";
@@ -92,7 +92,7 @@ export default function HomePage() {
               title="Quick start"
               description="Learn how to use EurekaCodes Pro Plan with workspaces and projects"
               href="/docs/getting-started/C346"
-              icon={<Globe className="w-6 h-6" />}
+              icon={<BookOpen className="w-6 h-6" />}
             />
             <QuickStartCard
               title="Chat App Application Guide"
@@ -113,25 +113,25 @@ export default function HomePage() {
             title="eureka-chats-front"
             description="Real-time Chat Application frontend built with React, TypeScript, and modern UI components"
             href="/docs/technology/C319"
-            icon={<Zap className="w-6 h-6" />}
+            icon={<Globe className="w-6 h-6" />}
           />
           <TopicCard
             title="eureka-sockets-api"
             description="Serverless event-driven WebSocket service providing real-time communication in MSA environments"
             href="/docs/technology/C321"
-            icon={<Cloud className="w-6 h-6" />}
+            icon={<Server className="w-6 h-6" />}
           />
           <TopicCard
             title="eureka-chats-api"
             description="Serverless real-time chat microservice with WebSocket integration for backend API services"
             href="/docs/technology/C322"
-            icon={<Wrench className="w-6 h-6" />}
+            icon={<Server className="w-6 h-6" />}
           />
           <TopicCard
             title="MCP Utilization: LangChain & LangGraph"
             description="Framework for developing AI applications with large language models and flexible workflows"
             href="/docs/technology/C338"
-            icon={<Bot className="w-6 h-6" />}
+            icon={<BrainCircuit className="w-6 h-6" />}
           />
         </div>
       </section>
