@@ -17,13 +17,14 @@ const config = {
   ...(process.env.NODE_ENV === 'production' && {
     output: 'export',
     trailingSlash: true,
+    distDir: 'out',
   }),
   images: {
     unoptimized: true,
   },
-  // S3의 /en 폴더 구조에 맞춘 설정
-  basePath: process.env.NODE_ENV === 'production' ? '/en' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/en' : '',
+  // S3 루트 배포로 단순화
+  basePath: '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://docs.eureka.codes/' : '',
   // Fix fs module error for client components
   webpack: (config, { isServer }) => {
     if (!isServer) {

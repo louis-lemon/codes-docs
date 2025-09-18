@@ -9,9 +9,13 @@ export function Provider({ children }: { children: ReactNode }) {
       search={{
         options: {
           type: 'static',
-          // AWS S3 + CloudFront 배포시 /en basePath 고려
-          api: process.env.NODE_ENV === 'production' ? '/en/api/search' : '/api/search',
+          // AWS S3 + CloudFront 배포시 루트 배포
+          api: '/api/search',
         },
+      }}
+      theme={{
+        defaultTheme: 'light',
+        enabled: true,
       }}
     >
       {children}
