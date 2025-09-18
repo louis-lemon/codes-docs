@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import BlogAllPage from '@/components/blog-all-page';
-import BlogSkeletonLoader from '@/components/blog-skeleton-loader';
+import BlogAllPage from '@/components/blog/blog-all-page';
+import BlogSkeletonLoader from '@/components/blog/blog-skeleton-loader';
 import { blog } from '@/lib/source';
 import { Suspense } from 'react';
 

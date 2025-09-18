@@ -2,8 +2,8 @@ import { blog } from '@/lib/source';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
-import BlogListPage from '@/components/blog-list-page';
-import BlogPostPage from '@/components/blog-post-page';
+import BlogListPage from '@/components/blog/blog-list-page';
+import BlogPostPage from '@/components/blog/blog-post-page';
 
 type PageProps = {
   params: Promise<{ slug?: string[] }>;

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import ShaderBackground from "@/components/shader-background";
 import { SearchButton } from "@/components/search-button";
-import { QuickStartCard, TopicCard } from "@/components/card";
+import { QuickStartCard, TopicCard } from "@/components/home/home-cards";
 
 export default function HomePage() {
   return (
