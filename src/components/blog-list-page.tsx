@@ -11,7 +11,7 @@ import {
   ArrowRight,
   Eye,
   Cpu,
-  Mail
+  ExternalLink
 } from "lucide-react"
 
 interface BlogListPageProps {
@@ -45,7 +45,7 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900 dark:text-gray-200">
-                Exploring the Frontiers of{' '}
+                From Infrastructure to{' '}
                 <span
                   style={{
                     background: 'linear-gradient(102deg, rgb(255, 212, 95) -3.17%, rgb(255, 164, 90) 40.51%, rgb(255, 98, 0) 89.47%)',
@@ -55,26 +55,28 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
                     color: 'transparent'
                   }}
                 >
-                  Artificial Intelligence
+                  Scalable Microservices
                 </span>
               </h1>
               <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-normal leading-relaxed">
-                Deep insights into AI, GenAI, Computer Vision, and Deep Learning advancements.
+                Stress-free AI DevOps insights and practical guides for building scalable, modern software architectures.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/blog/all" className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
-                  Latest Articles
-                </Link>
-                <button className="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-border bg-background text-foreground font-medium hover:bg-muted transition-colors">
-                  <Mail className="h-4 w-4 mr-2" />
-                  Join Newsletter
-                </button>
+                <a
+                  href="https://eureka.codes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-border bg-background text-foreground font-medium hover:bg-muted transition-colors"
+                >
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Try EurekaCodes
+                </a>
               </div>
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-background to-muted/20">
               <Image
                 src="https://image.lemoncloud.io/codes/landing_img5.png"
-                alt="AI visualization showing neural network connections and robotic intelligence"
+                alt="Modern infrastructure visualization showing scalable microservices architecture and DevOps automation"
                 fill
                 className="object-cover"
                 priority
@@ -87,7 +89,7 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
       {/* Featured Posts */}
       <section className="my-12 mx-auto max-w-6xl px-5">
         <p className="text-gray-900 dark:text-gray-200 text-left text-2xl mb-4 font-semibold">
-          추천 포스트
+          Featured Articles
         </p>
 
         <div className="not-prose grid gap-4 sm:grid-cols-3">
