@@ -187,7 +187,7 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
             Recent Articles
           </p>
           <Link href="/blog/all" className="text-primary dark:text-primary-light text-sm hover:text-primary/80">
-            view all articles
+            View all
           </Link>
         </div>
 
@@ -222,7 +222,7 @@ function FeaturedCard({ post, image, categoryInfo }: { post: any; image: string;
   const category = post.data.category === 'Blog'
     ? (post.data.subCategory || 'Other')
     : (post.data.category || post.data.subCategory || 'AI')
-  
+
   // Get the appropriate icon from categoryInfo
   const info = categoryInfo[category] || categoryInfo['Other']
 
