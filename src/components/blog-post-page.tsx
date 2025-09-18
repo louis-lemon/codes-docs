@@ -71,6 +71,9 @@ export default function BlogPostPage({ page, relatedPosts }: BlogPostPageProps) 
               <User className="h-4 w-4" />
               <span>EurekaCodes</span>
             </div>
+            <div className="ml-auto">
+              <ShareButton />
+            </div>
           </div>
 
           {/* Hero Image */}
@@ -85,10 +88,6 @@ export default function BlogPostPage({ page, relatedPosts }: BlogPostPageProps) 
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
 
-          {/* Social sharing buttons */}
-          <div className="flex items-center gap-3 pb-8 border-b border-border">
-            <ShareButton />
-          </div>
         </header>
 
         {/* Table of Contents */}
