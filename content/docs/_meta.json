@@ -1,12 +1,12 @@
 {
   "pages": [
     {
-      "name": "user-guides",
-      "title": "User guides"
-    },
-    {
       "name": "technology",
       "title": "Technology"
+    },
+    {
+      "name": "user-guides",
+      "title": "User guides"
     }
   ]
 }
