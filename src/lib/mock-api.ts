@@ -1,9 +1,10 @@
 // Mock API 데이터 및 서버
 import { EurekaDocument, EurekaApiResponse } from '@/types/eureka';
 import mockData from '../../dummy/category_full_readme.json';
+import mockData2 from '../../dummy/contents.json';
 
 // Mock 데이터를 타입에 맞게 변환
-export const mockDocuments: EurekaDocument[] = mockData.list.map((doc: any) => ({
+export const mockDocuments: EurekaDocument[] = mockData2.list.map((doc: any) => ({
   ...doc,
   // TODO: add something
 }));
