@@ -30,7 +30,7 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
     })
 
   // Specific featured posts: C135, C136, C138
-  const featuredPostIds = ['C135', 'C136', 'C138']
+  const featuredPostIds = ['C329', 'C331']
   const featuredPosts = featuredPostIds
     .map(id => allPosts.find(post => post.data.id === id))
     .filter(Boolean) // Remove any undefined posts
