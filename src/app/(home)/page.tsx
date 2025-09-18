@@ -89,67 +89,49 @@ export default function HomePage() {
         <div>
           <div className="not-prose grid gap-x-4 sm:grid-cols-3">
             <QuickStartCard
-              title="Web Interface"
-              description="Get up and running with EurekaBox's web documentation interface in 5 minutes"
-              href="/docs"
+              title="Quick start"
+              description="Learn how to use EurekaCodes Pro Plan with workspaces and projects"
+              href="/docs/getting-started/C346"
               icon={<Globe className="w-6 h-6" />}
             />
             <QuickStartCard
-              title="AWS Integration"
-              description="Learn how to integrate EurekaBox with AWS services and infrastructure"
-              href="/docs/aws"
-              icon={<Cloud className="w-6 h-6" />}
-            />
-            <QuickStartCard
-              title="Development Guide"
-              description="Start developing with EurekaBox using our comprehensive development documentation"
-              href="/docs/development"
-              icon={<Wrench className="w-6 h-6" />}
+              title="Chat App Application Guide"
+              description="How to apply Chat App service in EurekaCodes platform"
+              href="/docs/getting-started/C348"
+              icon={<Bot className="w-6 h-6" />}
             />
           </div>
         </div>
 
         {/* Topics Section */}
         <p className="text-gray-900 dark:text-gray-200 text-left mt-10 text-2xl mb-4 font-semibold">
-          Choose a topic below or <Link href="/docs" className="text-primary dark:text-primary-light">get started in 5 minutes</Link>
+          Technology Stack
         </p>
 
         <div className="not-prose grid gap-x-4 sm:grid-cols-3">
           <TopicCard
-            title="Managing Context"
-            description="Learn how to bring together and manage context from across your documentation system"
-            href="/docs"
-            icon={<BookOpen className="w-6 h-6" />}
-          />
-          <TopicCard
-            title="EurekaBox CMS"
-            description="Specialized content management system designed for technical documentation"
-            href="/docs"
-            icon={<Bot className="w-6 h-6" />}
-          />
-          <TopicCard
-            title="GitHub Integration"
-            description="Master EurekaBox's seamless integration with GitHub Actions and workflows"
-            href="/docs"
+            title="eureka-chats-front"
+            description="Real-time Chat Application frontend built with React, TypeScript, and modern UI components"
+            href="/docs/technology/C319"
             icon={<Zap className="w-6 h-6" />}
           />
           <TopicCard
-            title="Use Cases"
-            description="Explore real-world applications and examples of EurekaBox implementations"
-            href="/docs"
-            icon={<Lightbulb className="w-6 h-6" />}
+            title="eureka-sockets-api"
+            description="Serverless event-driven WebSocket service providing real-time communication in MSA environments"
+            href="/docs/technology/C321"
+            icon={<Cloud className="w-6 h-6" />}
           />
           <TopicCard
-            title="Static Site Generation"
-            description="Allow EurekaBox to automatically generate static documentation sites"
-            href="/docs"
-            icon={<Search className="w-6 h-6" />}
+            title="eureka-chats-api"
+            description="Serverless real-time chat microservice with WebSocket integration for backend API services"
+            href="/docs/technology/C322"
+            icon={<Wrench className="w-6 h-6" />}
           />
           <TopicCard
-            title="Deployment Guide"
-            description="Leverage GitHub Pages and automated deployment for your documentation"
-            href="/docs"
-            icon={<Compass className="w-6 h-6" />}
+            title="MCP Utilization: LangChain & LangGraph"
+            description="Framework for developing AI applications with large language models and flexible workflows"
+            href="/docs/technology/C338"
+            icon={<Bot className="w-6 h-6" />}
           />
         </div>
       </section>
