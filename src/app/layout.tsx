@@ -1,5 +1,5 @@
 import '@/app/global.css';
-import { Provider } from '@/components/provider';
+import { Provider } from '@/components/layout/provider';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import {Toaster} from "@/components/ui/toaster";
@@ -10,25 +10,34 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Test Docs',
-    template: '%s | Test Docs',
+    default: 'EurekaCodes',
+    template: '%s | EurekaCodes',
   },
-  description: 'Documentation site built with Fumadocs',
-  keywords: ['documentation', 'fumadocs', 'nextjs', 'react'],
-  authors: [{ name: 'Test Docs Team' }],
-  creator: 'Test Docs Team',
+  description: 'From Infrastructure to Scalable Microservices. Transform your ideas into intelligent, production-ready applications with EurekaCodes platform.',
+  keywords: [
+    'microservices', 'AI agents', 'cloud-native', 'infrastructure', 
+    'scalable applications', 'DevOps automation', 'real-time chat', 
+    'WebSocket', 'serverless', 'eureka codes'
+  ],
+  authors: [{ name: 'EurekaCodes Team' }],
+  creator: 'EurekaCodes',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://louis-lemon.github.io/test-docs',
-    title: 'Test Docs',
-    description: 'Documentation site built with Fumadocs',
-    siteName: 'Test Docs',
+    url: 'https://docs.eureka.codes',
+    title: 'EurekaCodes - From Infrastructure to Scalable Microservices',
+    description: 'Transform your ideas into intelligent, production-ready applications. Build AI agents, microservices, and real-time applications with enterprise-grade infrastructure.',
+    siteName: 'EurekaCodes',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Test Docs',
-    description: 'Documentation site built with Fumadocs',
+    title: 'EurekaCodes - From Infrastructure to Scalable Microservices',
+    description: 'Transform your ideas into intelligent, production-ready applications with EurekaCodes platform.',
   },
   robots: {
     index: true,

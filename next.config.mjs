@@ -13,7 +13,7 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // 개발 환경에서는 정적 내보내기 비활성화
+  // AWS S3 + CloudFront 배포를 위한 정적 내보내기
   ...(process.env.NODE_ENV === 'production' && {
     output: 'export',
     trailingSlash: true,
@@ -21,9 +21,9 @@ const config = {
   images: {
     unoptimized: true,
   },
-  // GitHub Pages 배포시 저장소 이름이 서브패스가 됩니다
-  basePath: process.env.NODE_ENV === 'production' ? '/codes-docs' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/codes-docs' : '',
+  // S3의 /en 폴더 구조에 맞춘 설정
+  basePath: process.env.NODE_ENV === 'production' ? '/en' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/en' : '',
   // Fix fs module error for client components
   webpack: (config, { isServer }) => {
     if (!isServer) {

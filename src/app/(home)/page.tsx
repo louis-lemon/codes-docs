@@ -10,8 +10,8 @@ import {
   Search,
   Compass, Monitor, Server, BrainCircuit, Smartphone
 } from 'lucide-react';
-import ShaderBackground from "@/components/shader-background";
-import { SearchButton } from "@/components/search-button";
+import ShaderBackground from "@/components/common/shader-background";
+import { SearchButton } from "@/components/common/search-button";
 import { QuickStartCard, TopicCard } from "@/components/home/home-cards";
 
 export default function HomePage() {

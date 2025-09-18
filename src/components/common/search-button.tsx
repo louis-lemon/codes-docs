@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { MESSAGES } from '@/constants/messages';
 
 export function SearchButton() {
   const [isMac, setIsMac] = useState(false);
@@ -33,7 +34,7 @@ export function SearchButton() {
           maskPosition: 'center'
         }}
       />
-      <span>Search or ask anything</span>
+      <span>{MESSAGES.SEARCH.PLACEHOLDER}</span>
     </button>
   );
 }

@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import {Card, CardContent, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
 import { getMDXComponents } from '@/mdx-components';
 import BlogToc from '@/components/blog/blog-toc';
-import ShareButton from '@/components/share-button';
+import ShareButton from '@/components/common/share-button';
 import { categoryInfo } from '@/constants/blog-categories';
 import BlogCard from '@/components/blog/blog-card';
 

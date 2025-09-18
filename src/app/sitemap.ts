@@ -5,7 +5,7 @@ import { source } from '@/lib/source';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://louis-lemon.github.io/test-docs';
+  const baseUrl = 'https://docs.eureka.codes';
   
   // Get all pages from the source
   const pages = source.getPages();

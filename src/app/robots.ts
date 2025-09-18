@@ -4,7 +4,7 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://louis-lemon.github.io/test-docs';
+  const baseUrl = 'https://docs.eureka.codes';
 
   return {
     rules: {

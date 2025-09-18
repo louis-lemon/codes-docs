@@ -53,17 +53,17 @@ This is a **Fumadocs** documentation site built on **Next.js 15** with **React 1
 
 Uses path mapping with `@/*` pointing to `./src/*` and `@/.source` pointing to the generated content source.
 
-## GitHub Pages Deployment
+## AWS Deployment (S3 + CloudFront + Route53)
 
-This site is configured for automatic deployment to GitHub Pages using gh-pages branch:
+This site is configured for deployment to AWS infrastructure:
 
 **Configuration**:
-- `next.config.mjs` - Configured for static export with SEO optimizations:
+- `next.config.mjs` - Configured for static export with AWS deployment:
   - `output: 'export'` for static site generation
-  - `basePath` and `assetPrefix` for GitHub Pages subdirectory support
+  - `basePath: '/en'` and `assetPrefix: '/en'` for S3 folder structure
   - Unoptimized images for static hosting
-- `.github/workflows/deploy.yml` - Uses `peaceiris/actions-gh-pages` for gh-pages deployment
-- `.nojekyll` - Prevents Jekyll processing for GitHub Pages
+- Domain: `https://docs.eureka.codes`
+- S3 Structure: Files deployed to `/en/` directory
 
 **SEO Features**:
 - `src/app/layout.tsx` - Comprehensive metadata including OpenGraph and Twitter cards
@@ -78,16 +78,17 @@ This site is configured for automatic deployment to GitHub Pages using gh-pages 
 - `@orama/orama` package required for static search functionality
 
 **Deployment Process**:
-1. Push to `main` branch triggers GitHub Actions
-2. Site is built and deployed to `gh-pages` branch
-3. GitHub Pages serves from gh-pages branch
-4. Site is available at `https://louis-lemon.github.io/test-docs`
+1. Run `yarn deploy:aws` to build the static site
+2. Built files are generated in `./out/` directory
+3. Upload contents to S3 bucket under `/en/` directory
+4. CloudFront serves content with proper routing
+5. Site is available at `https://docs.eureka.codes`
 
-**Setup Requirements**:
-- Repository Settings → Pages → Source: "Deploy from a branch"
-- Select "gh-pages" branch and "/ (root)" folder
+**AWS Infrastructure**:
+- **S3**: Static file hosting in `/en/` directory structure
+- **CloudFront**: CDN with caching and HTTPS
+- **Route53**: DNS management for custom domain
 
-**Local Testing**:
-- `yarn deploy:local` - Builds and deploys to local gh-pages branch for testing
-- Requires `gh-pages` package (already installed as dev dependency)
-- Useful for testing deployment before pushing to GitHub
+**Build Commands**:
+- `yarn deploy:aws` - Builds for AWS deployment with instructions
+- `yarn deploy:local` - Legacy GitHub Pages local testing (still available)

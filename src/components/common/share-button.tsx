@@ -3,6 +3,7 @@
 import { Share } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { MESSAGES } from '@/constants/messages';
 
 interface ShareButtonProps {
   title?: string;
@@ -18,13 +19,13 @@ export default function ShareButton({ title = "Share", className }: ShareButtonP
       await navigator.clipboard.writeText(currentUrl);
       
       toast({
-        title: "링크가 복사되었습니다!",
-        description: "URL이 클립보드에 저장되었습니다.",
+        title: MESSAGES.SHARE.SUCCESS.TITLE,
+        description: MESSAGES.SHARE.SUCCESS.DESCRIPTION,
       });
     } catch (error) {
       toast({
-        title: "복사 실패",
-        description: "링크 복사에 실패했습니다. 다시 시도해 주세요.",
+        title: MESSAGES.SHARE.ERROR.TITLE,
+        description: MESSAGES.SHARE.ERROR.DESCRIPTION,
         variant: "destructive",
       });
     }

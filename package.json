@@ -7,6 +7,7 @@
     "dev": "next dev --turbo",
     "start": "next start",
     "deploy": "next build",
+    "deploy:aws": "next build && echo 'Build completed. Upload ./out/* to S3 /en/ directory'",
     "deploy:local": "yarn build && gh-pages -d out -b gh-pages",
     "postinstall": "fumadocs-mdx",
     "generate": "FORCE_REBUILD=true tsx scripts/generate-md.ts",
