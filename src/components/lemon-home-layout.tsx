@@ -40,7 +40,7 @@ export function LemonHomeLayout(
             <main
                 id="nd-home-layout"
                 {...rest}
-                className={cn('flex flex-1 flex-col pt-16 sm:pt-24', rest.className)}
+                className={cn('flex flex-1 flex-col pt-14 md:pt-24', rest.className)}
             >
                 {nav.enabled !== false &&
                     (nav.component ?? (
@@ -89,7 +89,7 @@ function LemonHomeHeader({
                 {nav.title}
             </Link>
             {nav.children}
-            <div className="flex-1 flex justify-center max-lg:hidden py-3">
+            <div className="flex-1 flex justify-center max-md:hidden py-3">
                 {searchToggle.enabled !== false &&
                     (searchToggle.components?.lg ?? (
                         <LargeSearchToggle
@@ -98,7 +98,7 @@ function LemonHomeHeader({
                         />
                     ))}
             </div>
-            <div className="flex flex-row items-center gap-1.5 max-lg:hidden py-3">
+            <div className="flex flex-row items-center gap-1.5 max-md:hidden py-3">
                 {themeSwitch.enabled !== false &&
                     (themeSwitch.component ?? <ThemeToggle mode={themeSwitch?.mode} />)}
                 {i18n ? (
@@ -112,7 +112,7 @@ function LemonHomeHeader({
                     ))}
                 </div>
             </div>
-            <ul className="flex flex-row items-center ms-auto -me-1.5 lg:hidden">
+            <ul className="flex flex-row items-center ms-auto -me-1.5 md:hidden">
                 {searchToggle.enabled !== false &&
                     (searchToggle.components?.sm ?? (
                         <SearchToggle className="p-2 cursor-pointer" hideIfDisabled />
@@ -158,7 +158,7 @@ function LemonHomeHeader({
                 </Menu>
             </ul>
         </Navbar>
-        <Navbar id="second-nav" className="!h-10 max-lg:hidden !top-[calc(var(--fd-banner-height)+3.5rem)] [&_nav]:!h-10 !border-t-0 backdrop-blur-sm">
+        <Navbar id="second-nav" className="!h-10 max-md:hidden !top-[calc(var(--fd-banner-height)+3.5rem)] [&_nav]:!h-10 !border-t-0 backdrop-blur-sm">
             <ul className="flex flex-row items-center gap-2">
                 {navItems
                     .filter((item) => !isSecondary(item))
