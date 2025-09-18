@@ -22,9 +22,9 @@ const config = {
   images: {
     unoptimized: true,
   },
-  // S3 루트 배포로 단순화
-  basePath: '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://docs.eureka.codes/' : '',
+  // S3 /en/ 경로 배포
+  basePath: process.env.NODE_ENV === 'production' ? '/en' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://docs.eureka.codes/en' : '',
   // Fix fs module error for client components
   webpack: (config, { isServer }) => {
     if (!isServer) {

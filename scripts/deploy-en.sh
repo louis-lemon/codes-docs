@@ -76,7 +76,7 @@ validate_environment() {
 get_distribution_id() {
     local deploy_env="$1"
 
-    echo "DISTRIBUTION_ID"
+    echo "${DISTRIBUTION_ID}"
 }
 
 print_deployment_info() {
@@ -87,7 +87,7 @@ print_deployment_info() {
     log_info "AWS S3 Deployment Configuration"
     log_info "================================"
     log_info "Environment: ${deploy_env}"
-    log_info "S3 Target: s3://${BUCKET_NAME}/${deploy_env}"
+    log_info "S3 Target: s3://${BUCKET_NAME}"
     log_info "Source: ${DIST_DIR}"
     if [ -n "${distribution_id}" ] && [ "${distribution_id}" != "TODO" ]; then
         log_info "CloudFront: ${distribution_id}"
@@ -100,7 +100,7 @@ print_deployment_info() {
 
 sync_static_assets() {
     local deploy_env="$1"
-    local s3_target="s3://${BUCKET_NAME}/${deploy_env}"
+    local s3_target="s3://${BUCKET_NAME}/en"
 
     log_info "Syncing static assets (excluding HTML, CSS, JS, locales)..."
 
@@ -120,7 +120,7 @@ sync_static_assets() {
 
 sync_css_js_files() {
     local deploy_env="$1"
-    local s3_target="s3://${BUCKET_NAME}/${deploy_env}"
+    local s3_target="s3://${BUCKET_NAME}/en"
 
     log_info "Syncing CSS and JavaScript files..."
 
@@ -140,7 +140,7 @@ sync_css_js_files() {
 
 sync_asset_files() {
     local deploy_env="$1"
-    local s3_target="s3://${BUCKET_NAME}/${deploy_env}"
+    local s3_target="s3://${BUCKET_NAME}/en"
 
     log_info "Syncing asset files..."
 
@@ -158,7 +158,7 @@ sync_asset_files() {
 
 sync_locales() {
     local deploy_env="$1"
-    local s3_target="s3://${BUCKET_NAME}/${deploy_env}"
+    local s3_target="s3://${BUCKET_NAME}/en"
     local locales_dir="${DIST_DIR}/locales"
 
     if [ -d "${locales_dir}" ]; then
@@ -180,7 +180,7 @@ sync_locales() {
 
 upload_index_html() {
     local deploy_env="$1"
-    local s3_target="s3://${BUCKET_NAME}/${deploy_env}"
+    local s3_target="s3://${BUCKET_NAME}/en"
 
     log_info "Uploading index.html with no-cache headers..."
 
@@ -261,7 +261,7 @@ main() {
     log_success "================================"
     log_success "Deployment completed successfully!"
     log_success "Environment: ${deploy_env}"
-    log_success "S3 URL: https://${BUCKET_NAME}.s3.amazonaws.com/${deploy_env}/index.html"
+    log_success "S3 URL: https://${BUCKET_NAME}.s3.amazonaws.com/en/index.html"
     log_success "================================"
 }
 
