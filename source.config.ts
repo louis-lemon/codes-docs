@@ -5,6 +5,7 @@ import {
   metaSchema,
 } from 'fumadocs-mdx/config';
 import { z } from 'zod';
+import {rehypeCode} from "fumadocs-core/mdx-plugins";
 
 // Extended frontmatter schema for EurekaBox documents
 const extendedFrontmatterSchema = frontmatterSchema.extend({
@@ -79,7 +80,7 @@ export default defineConfig({
   mdxOptions: {
     // MDX options
     remarkPlugins: [],
-    rehypePlugins: [],
+    rehypePlugins: [rehypeCode],
     // Disable image optimization completely
     remarkImageOptions: false,
   },

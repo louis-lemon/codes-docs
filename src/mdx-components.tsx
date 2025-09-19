@@ -3,6 +3,7 @@ import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import { getImagePath } from '@/lib/image-utils';
 import { Mermaid } from '@/components/mdx/mermaid';
+import {CodeBlock, Pre} from "@/components/codeblock";
 
 // Custom image component that handles dynamic dimensions
 const CustomImage = ({ src, alt, ...props }: any) => {
@@ -40,6 +41,11 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     ...defaultMdxComponents,
     img: CustomImage,
     Mermaid,
+    pre: ({ ref: _ref, ...props }) => (
+        <CodeBlock {...props}>
+          <Pre>{props.children}</Pre>
+        </CodeBlock>
+    ),
     ...components,
   };
 }
