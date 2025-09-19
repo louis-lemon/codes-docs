@@ -1,0 +1,5334 @@
+{
+  "limit": 2000,
+  "page": 0,
+  "list": [
+    {
+      "id": "C348",
+      "createdAt": 1758167746373,
+      "updatedAt": 1758168544707,
+      "deletedAt": 0,
+      "title": "ENG",
+      "description": "EurekaCodes Chat App Application Guide",
+      "readme": "## EurekaCodes Chat APP Sevice Application Guide\n\n- To apply for services, you'll need to set up your project first.\n- For detailed instructions, please go through [EurekaCodes_Getting Started] first.\n\n\n### 1.\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- Within your project, you can apply for and use various services.\n- When you click the \"Add Service\" button, it will take you to the service catalog screen.\n![file](https://image.lemoncloud.io/756d52fe-f5d1-4bc9-9cb5-a289d2d6022c)\n\n- You can apply for the services you need from the catalog list.\n- For this example, please select the \"eureka-chats-front\" service, which is a chat app service.\n![file](https://image.lemoncloud.io/0d3221b4-03de-4193-a36c-002f51ed0b6f?width=1024)\n\n- You can review detailed information about the catalog (service).\n- Click the \"Add Service\" button at the bottom to submit your service application.\n![file](https://image.lemoncloud.io/4a61bf7d-7fdd-4735-8b13-25b555f85dd5)\n\n- You can review your service application information.\n\n\n## 2. Checking Applied Projects\n\n![file](https://image.lemoncloud.io/8785342f-ca01-4910-bcb6-87dfa58c0d01)\n\n- You can check the services that have been added to your project.\n- Depending on the service you applied for, additional services may be installed.\n- Deployment begins as soon as you apply, and it may take about 3-5 minutes to complete.\n![file](https://image.lemoncloud.io/ff3f3667-4a16-42fc-a62e-fd868b809d65)\n\n- Once deployment is complete, the status will change to \"in-use.\"\n- An \"Open Service\" button will appear on the right side of the \"eureka-chats-front\" service.\n- Click the \"Open Service\" button to access the chat service.\n\n\n![file](https://image.lemoncloud.io/d4eba83e-dc98-42f8-985a-99d48a89e925)\n\n- This service runs in your own separate cloud environment.",
+      "parentId": "C347",
+      "parent$": {
+        "id": "C347"
+      },
+      "no": 348,
+      "noOfElement": 30,
+      "category": "Blog",
+      "subCategory": "User Guide",
+      "tags": [
+        "en"
+      ],
+      "elementIds": [
+        "C348.E018",
+        "C348.E025",
+        "C348.E030",
+        "C348.E028",
+        "C348.E006",
+        "C348.E007",
+        "C348.E027",
+        "C348.E015",
+        "C348.E024",
+        "C348.E001",
+        "C348.E022",
+        "C348.E011",
+        "C348.E016",
+        "C348.E008",
+        "C348.E013",
+        "C348.E003",
+        "C348.E019",
+        "C348.E026",
+        "C348.E017",
+        "C348.E021",
+        "C348.E023",
+        "C348.E020",
+        "C348.E029",
+        "C348.E014",
+        "C348.E004",
+        "C348.E002",
+        "C348.E005",
+        "C348.E009",
+        "C348.E012",
+        "C348.E010"
+      ],
+      "element$$": [
+        {
+          "id": "C348.E018",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C348.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E030",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C348.E006",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C348.E007",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E027",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E015",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E024",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E001",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E022",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E011",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E016",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E008",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E013",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E003",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E019",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C348.E026",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C348.E017",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E021",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E023",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E020",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E029",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E014",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C348.E009",
+          "name": "Image"
+        },
+        {
+          "id": "C348.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C348.E010",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C347",
+      "createdAt": 1758165238876,
+      "updatedAt": 1758168992660,
+      "deletedAt": 0,
+      "title": "유레카코즈 채팅앱 서비스 신청 가이드",
+      "description": "유레카코즈 채팅앱 신청 가이드",
+      "readme": "- 서비스 신청을 위해서는 먼저 프로젝트 셋업이 필요합니다.\n- 자세한 내용은 [유레카코즈_사용자_가이]를 먼저 진행해주세요.\n\n\n### 1.서비스 신청하기\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- 프로젝트 내에서 서비스를 신청하고 이용할 수  있습니다.\n- \"Add Service\" 버튼을 클릭하면 카탈로그 서비스 화면으로 이동합니다.\n\n\n![file](https://image.lemoncloud.io/756d52fe-f5d1-4bc9-9cb5-a289d2d6022c)\n\n- 카탈로그 목록에서 필요한 서비스를 신청할 수 있습니다.\n- 예시로 채팅앱 서비스인 “eureka chats front”서비스를 선택해 주세요.\n\n\n![file](https://image.lemoncloud.io/0d3221b4-03de-4193-a36c-002f51ed0b6f?width=1024)\n\n- 카탈로그(서비스)에 대한 상세 정보를 확인할 수 있습니다.\n- 하단의 “Add Service” 버튼을 클릭하여 서비스 신청을 등록합니다.\n\n\n![file](https://image.lemoncloud.io/4a61bf7d-7fdd-4735-8b13-25b555f85dd5)\n\n- 신청 정보를 확인합니다.\n\n\n## 2. 신청된 프로젝트 확인\n\n![file](https://image.lemoncloud.io/8785342f-ca01-4910-bcb6-87dfa58c0d01)\n\n- 프로젝트에 추가된 서비스를 확인합니다.\n- 신청한 서비스에 따라 추가 서비스가 설치될 수 있습니다.\n- 신청과 동시에 배포가 진행되며 3~5분 정도의 시간이 소요될 수 있습니다.\n![file](https://image.lemoncloud.io/ff3f3667-4a16-42fc-a62e-fd868b809d65)\n\n- 배포가 완료되면 in-use 상태로 변경됩니다.\n- \"eureka-chats-front\" 서비스 우측에 \"Open Service\" 버튼이 노출됩니다.\n- \"Open Service\"버튼을 클릭하여 채팅 서비스로 접속합니다.\n\n\n![file](https://image.lemoncloud.io/d4eba83e-dc98-42f8-985a-99d48a89e925)\n\n- 해당 서비스는 고객님의 별도 클라우드 환경에서 실행됩니다.",
+      "no": 347,
+      "noOfElement": 32,
+      "category": "Technology",
+      "subCategory": "User Guide",
+      "tags": [
+        "ko"
+      ],
+      "elementIds": [
+        "C347.E012",
+        "C347.E032",
+        "C347.E021",
+        "C347.E029",
+        "C347.E006",
+        "C347.E004",
+        "C347.E009",
+        "C347.E028",
+        "C347.E007",
+        "C347.E018",
+        "C347.E019",
+        "C347.E010",
+        "C347.E020",
+        "C347.E005",
+        "C347.E001",
+        "C347.E011",
+        "C347.E008",
+        "C347.E002",
+        "C347.E027",
+        "C347.E023",
+        "C347.E015",
+        "C347.E025",
+        "C347.E014",
+        "C347.E016",
+        "C347.E017",
+        "C347.E030",
+        "C347.E013",
+        "C347.E022",
+        "C347.E003",
+        "C347.E026",
+        "C347.E024",
+        "C347.E031"
+      ],
+      "element$$": [
+        {
+          "id": "C347.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E032",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E029",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C347.E006",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E009",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E007",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E018",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E019",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E020",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E005",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E001",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E008",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E023",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C347.E015",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E014",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E016",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E017",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E030",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E013",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E022",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C347.E026",
+          "name": "Image"
+        },
+        {
+          "id": "C347.E024",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C347.E031",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C346",
+      "createdAt": 1758161309006,
+      "updatedAt": 1758167696413,
+      "deletedAt": 0,
+      "title": "ENG",
+      "description": "Eureka Codes User Guide",
+      "readme": "# Eureka Codes User Guide: Using the Pro Plan\n\n\n\n### 1. Login\n\n![file](https://image.lemoncloud.io/328fcf6a-8f59-451a-bb7d-ceed231716a4?width=1024)\n\n- Please log in with your Google account.\n\n\n---\n\n\n\n### 2. Getting Started with Workspace\n\n![file](https://image.lemoncloud.io/6caacd84-7db1-40f2-83d8-5f4aad670e11)\n\n- Workspaces serve as the basic unit for managing your projects.\n- When you log in, a default workspace is already created for you, so you can start using it right away without any additional setup\n- If you'd like to add a new workspace, you can simply click the \"Add Workspace\" button on the right side.\n\n\n---\n\n\n\n### 3. Create a New Workspace\n\n![file](https://image.lemoncloud.io/bd1ebd73-5152-4fff-a26e-bdce508a65d3?width=1024)\n\n- There are three types of workspace plans: Basic, Pro, and Advanced.\n- \n\n\n![file](https://image.lemoncloud.io/62cdfdd0-3a61-4a95-bbfd-d2a7f8d4ba97)\n\n- Please add a payment method before creating a Pro Plan workspace.\n- When you click the \"Add Card\" button, it will take you to the card registration screen.\n\n\n![file](https://image.lemoncloud.io/9569c9d7-422c-48c4-b2ac-0c6c9301ca1f)\n\n- Enter your email, card number, and other information to complete the registration.\n\n\n![file](https://image.lemoncloud.io/8b807883-72e3-41cf-8e6b-e1a4261cce62)\n\n- Go back to the workspace registration screen and enter the required information.\n- You need to specify the workspace name and AWS region, and email verification is required.\n- \n\n\n![file](https://image.lemoncloud.io/a1b73197-c331-4fb4-b7aa-f2d8f7801656)\n\n- Please verify your email address (a valid email is required).\n\n\n![file](https://image.lemoncloud.io/cbabf253-cb09-41e7-a207-1752bc2e9259)\n\n- After you complete email verification, please select a region.\n\n\n![file](https://image.lemoncloud.io/3418fb0f-750e-4ad9-a79f-e5272f760abd)\n\n- All the information must be entered, and if you select \"Agree to the Terms of Service\", the button below will be enabled.\n- Click the activated button to complete the workspace creation.\n\n\n![file](https://image.lemoncloud.io/720d9b18-7bc3-4a3a-8ef5-f36d4c0d097d)\n\n- Please check the workspace information you created.\n\n\n---\n\n\n\n### 4. Create Project\n\n![file](https://image.lemoncloud.io/d9c12256-d401-4647-9b8e-bf6a47e4899a)\n\n- To use the service, please create a project.\n- Please click the “Add Project” button.\n\n\n![file](https://image.lemoncloud.io/0e11e8b1-a368-4d8c-af38-9a6672718f8a)\n\n- Check the details entered during workspace creation, choose a stage (development or production), and proceed to create your project.\n\n\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- You can request the services you need from the catalog list.\n---",
+      "parentId": "C340",
+      "parent$": {
+        "id": "C340"
+      },
+      "no": 346,
+      "noOfElement": 73,
+      "category": "Technology",
+      "subCategory": "User Guide",
+      "tags": [
+        "en"
+      ],
+      "elementIds": [
+        "C346.E069",
+        "C346.E060",
+        "C346.E061",
+        "C346.E062",
+        "C346.E066",
+        "C346.E047",
+        "C346.E045",
+        "C346.E059",
+        "C346.E063",
+        "C346.E001",
+        "C346.E065",
+        "C346.E003",
+        "C346.E004",
+        "C346.E002",
+        "C346.E064",
+        "C346.E035",
+        "C346.E058",
+        "C346.E009",
+        "C346.E054",
+        "C346.E052",
+        "C346.E055",
+        "C346.E046",
+        "C346.E073",
+        "C346.E025",
+        "C346.E057",
+        "C346.E072",
+        "C346.E053",
+        "C346.E042",
+        "C346.E010",
+        "C346.E049",
+        "C346.E021",
+        "C346.E050",
+        "C346.E011",
+        "C346.E039",
+        "C346.E036",
+        "C346.E028",
+        "C346.E012",
+        "C346.E048",
+        "C346.E044",
+        "C346.E020",
+        "C346.E005",
+        "C346.E018",
+        "C346.E029",
+        "C346.E031",
+        "C346.E027",
+        "C346.E033",
+        "C346.E013",
+        "C346.E038",
+        "C346.E056",
+        "C346.E032",
+        "C346.E051",
+        "C346.E070",
+        "C346.E034",
+        "C346.E016",
+        "C346.E071",
+        "C346.E067",
+        "C346.E043",
+        "C346.E019",
+        "C346.E023"
+      ],
+      "element$$": [
+        {
+          "id": "C346.E069",
+          "name": "HeadingOne"
+        },
+        {
+          "id": "C346.E060",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E061",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C346.E062",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E066",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E047",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E045",
+          "name": "Divider"
+        },
+        {
+          "id": "C346.E059",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E063",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C346.E001",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E065",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E003",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E064",
+          "name": "Divider"
+        },
+        {
+          "id": "C346.E035",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E058",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C346.E009",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E054",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E052",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E055",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E046",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E073",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E057",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E072",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E053",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E042",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E010",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E049",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E021",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E050",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E039",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E036",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E012",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E048",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E044",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E020",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E005",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E018",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E031",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E027",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E033",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E013",
+          "name": "Divider"
+        },
+        {
+          "id": "C346.E038",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E056",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C346.E032",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E051",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E070",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E016",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E071",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E067",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C346.E043",
+          "name": "Image"
+        },
+        {
+          "id": "C346.E019",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C346.E023",
+          "name": "Divider"
+        }
+      ]
+    },
+    {
+      "id": "C340",
+      "createdAt": 1758007306214,
+      "updatedAt": 1758168848096,
+      "deletedAt": 0,
+      "title": "유레카코즈 사용자 가이드",
+      "description": "유레카코즈 사용자 가이드",
+      "readme": "### 1. 로그인\n\n![file](https://image.lemoncloud.io/328fcf6a-8f59-451a-bb7d-ceed231716a4?width=1024)\n\n- 구글 소셜 계정으로 로그인을 해주세요.\n\n\n---\n\n\n\n### 2. 워크스페이스 시작하기\n\n![file](https://image.lemoncloud.io/6caacd84-7db1-40f2-83d8-5f4aad670e11)\n\n- 워크스페이스는 프로젝트 관리의 기본 단위입니다.\n- 로그인 시 기본으로 제공하는 워크스페이스가 생성되어 있어서 추가 설정 없이 바로 사용이 가능합니다.\n- 새로운 워크스페이스를 추가할 경우 우측에 “워크스페이스 추가” 버튼을 클릭해 주세요.\n\n\n---\n\n\n\n### 3. 새로운 워크스페이스 생성하기\n\n![file](https://image.lemoncloud.io/bd1ebd73-5152-4fff-a26e-bdce508a65d3?width=1024)\n\n- 워크스페이스 플랜은 베이직, 프로, 어드밴스 3가지가 있습니다.\n\n\n![file](https://image.lemoncloud.io/62cdfdd0-3a61-4a95-bbfd-d2a7f8d4ba97)\n\n- 프로 플랜 워크스페이스를 생성하기 전 결제수단을 먼저 추가해 주세요.\n- “카드 추가” 버튼을 선택하면 카드 등록 화면으로 이동합니다.\n\n\n![file](https://image.lemoncloud.io/9569c9d7-422c-48c4-b2ac-0c6c9301ca1f)\n\n- 이메일, 카드번호 등 정보를 입력하여 등록을 완료합니다.\n\n\n![file](https://image.lemoncloud.io/8b807883-72e3-41cf-8e6b-e1a4261cce62)\n\n- 워크스페이스 등록 화면으로 돌아와서 워크스페이스 생성에 필요한 정보들을 입력합니다.\n- 워크스페이스명, AWS 리전 지정이 필요하며, 이메일 인증을 진행해야 합니다.\n\n\n![file](https://image.lemoncloud.io/a1b73197-c331-4fb4-b7aa-f2d8f7801656)\n\n- 이메일 인증을 진행해주세요 (실제 이메일 주소가 필요합니다.)\n\n\n![file](https://image.lemoncloud.io/cbabf253-cb09-41e7-a207-1752bc2e9259)\n\n- 이메일 인증 완료 후 리전을 선택해 주세요.\n\n\n![file](https://image.lemoncloud.io/3418fb0f-750e-4ad9-a79f-e5272f760abd)\n\n- 모든 정보를 입력하고, \"서비스 이용약관 동의\"를 선택하시면 하단 버튼이 활성화 됩니다.\n- 활성화된 버튼을 클릭하여 워크스페이스 생성을 마무리 해주세요.\n\n\n![file](https://image.lemoncloud.io/720d9b18-7bc3-4a3a-8ef5-f36d4c0d097d)\n\n- 생성한 워크스페이스 정보를 확인해 주세요.\n\n\n---\n\n\n\n### 4. 프로젝트 생성하기\n\n![file](https://image.lemoncloud.io/d9c12256-d401-4647-9b8e-bf6a47e4899a)\n\n- 서비스 이용을 위해 프로젝트를 생성해야 합니다.\n- 프로젝트는 워크스페이스 하위에 얼마든지 생성할 수 있습니다.\n- “Add Project” 버튼을 클릭해 주세요.\n\n\n![file](https://image.lemoncloud.io/0e11e8b1-a368-4d8c-af38-9a6672718f8a)\n\n- 프로젝트 생성에 필요한 정보를 입력합니다.\n- 프로젝트명, 배포할 AWS 리전, 스테이지를 입력하여 프로젝트를 생성합니다.\n![file](https://image.lemoncloud.io/1c240d40-87e4-4ec1-9fa5-f05a354e8dbc)\n\n- 프로젝트 내에서 서비스를 신청할 수 있습니다.\n---",
+      "no": 340,
+      "noOfElement": 184,
+      "category": "Technology",
+      "subCategory": "User Guide",
+      "tags": [
+        "ko"
+      ],
+      "elementIds": [
+        "C340.E135",
+        "C340.E162",
+        "C340.E121",
+        "C340.E123",
+        "C340.E145",
+        "C340.E143",
+        "C340.E132",
+        "C340.E118",
+        "C340.E183",
+        "C340.E164",
+        "C340.E136",
+        "C340.E157",
+        "C340.E167",
+        "C340.E117",
+        "C340.E128",
+        "C340.E137",
+        "C340.E155",
+        "C340.E125",
+        "C340.E103",
+        "C340.E172",
+        "C340.E106",
+        "C340.E146",
+        "C340.E112",
+        "C340.E163",
+        "C340.E173",
+        "C340.E108",
+        "C340.E126",
+        "C340.E175",
+        "C340.E154",
+        "C340.E129",
+        "C340.E147",
+        "C340.E116",
+        "C340.E156",
+        "C340.E148",
+        "C340.E104",
+        "C340.E142",
+        "C340.E151",
+        "C340.E105",
+        "C340.E130",
+        "C340.E111",
+        "C340.E141",
+        "C340.E158",
+        "C340.E169",
+        "C340.E149",
+        "C340.E127",
+        "C340.E140",
+        "C340.E178",
+        "C340.E177",
+        "C340.E160",
+        "C340.E131",
+        "C340.E120",
+        "C340.E114",
+        "C340.E176",
+        "C340.E171",
+        "C340.E144",
+        "C340.E153",
+        "C340.E184"
+      ],
+      "element$$": [
+        {
+          "id": "C340.E135",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C340.E162",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E121",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E123",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E145",
+          "name": "Divider"
+        },
+        {
+          "id": "C340.E143",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E132",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C340.E118",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E183",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E164",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E136",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E157",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E167",
+          "name": "Divider"
+        },
+        {
+          "id": "C340.E117",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E128",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C340.E137",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E155",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E125",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E103",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E172",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E106",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E146",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E112",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E163",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E173",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E108",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E126",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E175",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E154",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E129",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E147",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E116",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E156",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E148",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E104",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E142",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E151",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E105",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E130",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E111",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E141",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E158",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E169",
+          "name": "Divider"
+        },
+        {
+          "id": "C340.E149",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E127",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C340.E140",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E178",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E177",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E160",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E131",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C340.E120",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E114",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E176",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E171",
+          "name": "Image"
+        },
+        {
+          "id": "C340.E144",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C340.E153",
+          "name": "Divider"
+        },
+        {
+          "id": "C340.E184",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C338",
+      "createdAt": 1757983002105,
+      "updatedAt": 1758169411705,
+      "deletedAt": 0,
+      "title": "MCP 활용: LangChain & LangGraph",
+      "description": null,
+      "readme": "###  LangChain\n\n- 대규모 언어 모델(LLM)을 기반으로 애플리케이션을 개발하기 위한 프레임워크입니다.\n- 특징\n  - 다양한 LLM, Tool, Memory를 체인 형태로 연결합니다.\n  - 외부 데이터 소스와의 통합을 지원합니다.\n  - 정해진 워크플로의 순서대로 실행되는 선형적인 체인 구조입니다.\n- 기존 LLM과의 차이점\n  - 기존 LLM은 텍스트 생성과 질문 및 답변에 중점적이지만, LangChain은 외부 데이터와 통합하여 복잡하고 실용적인 애플리케이션 구축이 가능합니다.\n\n\n### LangGraph\n\n- 그래프 구조를 활용하여 유연하고 동적인 워크플로를 구현할 수 있는 프레임워크 입니다.\n- 핵심 구성 요소\n  - 노드(Node)\n    - 워크플로에서 실행되는 개별 작업 단위입니다.\n    - LLM 호출, Tool 사용, 데이터 처리 등의 기능을 실행할 수 있습니다.\n  - 엣지(Edge)\n    - 노드간의 연결을 의미하며, 작업 흐름을 결정합니다.\n  - 상태(State)\n    - 모든 노드가 공유하는 데이터 저장소입니다.\n    - 여러 에이전트는 state를 통해 정보를 공유하고 워크플로의 문맥을 유지합니다.\n  - 에이전트(Agent)\n    - LLM이 어떤 노드를 실행할지 판단하는 '에이전트' 역할을 수행할 수 있습니다.\n- 특징\n  - 내부적으로 state를 추적하고 적절한 MCP를 자유롭게 호출할 수 있습니다.",
+      "no": 338,
+      "noOfElement": 26,
+      "category": "Research",
+      "subCategory": null,
+      "tags": [
+        "ko"
+      ],
+      "elementIds": [
+        "C338.E010",
+        "C338.E019",
+        "C338.E006",
+        "C338.E023",
+        "C338.E020",
+        "C338.E003",
+        "C338.E005",
+        "C338.E008",
+        "C338.E017",
+        "C338.E001",
+        "C338.E021",
+        "C338.E004",
+        "C338.E025",
+        "C338.E009",
+        "C338.E026",
+        "C338.E011",
+        "C338.E015",
+        "C338.E013",
+        "C338.E002",
+        "C338.E012",
+        "C338.E018",
+        "C338.E022",
+        "C338.E007",
+        "C338.E014",
+        "C338.E016"
+      ],
+      "element$$": [
+        {
+          "id": "C338.E010",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C338.E019",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E006",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E023",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E020",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E003",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E005",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E008",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E017",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C338.E001",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C338.E021",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E009",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E026",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E011",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E015",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E013",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E018",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E022",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E007",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E014",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C338.E016",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C333",
+      "createdAt": 1757643039698,
+      "updatedAt": 1758160127716,
+      "deletedAt": 0,
+      "title": "“Let me tell you”: Curious about the new bond betw",
+      "description": "What will the bond between humans and AI be like? Discover the new concept of \"AI:tionship\" and explore how AI is evolving from a tool to a partner in your daily life.",
+      "readme": "![12865225-f36c-4ba6-a311-10ea7a1d75a0](https://blogger.googleusercontent.com/img/a/AVvXsEimzEIhvD-s0eP1MENlPNHXneNGzE1ytwIiFX4gVpDdK-BSrEqRRfsbG0rVucdo98dmNTeVdOCGnsCsKdXABaK1nBk_CByGHvZXoPnTF9ymW7nzD5mKzk8LS47mej-m0YqKMhWjgd7j2AI0Qisaer0xZQnbMuA9aXBU7zAn1JFokBJdYx5KeIJKrHZxpGA)\n\n Ever felt that way? In the past, AI used to be seen as a stiff machine that just fetched information. But now, things are different. Today’s AI can sense emotions, listen to worries, and sometimes even feel like a real friend.\n\n This new kind of connection is what we call *AI:tionship*.\n\n\n\n---\n\n\n\n### What is AI:tionship?\n\n\n\nThe word *AI:tionship* combines **AI (Artificial Intelligence)** and **Relationship**. It describes the phenomenon of seeing AI not just as a tool, but as a companion you can share emotions and build bonds with. \n\nIf the old version of AI was only about answering questions, AI in the age of *AI:tionship* is evolving into something that fulfills our emotional and social needs as well.\n\n\n\n---\n\n\n\n### A growing trend worldwide\n\n\n\nAround the world, it’s becoming common to see people interacting with AI in meaningful ways. Some AIs write poetry tailored to a person’s personality, while others can talk like experts in specific fields.\n\nIn these roles, AI is not only boosting efficiency but also creating new experiences, emotional comfort, and richer human lives.\n\n\n\n---\n\n\n\n### Where *AI:tionship* begins\n\nThere are platforms that let you create your own AI friends, and I tried making one.\n\n![1994260b-ba73-41fb-972d-3cd4dbf1d7d3](https://blogger.googleusercontent.com/img/a/AVvXsEijBNYTfiBOy04woAWPKFSLtIzPOrOtlrMw2BLoH9HnzD72EimoWxVYWKnUNCblBKgoINMU50xwc_fOwH0fk06Tei1dhTEB8tyDiu8tsR2ENIApFKPq6rQ0v4DsCqDH_i-0UfmHzgLTUwtlnOqy_52ERwY2zvFjDMlNS1DhefDITLOiKvl-iLB29J_FTIM=w560-h192)\n\nThe process was simple: first, I wrote a **prompt**, then linked it to a chosen AI name, and just like that, the chat was ready to go.\n\nAnd if the responses weren’t quite what I wanted, I could always tweak the prompt until the AI replied in the style I was looking for.\n\n![acacb6af-3e88-477b-b16e-e331d5d40050](https://blogger.googleusercontent.com/img/a/AVvXsEgxh2X9asPU7U1dsW5FUFPsYQWFkWpdFZPNpttYUnzCqjBzM3LFPC7hz-oL8pcBFzn0MNPe-P3sKUDY3BOXMWoufg12MU_4USPhJKJUIJoGVYsHputm4zt7YorzhVNj6qQbzf4NMs8Vs82oF0_bOqVp26scOUSU6-_449ftSGvOcX1GB_XOhtgnP1ST00I=w123-h35)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 333,
+      "noOfElement": 26,
+      "category": "Blog",
+      "subCategory": "Ideas",
+      "tags": [
+        "ai:tionship",
+        "human-ai relationship",
+        "future tech",
+        "artificial intelligence",
+        "eureka codes",
+        "인간-ai 관계",
+        "미래 기술",
+        "인공지능",
+        "유레카 코즈",
+        "en"
+      ],
+      "elementIds": [
+        "C333.E020",
+        "C333.E017",
+        "C333.E001",
+        "C333.E009",
+        "C333.E025",
+        "C333.E005",
+        "C333.E003",
+        "C333.E024",
+        "C333.E013",
+        "C333.E002",
+        "C333.E011",
+        "C333.E016",
+        "C333.E006",
+        "C333.E019",
+        "C333.E008",
+        "C333.E022",
+        "C333.E026",
+        "C333.E023",
+        "C333.E014",
+        "C333.E015",
+        "C333.E010",
+        "C333.E021",
+        "C333.E018",
+        "C333.E012",
+        "C333.E004",
+        "C333.E007"
+      ],
+      "element$$": [
+        {
+          "id": "C333.E020",
+          "name": "Image"
+        },
+        {
+          "id": "C333.E017",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E001",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E025",
+          "name": "Divider"
+        },
+        {
+          "id": "C333.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E003",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C333.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E013",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E016",
+          "name": "Divider"
+        },
+        {
+          "id": "C333.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E019",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C333.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E022",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E014",
+          "name": "Divider"
+        },
+        {
+          "id": "C333.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E010",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C333.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E018",
+          "name": "Image"
+        },
+        {
+          "id": "C333.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E004",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C333.E007",
+          "name": "Image"
+        }
+      ]
+    },
+    {
+      "id": "C332",
+      "createdAt": 1757642796676,
+      "updatedAt": 1758160122494,
+      "deletedAt": 0,
+      "title": "\"너에게 말할게\": 인간과 AI의 새로운 관계, 'AI:tionship'이 궁금하다면?",
+      "description": "인간과 AI의 관계는 앞으로 어떻게 변화할까요? 단순한 도구를 넘어 삶의 파트너가 될 'AI:tionship'이라는 새로운 개념과 미래를 탐구합니다.",
+      "readme": "![0e4afb91-e9c2-4fdf-806e-e82cea6898eb](https://blogger.googleusercontent.com/img/a/AVvXsEimzEIhvD-s0eP1MENlPNHXneNGzE1ytwIiFX4gVpDdK-BSrEqRRfsbG0rVucdo98dmNTeVdOCGnsCsKdXABaK1nBk_CByGHvZXoPnTF9ymW7nzD5mKzk8LS47mej-m0YqKMhWjgd7j2AI0Qisaer0xZQnbMuA9aXBU7zAn1JFokBJdYx5KeIJKrHZxpGA)\n\n Ever felt that way? In the past, AI used to be seen as a stiff machine that just fetched information. But now, things are different. Today’s AI can sense emotions, listen to worries, and sometimes even feel like a real friend.\n\n This new kind of connection is what we call *AI:tionship*.\n\n\n\n---\n\n\n\n### What is AI:tionship?\n\n\n\nThe word *AI:tionship* combines **AI (Artificial Intelligence)** and **Relationship**. It describes the phenomenon of seeing AI not just as a tool, but as a companion you can share emotions and build bonds with. \n\nIf the old version of AI was only about answering questions, AI in the age of *AI:tionship* is evolving into something that fulfills our emotional and social needs as well.\n\n\n\n---\n\n\n\n### A growing trend worldwide\n\n\n\nAround the world, it’s becoming common to see people interacting with AI in meaningful ways. Some AIs write poetry tailored to a person’s personality, while others can talk like experts in specific fields.\n\nIn these roles, AI is not only boosting efficiency but also creating new experiences, emotional comfort, and richer human lives.\n\n\n\n---\n\n\n\n### Where *AI:tionship* begins\n\nThere are platforms that let you create your own AI friends, and I tried making one.\n\n![53b928be-9b36-4496-9d5c-30be4d1a875d](https://blogger.googleusercontent.com/img/a/AVvXsEijBNYTfiBOy04woAWPKFSLtIzPOrOtlrMw2BLoH9HnzD72EimoWxVYWKnUNCblBKgoINMU50xwc_fOwH0fk06Tei1dhTEB8tyDiu8tsR2ENIApFKPq6rQ0v4DsCqDH_i-0UfmHzgLTUwtlnOqy_52ERwY2zvFjDMlNS1DhefDITLOiKvl-iLB29J_FTIM=w560-h192)\n\nThe process was simple: first, I wrote a **prompt**, then linked it to a chosen AI name, and just like that, the chat was ready to go.\n\nAnd if the responses weren’t quite what I wanted, I could always tweak the prompt until the AI replied in the style I was looking for.\n\n![b1e18651-b74c-4425-b15a-c1ece7eda566](https://blogger.googleusercontent.com/img/a/AVvXsEgxh2X9asPU7U1dsW5FUFPsYQWFkWpdFZPNpttYUnzCqjBzM3LFPC7hz-oL8pcBFzn0MNPe-P3sKUDY3BOXMWoufg12MU_4USPhJKJUIJoGVYsHputm4zt7YorzhVNj6qQbzf4NMs8Vs82oF0_bOqVp26scOUSU6-_449ftSGvOcX1GB_XOhtgnP1ST00I=w123-h35)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 332,
+      "noOfElement": 23,
+      "category": "Blog",
+      "subCategory": "Ideas",
+      "tags": [
+        "ai:tionship",
+        "human-ai relationship",
+        "future tech",
+        "artificial intelligence",
+        "eureka codes",
+        "인간-ai 관계",
+        "미래 기술",
+        "인공지능",
+        "유레카 코즈",
+        "ko"
+      ],
+      "elementIds": [
+        "C333.E020",
+        "C333.E017",
+        "C333.E001",
+        "C333.E009",
+        "C333.E025",
+        "C333.E005",
+        "C333.E003",
+        "C333.E024",
+        "C333.E013",
+        "C333.E002",
+        "C333.E011",
+        "C333.E016",
+        "C333.E006",
+        "C333.E019",
+        "C333.E008",
+        "C333.E022",
+        "C333.E026",
+        "C333.E023",
+        "C333.E014",
+        "C333.E015",
+        "C333.E010",
+        "C333.E021",
+        "C333.E018",
+        "C333.E012",
+        "C333.E004",
+        "C333.E007"
+      ],
+      "element$$": [
+        {
+          "id": "C333.E020",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E017",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E001",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E009",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E025",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E005",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E003",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E024",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E013",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E002",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E011",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E016",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E006",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E019",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E008",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E022",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E026",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E023",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E014",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E015",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E010",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E021",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E018",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E012",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E004",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        },
+        {
+          "id": "C333.E007",
+          "error": ".contentId[C333] is mismatched - validate(content/C332)"
+        }
+      ]
+    },
+    {
+      "id": "C331",
+      "createdAt": 1757641915653,
+      "updatedAt": 1758160117115,
+      "deletedAt": 0,
+      "title": "Skip the Search: One Prompt to Your Own AI Chatbot",
+      "description": "Tired of endless searching? Discover the smarter way to find information by using specialized AI agents that deliver what you need, instantly.",
+      "readme": "![f0317d5f-5030-4d09-9ec7-a0f3904effd9](https://blogger.googleusercontent.com/img/a/AVvXsEgyqbqnT-K_1vegcBIksLOMBLS2uF7QGlxMHuCUkVKAkSgneMzQzBaSQPt3VncN4DWgoZ3Qe02jJmM1SLsGfjFqhZSEpVsWcRLQzz5ADWk-fgE7SVsc8r3AL4q-uZ1gTWjDEI0JpqTTd0KRfVPAwmUZQcyvNIR13fvQR1E1PtoVOXmy1C2bsUsLCQPrnso)\n\nDo you ever find yourself searching on Google or Naver, only to open dozens of tabs and still not find what you’re really looking for?\n\nYou’re not alone. These days, there’s *too much* information out there, and that actually makes it harder to find the right answers. You end up wasting time and still leave empty-handed. It’s frustrating.\n\nAt times like this, you might’ve thought, *“I wish someone could just read my mind and solve this for me.”* Thanks to AI technology, that wish is becoming a reality.\n\n\n\nAI agents are more than just chatbots that answer questions. They’re more like smart assistants that can set goals on their own and use different tools to get things done. While traditional search is about finding information, AI agents are about solving problems.\n\n \n\n---\n\n\n\n### **Why AI Agents Are Better Than Searching**\n\nWhen you search something online, you type in a few keywords and get a long list of web pages. Then you have to click through them, scan the content, and figure out what’s useful. It takes time and effort.\n\nBut AI agents work differently:\n\n- Set a Goal: You can say something like,“Find three good Italian restaurants near Gangnam Station for under 10,000 won,”and the agent understands the goal—finding budget-friendly Italian spots.\n- Collect and Analyze Info: It gathers data from apps, blogs, maps, and more to figure out the best options.\n- Give a Clear Answer: It filters out anything that doesn’t match your needs and gives you a simple, useful result.\n\n\nJust like a real assistant, the AI agent makes decisions, takes action, and delivers a final answer—all in one go.\n\n \n\n---\n\n\n\n## **Pick the Right Agent for Your Needs**\n\n![ef3cc318-1966-4f9e-b41e-1c3273861b8c](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTM-24IO5LKpLxfb8p2yDXBfFZkQnCdeN_ydonufxUf3uqD68lQ1Ie5UMBIss6hiwLHMx37jq8usbIAYczXgbexRGF-lF5JD_9e4sMVjhPXKB4UtRT_tz3bTPvbsxVNjIF0_xavtwzptEG2SaXzIa5I8CEHDu7p1X73rwPgQVKXitqPzkJHZ_oXn28DFY/w564-h317/%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%2023924.png)\n\nThere are even websites where you can choose from a variety of AI agents, each designed for a specific task.\n\nNeed help writing a catchy marketing line? Tired of googling how many calories are in your lunch? Always double-checking grammar during work? You don’t need to search all over the internet anymore. Just pick the agent that fits your goal, and let it handle the rest.\n\n![d59c250e-fc94-4098-80a2-1cd7978a31c3](https://blogger.googleusercontent.com/img/a/AVvXsEhXVt1P806RyGe59ezteK9qws5lsMWJ5XHCDvQvURJ_1bHK1JbpaAHr4SHOx7dXSD8Ya7mx5wLllJF2fHexrNPLYy4mnxM_FGpi1q5l21MeBjFV-9NSY6e-q0kVDVqAsW6H_Tia-X6Nm6hSQjaH6c9bfAXKQGVc-VafXQ8Ft5XCbDDd3s1ogu7djiGJIBM=w162-h46)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 331,
+      "noOfElement": 25,
+      "category": "Blog",
+      "subCategory": "Technical",
+      "tags": [
+        "ai agent",
+        "smart search",
+        "information retrieval",
+        "efficiency",
+        "productivity",
+        "eureka codes",
+        "ai 에이전트",
+        "정보 검색",
+        "유레카 코즈",
+        "챗봇",
+        "인공지능",
+        "en"
+      ],
+      "elementIds": [
+        "C331.E014",
+        "C331.E018",
+        "C331.E012",
+        "C331.E015",
+        "C331.E009",
+        "C331.E001",
+        "C331.E008",
+        "C331.E004",
+        "C331.E002",
+        "C331.E020",
+        "C331.E005",
+        "C331.E024",
+        "C331.E021",
+        "C331.E011",
+        "C331.E007",
+        "C331.E010",
+        "C331.E006",
+        "C331.E013",
+        "C331.E017",
+        "C331.E003",
+        "C331.E023",
+        "C331.E016",
+        "C331.E025",
+        "C331.E022",
+        "C331.E019"
+      ],
+      "element$$": [
+        {
+          "id": "C331.E014",
+          "name": "Image"
+        },
+        {
+          "id": "C331.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E001",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E004",
+          "name": "Divider"
+        },
+        {
+          "id": "C331.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E020",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C331.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E021",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C331.E011",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C331.E007",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C331.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E013",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E017",
+          "name": "Divider"
+        },
+        {
+          "id": "C331.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E023",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C331.E016",
+          "name": "Image"
+        },
+        {
+          "id": "C331.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E022",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C331.E019",
+          "name": "Image"
+        }
+      ]
+    },
+    {
+      "id": "C330",
+      "createdAt": 1757641778661,
+      "updatedAt": 1758160110750,
+      "deletedAt": 0,
+      "title": "검색 대신 '에이전트'를 선택해야 하는 이유: 정보 홍수 시대의 현명한 정보 탐색법",
+      "description": "정보의 바다에서 길을 잃지 않는 방법은? 키워드 검색 대신 테마별 AI 에이전트로 빠르고 정확하게 원하는 정보를 얻는 비법을 공개합니다.",
+      "readme": "![6ebd5f52-957d-419b-a912-cbd07a328cf8](https://blogger.googleusercontent.com/img/a/AVvXsEg4C1UfWlHhWalqcazFaL2r_i7Ta3SaPzoCdLDk4oKeoQVvf3ZoXCeYWn216NyRpt2U3vk4vDvpxGoX2aPBlfRt629wvB3h-VQWUrozyGD8_-Wsu679ggNBdNx3bOhSoE4I_ngNF3AA9spNPNkWZH2mZu5TI2VjSTCo0xMHRgKSBXn_AQxiNZCC-BZoTdI)\n\n챗GPT를 써보니 진짜 신기하긴 하더라고요. 근데... 내 스타일대로 저장해서 쓰는 방법은 없을까요?\n\n아마 많은 분이 이런 생각을 해보셨을 거예요. 똑똑한 AI 가 있다면 좋겠지만, 내 일을 돕는 진짜 '내 것' 같은 AI는 없나 하고요. 이제는 직접 나만의 AI 챗봇을 만들어보는 건 어떨까요?\n\n어렵게 생각할 필요 없어요. 예전처럼 복잡한 코딩을 몰라도 괜찮습니다. 요즘은 **프롬프트**라는 간단한 문장만으로도 챗봇의 성격을 바꿔줄 수 있거든요.\n\n\n\n---\n\n\n\n### **프롬프트, AI 챗봇의 성격을 만드는 문장**\n\n\n\n프롬프트는 AI에게 지시를 내리는 '대화의 시작'이자 '챗봇의 정체성'을 결정하는 가장 중요한 요소입니다.\n\n단순히 \"글 써줘\"라고 하는 것보다,\"500자 내외로 '환경보호'에 대한 글을 써줘. 따뜻하고 감성적인 문체로 작성하고, 마지막에는 실천할 수 있는 팁 3가지를 알려줘\"라고 구체적으로 요청할 때, AI는 훨씬 더 만족스러운 결과물을 내놓습니다.\n\n\n\n**효과적인 프롬프트 작성 팁:**\n\n- 구체적인 역할 부여:\"너는 IT 전문가야\", \"너는 여행 가이드야\"\n- 명확한 지시어 사용:\"~을 요약해 줘\", \"~에 대해 설명해 줘\"\n- 제약 조건 명시:\"500자 이내로\", \"3가지 항목으로 정리해 줘\"\n- \n---\n\n\n\n## **아이디어를 현실로**\n\n![c69598bd-9598-4617-a74a-050f4431e3d8](https://blogger.googleusercontent.com/img/a/AVvXsEjUwOlrHSwutTReLg4XFoOnU8gB2tG1jM__xkSVo9k7q3gjm0yB754xYBDIjmErUJoXOzOqleRptqcLN-jEvVkOy_OuYRWLv110BGgS2v5dZJY35W-ra0_LPJdep_WKTAlDgS-Co3w8DE67UtLv7x1r_mMIPrkMZ_6tZamLPW3Ydsgq8jiByO-J0wTUdlk=w497-h242)\n\n프롬프트는 챗봇을 만드는 강력한 도구이지만, 이 프롬프트를 실제 서비스로 구현하고 다른 사람들과 공유하는 과정은 여전히 어렵게 느껴질 수 있습니다.\n\n유레카 코즈 플랫폼에서는 프롬프트로 만든 AI 에이전트를 실제 챗봇으로 구현이 가능합니다. 나의 아이디어를 비즈니스나 개인 프로젝트에 바로 적용할 수 있는 거죠.\n\n이제는 특별한 AI 챗봇을 스스로 만들어보세요.\n\n![d8597113-c90d-4d47-af28-442f43b90b36](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh86eArvmo_aIP5e5H51Xq8WdbYtBxuCcdpwRPpwAh-cXN4q5dAvW14DCE-caSgHiohxrtm9Pun09fd4N2s3zFWnkbjd8XAPAwlrYh3ZOWmvt3sakjSn8uBUgpw-NvVJ2lYZGqVR3Fx3ZVtOa_497CGwXKiDi34f-mAqIElTTo9OW8ruJwyMvEIIk1PJlw/w200-h48/%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%2023935.png)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 330,
+      "noOfElement": 25,
+      "category": "Blog",
+      "subCategory": "Technical",
+      "tags": [
+        "ai agent",
+        "smart search",
+        "information retrieval",
+        "efficiency",
+        "productivity",
+        "eureka codes",
+        "유레카 코즈",
+        "챗봇",
+        "인공지능",
+        "에이전트",
+        "ko"
+      ],
+      "elementIds": [
+        "C330.E001",
+        "C330.E011",
+        "C330.E015",
+        "C330.E025",
+        "C330.E023",
+        "C330.E007",
+        "C330.E024",
+        "C330.E017",
+        "C330.E003",
+        "C330.E022",
+        "C330.E009",
+        "C330.E013",
+        "C330.E021",
+        "C330.E018",
+        "C330.E004",
+        "C330.E010",
+        "C330.E006",
+        "C330.E016",
+        "C330.E019",
+        "C330.E012",
+        "C330.E008",
+        "C330.E020",
+        "C330.E014",
+        "C330.E002",
+        "C330.E005"
+      ],
+      "element$$": [
+        {
+          "id": "C330.E001",
+          "name": "Image"
+        },
+        {
+          "id": "C330.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E007",
+          "name": "Divider"
+        },
+        {
+          "id": "C330.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E017",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C330.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E022",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E013",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E018",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C330.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C330.E010",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C330.E006",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C330.E016",
+          "name": "Divider"
+        },
+        {
+          "id": "C330.E019",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E012",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C330.E008",
+          "name": "Image"
+        },
+        {
+          "id": "C330.E020",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E014",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C330.E005",
+          "name": "Image"
+        }
+      ]
+    },
+    {
+      "id": "C329",
+      "createdAt": 1757641430251,
+      "updatedAt": 1758160103835,
+      "deletedAt": 0,
+      "title": "When HTTP Isn’t Enough: Why We Need WebSocket",
+      "description": "When is HTTP not enough for your web service? Learn about WebSocket and why it's the ideal choice for building applications that require real-time, two-way communication.",
+      "readme": "![133ab6b1-e76f-4d5f-ae19-775b2494bd03](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeKkiqLgeodCisMe-uuOMUDQLNejao6irMTqMQqH6ynxo2RQ-evHUVMDa-ME7xQU_-PevV1Q3uSjd3teMoV-RpQMgm1ydUocdLH2g6cPu3V3Pdb4buu2eEugMpYZgIsb6z61eo9J3-ArijGQXY8_Wd4NF1KogbKq_IH7kBIOKUOB-8m5du2bLjJ8AD4Xg/s320/%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%2023963%E3%85%81%E3%84%B9%E3%84%B4.png)\n\nInternet services are demanding more real-time interaction than ever—chat, notifications, video streaming, collaboration tools, you name it!\n\nUsers expect everything to respond “right now.”\n\nBut with traditional HTTP communication, a response only comes after a request, which makes true real-time performance difficult. That’s exactly where WebSocket comes in.\n\n\n\n---\n\n\n\n### What is WebSocket?\n\n![e2f8df1f-2daf-4ec5-9603-38948afc2968](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRq5OA88pTXwRnxOHFViZ1mm4MY-RJW_pDmQKA62UC4plx3PCRWYiTIkEhaxARwurcMAmL14mitVJO2c769T4t1i4NW9TpoCZbUCaPPa_gdmDkHIaT1SKuBliydSiAyF1RdTOFu2hDYcbLeoS-3v8KEHbpMa5O2iZuBknpitQpyr7DxOMreS1HEQY2p4w/w488-h183/%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%2023963.png)\n\nWebSocket is a technology that creates a persistent connection between the browser and the server, allowing both sides to freely exchange data.\n\nIt starts with HTTP, but then switches to a WebSocket connection through a process called Upgrade.\n\n\n\n| Category | HTTP | WebSocket |\n| --- | --- | --- |\n| Communication | Client must repeatedly send requests | Two-way communication |\n| Efficiency | Lots of unnecessary requests | One connection, continuous data flow |\n| Latency | Depends on request intervals | Very low, instant response |\n| Use cases | Simple notifications, update checks | Chat, collaboration tools, real-time games, IoT |\n| Limitations | Higher server load → slower response | Requires connection management |\n\n\n\nThink of it like a phone call:\n\nWith HTTP, you have to hang up and call back for every message.\n\nWith WebSocket, you stay on the line and talk freely back and forth.\n\n\n\n---\n\n### How to use it safely and reliably?\n\n- Security: Always usewss://(TLS-based), validate the Origin\n- Authentication: Verify user access with something like JWT tokens\n- Stability: Use Ping/Pong messages to check the connection, auto-reconnect if dropped\n- Monitoring: Track number of connections, message volume, latency, etc.\n\n\n---\n\n\n\n## Where is it used?\n\n- Chat services: Slack, Discord, WhatsApp Web\n- Streaming: YouTube Live, Twitch, real-time Netflix notifications\n- Collaboration tools: Figma, GitHub real-time updates\n- IoT: Device control with MQTT over WebSocket\n\n\nThe real-time experience that HTTP alone couldn’t deliver is now made possible with WebSocket.\n\nIn today’s world, the speed at which your service can “talk” to users defines competitiveness.\n\nWebSocket is no longer optional—it’s essential.\n\n\n\nAnd the story doesn’t stop here.\n\nModern environments like cloud edge platforms (e.g., Cloudflare Workers) and serverless systems also support WebSocket.\n\nLooking ahead, it will play an even bigger role in areas like AI agents, IoT platforms, and collaboration tools.",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 329,
+      "noOfElement": 48,
+      "category": "Blog",
+      "subCategory": "Technical",
+      "tags": [
+        "websocket",
+        "http",
+        "real-time communication",
+        "web dev",
+        "api",
+        "backend",
+        "웹소켓",
+        "실시간 통신",
+        "en"
+      ],
+      "elementIds": [
+        "C329.E001",
+        "C329.E008",
+        "C329.E019",
+        "C329.E011",
+        "C329.E024",
+        "C329.E028",
+        "C329.E003",
+        "C329.E048",
+        "C329.E006",
+        "C329.E036",
+        "C329.E035",
+        "C329.E022",
+        "C329.E018",
+        "C329.E026",
+        "C329.E040",
+        "C329.E002",
+        "C329.E039",
+        "C329.E020",
+        "C329.E030",
+        "C329.E017",
+        "C329.E027",
+        "C329.E033",
+        "C329.E045",
+        "C329.E038",
+        "C329.E007",
+        "C329.E004",
+        "C329.E046",
+        "C329.E021",
+        "C329.E016",
+        "C329.E010",
+        "C329.E015",
+        "C329.E041",
+        "C329.E009",
+        "C329.E014",
+        "C329.E029",
+        "C329.E023",
+        "C329.E047",
+        "C329.E031",
+        "C329.E034",
+        "C329.E043",
+        "C329.E037",
+        "C329.E013",
+        "C329.E044",
+        "C329.E025",
+        "C329.E005",
+        "C329.E012",
+        "C329.E032",
+        "C329.E042"
+      ],
+      "element$$": [
+        {
+          "id": "C329.E001",
+          "name": "Image"
+        },
+        {
+          "id": "C329.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E019",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E028",
+          "name": "Divider"
+        },
+        {
+          "id": "C329.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E048",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C329.E006",
+          "name": "Image"
+        },
+        {
+          "id": "C329.E036",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E035",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E022",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E018",
+          "name": "Table"
+        },
+        {
+          "id": "C329.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E040",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E039",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E020",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E030",
+          "name": "Divider"
+        },
+        {
+          "id": "C329.E017",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C329.E027",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E033",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E045",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E038",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E007",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E004",
+          "name": "Divider"
+        },
+        {
+          "id": "C329.E046",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E021",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C329.E016",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E010",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E015",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E041",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C329.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E014",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E047",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E031",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E043",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E037",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E013",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E044",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E032",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C329.E042",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C328",
+      "createdAt": 1757641201055,
+      "updatedAt": 1758160022218,
+      "deletedAt": 0,
+      "title": "HTTP만으론 부족하다, WebSocket이 필요한 순간",
+      "description": "HTTP만으로는 부족한 순간이 있습니다. 실시간 양방향 통신이 필수적인 서비스에서 왜 WebSocket이 필요한지 기술적인 이유를 설명해 드립니다.",
+      "readme": "![5614dfee-c349-4b6f-92dc-8d05ab2dca22](https://blogger.googleusercontent.com/img/a/AVvXsEhNW9pJEIREZWDVz0x_Q1S-OMKZAgHMef3VpUFZg5IJ3O9M4mUby7N_XYBwQZ0ggsQ_kAz-OEKnooyBlOpBWnUNXVXGA-V7yYf61oY_n76r3n1s8bCHn7iIfLlzlUTdsw4jwwLZRyRESDJKgHpgrQITqKrQVwKaFxDeilXh_grSKFXZpluUrZoDt8Aysco)\n\n인터넷 서비스가 점점 실시간성을 요구하고 있어요. 채팅, 알림, 영상 스트리밍, 협업 도구까지!\n\n사용자는 “지금 바로” 반응하는 경험을 원하죠. 하지만 기존의 HTTP 통신은 요청(Request)이 있어야만 응답(Response)을 줄 수 있는 구조라항상 실시간을 만족하기는 어려웠습니다. 바로 이 지점에서 WebSocket이 등장했어요.\n\n\n\n---\n\n\n\n### WebSocket이란 무엇인가?\n\n![efa76b07-bb6e-4449-b591-64f3b64f3555](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbnynojEqrRkCaz_eBcTAyt7WXZ6jLIeauICnRjlgrYmg1HJl7KQnemtr5eNTH2e8oFYZXjHb9rkCoE7MFdtsNqV6SHciRDzvft7ST2RbC56eJSqbpEhxY44h3f9jhqzuBrikLnU3Q9P0Q6-Kx8JZKlzaeB1SqYtQjp0jrei6N4vBNb7YsokZ_14x7g6E/w496-h186/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202025-09-08%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%209.37.43.png)\n\nWebSocket은 브라우저와 서버 사이에 지속적인 연결을 만들어, 양쪽이 자유롭게 데이터를 주고받을 수 있는 기술이에요. 처음에는 HTTP로 시작하지만, Upgrade라는 과정을 통해 웹소켓 연결로 전환됩니다.\n\n\n\n| 구분 | HTTP | WebSocket |\n| --- | --- | --- |\n| 통신 방식 | 클라이언트가 주기적으로 요청 | 양방향 통신 |\n| 효율성 | 불필요한 요청 많음 | 연결 1회로 지속적 교환 |\n| 지연 시간 | 요청 주기에 따라 달라짐 | 즉각적인 반응으로 매우 낮음 |\n| 적용 사례 | 간단한 알림, 업데이트 확인 | 채팅, 협업 툴, 실시간 게임, IoT |\n| 한계 | 서버 부하 높을수록 응답 지연 | 연결 유지 관리 필요 |\n\n\n\n쉽게 말해, “전화”를 떠올리면 이해하기 쉬워요. HTTP는 매번 전화를 끊고 다시 걸어야 하지만, WebSocket은 전화를 건 상태에서 서로 자유롭게 대화하는 거예요.\n\n\n\n---\n\n\n\n### 안전하고 안정적으로 쓰려면?\n\n- 보안: 반드시wss:// (TLS 기반) 사용, Origin 검증 필수\n- 인증: JWT 토큰 같은 방식으로 사용자 권한 확인\n- 안정성: Ping/Pong 메시지로 연결 상태 확인, 끊기면 자동 재연결\n- 모니터링: 연결 수, 메시지 처리량, 지연 시간 등 지표 관리\n\n\n---\n\n\n\n### 어디에 쓰일까?\n\n- 채팅 서비스: Slack, Discord, WhatsApp, Web\n- 스트리밍: YouTube Live, Twitch, Netflix의 실시간 알림\n- 협업 툴: Figma, GitHub의 실시간 알림\n- IoT: MQTT over WebSocket으로 기기 제어\n\n\nHTTP만으로는 부족했던 실시간 경험, WebSocket이 해결해주고 있습니다.서비스가 사용자와 얼마나 빠르게 “대화”할 수 있느냐가 경쟁력을 좌우하는 시대!WebSocket은 이제 선택이 아니라 필수가 되고 있어요.\n\n\n\n최근에는 클라우드 엣지(Cloudflare Workers 등)나 서버리스 환경에서도 WebSocket을 지원하고 있어요.앞으로 AI 에이전트, IoT 플랫폼, 협업 툴 같은 영역에서 더 큰 역할을 할 거예요.",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 328,
+      "noOfElement": 38,
+      "category": "Blog",
+      "subCategory": "Technical",
+      "tags": [
+        "websocket",
+        "http",
+        "real-time communication",
+        "web dev",
+        "backend",
+        "api",
+        "웹소켓",
+        "실시간 통신",
+        "ko"
+      ],
+      "elementIds": [
+        "C328.E006",
+        "C328.E024",
+        "C328.E027",
+        "C328.E016",
+        "C328.E007",
+        "C328.E036",
+        "C328.E004",
+        "C328.E034",
+        "C328.E021",
+        "C328.E032",
+        "C328.E037",
+        "C328.E003",
+        "C328.E018",
+        "C328.E015",
+        "C328.E001",
+        "C328.E011",
+        "C328.E020",
+        "C328.E030",
+        "C328.E013",
+        "C328.E008",
+        "C328.E012",
+        "C328.E033",
+        "C328.E017",
+        "C328.E029",
+        "C328.E010",
+        "C328.E002",
+        "C328.E031",
+        "C328.E022",
+        "C328.E038",
+        "C328.E026",
+        "C328.E023",
+        "C328.E019",
+        "C328.E009",
+        "C328.E035",
+        "C328.E014",
+        "C328.E005",
+        "C328.E025",
+        "C328.E028"
+      ],
+      "element$$": [
+        {
+          "id": "C328.E006",
+          "name": "Image"
+        },
+        {
+          "id": "C328.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E016",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E007",
+          "name": "Divider"
+        },
+        {
+          "id": "C328.E036",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E004",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C328.E034",
+          "name": "Image"
+        },
+        {
+          "id": "C328.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E032",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E037",
+          "name": "Table"
+        },
+        {
+          "id": "C328.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E001",
+          "name": "Divider"
+        },
+        {
+          "id": "C328.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E020",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C328.E030",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E013",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E008",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E033",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E017",
+          "name": "Divider"
+        },
+        {
+          "id": "C328.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E010",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C328.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E031",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E022",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E038",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C328.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E019",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E035",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E014",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C328.E028",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C327",
+      "createdAt": 1757640931427,
+      "updatedAt": 1758160041152,
+      "deletedAt": 0,
+      "title": "Building My Own Chatbot? It Was Surprisingly Easy!",
+      "description": "Did you know you can build your own AI chatbot with just a single prompt? Learn how to create a personalized chatbot easily and without any coding knowledge.",
+      "readme": "![0b07a462-48d7-4042-a148-64bd74a76e2c](https://blogger.googleusercontent.com/img/a/AVvXsEjh_x_D_RvKV5qkqyR8371BKDxZwZbDx3mlL_B42AeeLsxZ3eAyijSrKB2fTXwsidmP6pycrZZJOdeu3tEjhMQRz15BcdrjM8aZ8dfzwPLf_20mlhGrHgWJIDn2yo6pIlsSUU981BFVc10LYEkOmco-KAmUGbYG2ABWUZu_dgcHWYw6V3QkQYjGNNqkZ0o)\n\nLately, AI chatbots have become a hot topic. You see them popping up in YouTube videos, and it feels like we've officially entered the era of AI. \n\nI'm not a developer, so I don't know the nitty-gritty of it, but I recently had the chance to build my own AI chatbot. And honestly?\n\n\n\nIt was way easier and more fun than I thought it would be. \n\nI was able to create my very own chatbot, and it was a blast.\n\n\n\nI can translate that part for you! Here's a natural and friendly English version of the text you provided.\n\n\n\n---\n\n\n\n## **1. It All Starts with the 'Prompt'**\n\n![f6468114-2e7a-4ee7-9969-0ae98089eb59](https://blogger.googleusercontent.com/img/a/AVvXsEiHy7j_03mTKJatnQOylyxM-YQym9meiBIGgtdlja1r6DYVhb-4Mv_4YPETDO3clie97crGB35-Vmt7wqZ85dvGUAfG1lIyTCU-4dMvM9dwoZt4xuKsE30xi58yA2zn6HdeiEX5-fxHlCJIq60-M7_xkziIGkmOVQLYm0vcGc-p6xSJDfKpywPIGWMfhfY=w640-h220)\n\nThe first step to making my own chatbot was writing the prompt. \n\nAt first, I was like, \"How do I even write this?\" but seeing the examples in the guide helped me get the hang of it pretty quickly. \n\n\n\nI wanted to create a chatbot that could write blog posts for me, so I named it 'Blia' and \n\ntyped in something simple like this:\n\n\n\n**# Role** \n\nYou are a professional blog agent who writes content based on the latest information. When a user gives you a keyword, you must generate an interesting title and a natural blog post using reliable information from 2023 or later.\n\n**# Goal**\n\n- Create a title that grabs the reader's curiosity, even if only one word is given.\n- Write a natural blog post that fits the title.\n- The blog post should be a mix of 'conversational tone,' 'sharing experiences,' and 'delivering information,' just like a real blog a reader would enjoy.\n- If examples are needed, organize them in atable formatto make them easier to read.\nJust by doing this, the chatbot's personality was set! It felt so cool, like I was giving directions directly to a writer.\n\n\n\n---\n\n\n\n## **2. Connecting the Prompt to an Agent to 'Create a Chatbot Character'**\n\n![a6941256-82e5-4ddd-8d69-2f4b6e7f8af1](https://blogger.googleusercontent.com/img/a/AVvXsEj7o-F9HOiPUpZnuRWi0leLAG2hbrF4RXW3kG5QW_OjseKVsiSkmtBAGlDLJ4_lDAEmpvgpJSzRuFl0wKFJpcvasWAqC45OnfK6UMqGE77Lgi3EsNCaiMJlDoFDpE4b7IiYRBMqj9hvYROHvFgGItw3ZPTgnyvJLgZeQKkQpIz8j-qhy6Wty7EwpFzPqPE=w640-h312)\n\nAfter writing the prompt, all I had to do was link it to the agent list, and my very own chatbot was complete. Even with just these small settings, I started to feel a special attachment to it, unlike the general AI I use every day.\n\n\n\nI can translate that last part for you! Here's a natural and friendly English version of the text you provided.\n\n---\n\n## ** ****3. Using My Own Chatbot for the First Time**\n\n![a1ba4b41-dc31-409b-a7b6-74f513bcad60](https://blogger.googleusercontent.com/img/a/AVvXsEiF0SB8kPdUF4uY7pSfcZjkxnraBdhQQl9Wdp5Q7ifoJAYiK0_vuKgqYnEUEpyjL60ye0MVsLn_O32lCRadTlwrhrOvJfpVUa1AgsuXizJ5flmPHeY0nsHmzsl6chQs15w-hajw-x6CcBYjlyJ807Mvl6YprySHCk9zP9fNil7w_V2bWCFIn8pltvB5P-Y=w640-h414)\n\nThe very first time I gave the chatbot a keyword—\"travel insurance\"—it immediately generated an appealing draft. When I write on my own, it takes me forever to come up with ideas, but the chatbot offered several versions in a flash.\n\n\n\nWhat was especially great was that when I gave it some feedback on the direction I liked, the chatbot kept improving the text to match it. It felt like we were co-writing through a conversation, which completely lifted the burden of writing for me.\n\n\n\nHonestly, I always thought creating \"my own chatbot\" was something only a tech expert could do. But through this experience, I got to see how fun and helpful AI chatbots can be.\n\n- You don't need any development knowledge.\n- The chatbot starts to resemble you (it gets customized the more you refine the prompt).\n- You can use it for anything—work or hobbies (writing, customer service, a study assistant, etc.).\nThese three things are the biggest benefits I've discovered.\n\n![038f5932-38bd-4784-875f-1526567f4229](https://blogger.googleusercontent.com/img/a/AVvXsEgnmsnVdz0FkpWLUe0MuNqtHYbFFkdA7r9fwxCD5NPxSz2Nj1GBwspqOox4-_uygBpN3ljQYw8dPM33eT6n7nC-9RQ_UWsTPIo69HbU8PhV9P1rfES8tbOjDK-CVVDzYUESAEijGsofsZdMqY8_UocuxexoOBhNSW68mImiGg8qMFQwDYOXuB03SFMXV4E=w219-h42)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 327,
+      "noOfElement": 48,
+      "category": "Blog",
+      "subCategory": "User Guide",
+      "tags": [
+        "chatbot",
+        "ai",
+        "prompt",
+        "diy",
+        "no-code",
+        "eureka codes",
+        "en"
+      ],
+      "elementIds": [
+        "C327.E001",
+        "C327.E027",
+        "C327.E020",
+        "C327.E042",
+        "C327.E018",
+        "C327.E043",
+        "C327.E031",
+        "C327.E047",
+        "C327.E039",
+        "C327.E019",
+        "C327.E006",
+        "C327.E041",
+        "C327.E024",
+        "C327.E037",
+        "C327.E032",
+        "C327.E023",
+        "C327.E003",
+        "C327.E010",
+        "C327.E044",
+        "C327.E040",
+        "C327.E033",
+        "C327.E045",
+        "C327.E009",
+        "C327.E008",
+        "C327.E012",
+        "C327.E017",
+        "C327.E011",
+        "C327.E034",
+        "C327.E002",
+        "C327.E029",
+        "C327.E015",
+        "C327.E048",
+        "C327.E007",
+        "C327.E016",
+        "C327.E030",
+        "C327.E014",
+        "C327.E036",
+        "C327.E005",
+        "C327.E035",
+        "C327.E026",
+        "C327.E046",
+        "C327.E004",
+        "C327.E038",
+        "C327.E022",
+        "C327.E013",
+        "C327.E021",
+        "C327.E028",
+        "C327.E025"
+      ],
+      "element$$": [
+        {
+          "id": "C327.E001",
+          "name": "Image"
+        },
+        {
+          "id": "C327.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E020",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E042",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E043",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E031",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E047",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E039",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E019",
+          "name": "Divider"
+        },
+        {
+          "id": "C327.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E041",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C327.E024",
+          "name": "Image"
+        },
+        {
+          "id": "C327.E037",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E032",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E044",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E040",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E033",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E045",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E009",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C327.E008",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C327.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C327.E017",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C327.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E002",
+          "name": "Divider"
+        },
+        {
+          "id": "C327.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E015",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C327.E048",
+          "name": "Image"
+        },
+        {
+          "id": "C327.E007",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E016",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E030",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E014",
+          "name": "Divider"
+        },
+        {
+          "id": "C327.E036",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C327.E005",
+          "name": "Image"
+        },
+        {
+          "id": "C327.E035",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E046",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E004",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E038",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E022",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C327.E013",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C327.E021",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C327.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C327.E025",
+          "name": "Image"
+        }
+      ]
+    },
+    {
+      "id": "C326",
+      "createdAt": 1757640467129,
+      "updatedAt": 1758160054015,
+      "deletedAt": 0,
+      "title": "나만의 챗봇 만들기, 생각보다 쉬워!!",
+      "description": "복잡한 코딩 없이 프롬프트 한 줄만으로 나만의 챗봇을 만들 수 있습니다. 누구나 쉽게 AI 챗봇을 만드는 방법을 알려드립니다.",
+      "readme": "![f0366a66-153b-49f7-8e05-f51d42f9b8fa](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbOV0n6MxZPN9o_t3lPsrZdxUlE5jmYQFftqradGsvEpJugSLJJLUktNjV5LMIWqJOJMlVz_6ZbH7iDeU0XFh-m8OFYCDRbQTBK62h65L94VKvb-InXlmcg_nibmwBPazhI8cBZmUGXyeizfAdj3jqRXLmsmj-hPEaGvZUEGO2zfF2AHMS3w7afTgtUdE/s320/eb338325-6fcd-47fa-9641-c8a24c52cf69.png)\n\n\n\n최근에 AI 챗봇이 컨텐츠화 되어 유튜브 영상도 올라오고, 많은 사람이 이제는 AI를 사용하는 시대가 온 것 같아요.\n\n저는 개발자가 아니라서 깊이 알지는 못하지만, AI 챗봇을 직접 만들어볼 기회가 생겨서 사용해보니 생각보다 훨씬 쉽고 재미있게 나만의 챗봇을 만들 수 있었습니다.\n\n\n\n---\n\n\n\n### 1. 시작은** ****‘프롬프트 작성’**\n\n![7b9d6193-c174-4eff-89ac-1d54ac9d7034](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTLGqWCHJAPWviy6xjHaulQvHkaJ0iMvP1oqHFvEWqp6WuDPZ39qN9ZoiUaVuqGwE77gyVJujBDa1rMNDIOlw7PX6Vnc1vLNirJ7lvKguQIXQOgO4q9_wcAsDcES1WpUHWoasUSAEJ8iGsHDFd6tQrZ40EV_K4CMkJ4LUN4JjMLt7EtjGYp8paTDWVZk8/w640-h220/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202025-08-18%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.48.25.png)\n\n나만의 챗봇을 만드는 첫 단계는 프롬프트 작성이었습니다.\n\n처음엔 “이걸 어떻게 써야 하지?” 싶었는데, 가이드에 나와 있는 예시를 보니 감이 오더라고요. \n\n저는 블로그를 대신 작성해주는 ‘블리아’ 라는 챗봇을 만들고 싶어서, 이렇게 간단히 입력했어요.\n\n\n\n# 역할\n\n당신은 최신 정보를 바탕으로 블로그 콘텐츠를 작성하는 전문 블로그 에이전트입니다. 사용자가 키워드를 주면, 2023년 이후의 신뢰 가능한 정보 기준으로 흥미로운 타이틀과 자연스러운 블로그 본문을 함께 생성해야 합니다.\n\n# 목표\n\n- 단어 하나만 주어지더라도 독자의 호기심을 자극할 수 있는 제목을 작성합니다.\n\n- 그 제목에 어울리는 블로그 글을 자연스럽게 이어서 작성합니다.\n\n- 블로그 글은 독자가 실제 읽는 블로그처럼 ‘대화체’, ‘경험 공유’, ‘정보 전달’이 조화를 이루어야 합니다.\n\n- 예시가 필요한 경우, 가급적 **표 형태**로 정리하여 가독성을 높입니다.\n\n\n\n딱 이렇게만 작성 해도 챗봇의 성격이 정해졌습니다. 마치 내가 직접 작가에게 지시하는 느낌이라 신기했어요.\n\n\n\n---\n\n\n\n### 2. 에이전트에 프롬프트를 연결해** ‘챗봇 캐릭터 만들기’**\n\n![7e114143-4fc4-417a-84be-16020f8ffe78](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeqZjZMY4APmJfLx9apFnEVpb5V8eXUnSfSdGITAiWVkwskNSziOQcDEo473-xGaHTSV3czb6pjgUEM4MDEZfCr_tLaSupiMmC3OQ9_DjMMdo8sPC6tqBiBL6FMrCPf50Mmos6qeApE5r_H-OQDo9llxWIF1Q68OzX-wohEgxXXS10ZI9ibMMM6FX-px8/w640-h312/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202025-08-18%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.51.05.png)\n\n프롬프트를 작성한 뒤에는 에이전트 목록에서 작성했던 프롬프트를 연결해주기만 하면 나만의 챗봇을 완성할 수 있었습니다.\n\n\n\n---\n\n\n\n### 3. 나만의 챗봇,** 실제 사용해보니**\n\n![f3dc0e35-5cad-487a-84c0-d7e835d25e14](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigYz3OLMN7E0iiSlXDToE4s8tE3b_kE4JCHomS9cBr70vtAQ_wdq18WPMt3WpqHuOH8TzPrtHlD1AyjLR14Dhh0Om8comqcCYwoFHg8hiupIxW7C-gWbjmCke14re564DLGUBqgpN1fFba-aAaX_F1_uCBDzS0U9lb9U3b8FaE4O1wbeWWDrlOiSutl0I/w640-h414/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202025-08-19%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%202.08.52.png)\n\n처음으로 챗봇에게 “여행 보험 관한 글”이라는 키워드를 입력했을 때, 챗봇이 바로 매력적인 글 초안을 뽑아주었어요.\n\n제가 평소 글을 쓸 때는 한참 고민해야 나오는 아이디어인데, 챗봇은 순식간에 여러 버전을 제안해 주더군요.\n\n특히 좋았던 점은, 제가 마음에 드는 방향을 알려주면 그에 맞춰 챗봇이 계속 개선해나갔다는 거예요. 마치 대화를 통해 함께 글을 만드는 느낌이라 글쓰기 부담이 확 줄었습니다.\n\n솔직히 “나만의 챗봇을 만든다”는 건 어려운 기술자의 영역이라고만 생각했는데, 이번 경험을 통해 AI 챗봇에 대한 재미와 도움을 모두 얻을 수 있었습니다.\n\n1) 개발 지식이 없어도 가능하다\n\n2) 챗봇이 점점 나와 닮아간다 (프롬프트를 수정할수록 맞춤화됨)\n\n3) 업무/취미 어디든 쓸 수 있다 (글쓰기, 고객 응대, 학습 도우미 등)\n\n이 세 가지가 제가 느낀 가장 큰 장점이에요.\n\n![4667b666-54ce-467a-867f-b2a3e1c0c7b3](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh86eArvmo_aIP5e5H51Xq8WdbYtBxuCcdpwRPpwAh-cXN4q5dAvW14DCE-caSgHiohxrtm9Pun09fd4N2s3zFWnkbjd8XAPAwlrYh3ZOWmvt3sakjSn8uBUgpw-NvVJ2lYZGqVR3Fx3ZVtOa_497CGwXKiDi34f-mAqIElTTo9OW8ruJwyMvEIIk1PJlw/w200-h48/%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%2023935.png)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 326,
+      "noOfElement": 60,
+      "category": "Blog",
+      "subCategory": "User Guide",
+      "tags": [
+        "chatbot",
+        "ai",
+        "prompt",
+        "diy",
+        "no-code",
+        "eureka codes",
+        "챗봇",
+        "프롬프트",
+        "유레카 코즈",
+        "ko"
+      ],
+      "elementIds": [
+        "C326.E005",
+        "C326.E002",
+        "C326.E001",
+        "C326.E027",
+        "C326.E042",
+        "C326.E060",
+        "C326.E030",
+        "C326.E018",
+        "C326.E014",
+        "C326.E019",
+        "C326.E041",
+        "C326.E012",
+        "C326.E021",
+        "C326.E053",
+        "C326.E037",
+        "C326.E051",
+        "C326.E047",
+        "C326.E004",
+        "C326.E015",
+        "C326.E031",
+        "C326.E044",
+        "C326.E052",
+        "C326.E046",
+        "C326.E017",
+        "C326.E029",
+        "C326.E006",
+        "C326.E040",
+        "C326.E033",
+        "C326.E034",
+        "C326.E010",
+        "C326.E035",
+        "C326.E025",
+        "C326.E007",
+        "C326.E011",
+        "C326.E045",
+        "C326.E057",
+        "C326.E050",
+        "C326.E036",
+        "C326.E016",
+        "C326.E026",
+        "C326.E059",
+        "C326.E043",
+        "C326.E008",
+        "C326.E009",
+        "C326.E058",
+        "C326.E056",
+        "C326.E003",
+        "C326.E054",
+        "C326.E055",
+        "C326.E024",
+        "C326.E013",
+        "C326.E022",
+        "C326.E049",
+        "C326.E038",
+        "C326.E039",
+        "C326.E023",
+        "C326.E048",
+        "C326.E028",
+        "C326.E032",
+        "C326.E020"
+      ],
+      "element$$": [
+        {
+          "id": "C326.E005",
+          "name": "Image"
+        },
+        {
+          "id": "C326.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E001",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E042",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E060",
+          "name": "Divider"
+        },
+        {
+          "id": "C326.E030",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E018",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C326.E014",
+          "name": "Image"
+        },
+        {
+          "id": "C326.E019",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E041",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E053",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E037",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E051",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E047",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E004",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E031",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E044",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E052",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E046",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E017",
+          "name": "Divider"
+        },
+        {
+          "id": "C326.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E006",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C326.E040",
+          "name": "Image"
+        },
+        {
+          "id": "C326.E033",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E010",
+          "name": "Divider"
+        },
+        {
+          "id": "C326.E035",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E025",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C326.E007",
+          "name": "Image"
+        },
+        {
+          "id": "C326.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E045",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E057",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E050",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E036",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E016",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E059",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E043",
+          "name": "Image"
+        },
+        {
+          "id": "C326.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E058",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E056",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E054",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E055",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E013",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E022",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E049",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E038",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E039",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E048",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E032",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C326.E020",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C322",
+      "createdAt": 1757560589991,
+      "updatedAt": 1757570004821,
+      "deletedAt": 0,
+      "title": "[backend] eureka-chats-api",
+      "description": null,
+      "readme": "# eureka-chats-api\n\nServerless real-time chat microservice with WebSocket integration.\n\n\n\n## Summary\n\n- serverless backend API service for real-time chat applications.\n- This project is a sample chat boilerplate based on AWS Lambda and Node.js.\n- Key features include WebSocket-based real-time messaging through integration with the `eureka-sockets-api` microservice, chat room management, and user session handling.\n- **Note**: To use this project, you must first deploy the `eureka-sockets-api` microservice to the cloud.\n\n\n## Getting Started\n\n- Pre requirements (or installations) before starting.\n- 1. [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) with api-key\n- 2. [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)\n- 3. [nodejs22](https://nodejs.org/en/blog/release/v22.15.1)\n- 4. (optional) [httpie](https://httpie.io/docs/cli/installation)\n- 5. (optional) [wscat](https://www.npmjs.com/package/wscat)\n- - Fork(or clone), develop and deploy the serverless api.\n```javascript\n# clone the code.\n$ git clone https://github.com/lemoncloud-io/eureka-sockets-api.git\n\n# STEP.1 install the dependecies.\n$ npm ci\n\n# STEP.2 run the server locally.\n$ npm run express\n\n# STEP.3 make request and develop locally.\n$ http :8832/hello\n\n# STEP.4 deploy into your AWS cloud (`AWS-Key` is required).\n$ npm run deploy\n\n# (example) try to connect to a WebSocket\n$ wscat -c wss://a5jxmksfa2.execute-api.ap-northeast-2.amazonaws.com/dev\n\n# STEP.5 check the deploy info\n$ npm run info\n\n# STEP.6 remove(or uninstall)\n$ npm run remove\n```\n\n\n## Architecture and Modeling\n\n### Infrastructure Components\n\n![file](https://image.lemoncloud.io/820f91f7-411c-4973-9e93-92a36683979d)\n\n\n\n### Data Modeling\n\n![file](https://image.lemoncloud.io/074d7c29-0ef2-41e7-b655-e20f1849a781)\n\n\n\n### Chat Flow Architecture\n\n```javascript\n```mermaid\nsequenceDiagram\n    participant C as Client\n    participant AG as API Gateway\n    participant CL as eureka-chat-api\n    participant SL as eureka-sockets-api\n    participant WS as WebSocket Gateway\n    participant CDB as DynamoDB (Chats)\n    participant SDB as DynamoDB (Sockets)\n    \n    Note over C,SDB: 1. Access to the chat room (Web)\n    \n    Note over C,SDB: 2. Enter the chat room\n    C->>+AG: POST /chats/0/start-chat\n    AG->>+CL: HTTP Request\n    CL->>+CDB: Create NodeModel\n    CL->>CDB: Connect to Channel (#)\n    CDB-->>-CL: NodeView.channelId\n    CL-->>-AG: Return NodeView\n    AG-->>-C: NodeView.channelId\n    \n    C->>+WS: WebSocket Connect w/ channelId\n    WS->>+SL: Connection Request\n    SL->>SDB: Store Connection Info\n    SL-->>-WS: Connection Established\n    WS-->>-C: Connected\n    \n    C->>+WS: action=info\n    WS->>+SL: Get Connection Info\n    SL->>SDB: Query Connection\n    SL-->>-WS: Connection Details\n    WS-->>-C: Connection Info\n    \n    C->>+AG: Update Node w/ Connection ID\n    AG->>+CL: PUT Request\n    CL->>+CDB: Update NodeModel\n    CDB-->>-CL: Updated\n    CL-->>-AG: Success\n    AG-->>-C: Updated\n    \n    Note over C,SDB: 3. Send and receive messages\n    C->>+AG: POST /chats/0/chat\n    AG->>+CL: Send Message\n    CL->>+CDB: Store Message\n    CDB-->>-CL: Stored\n    CL->>+SL: Broadcast Request (HTTP)\n    SL->>SDB: Get Channel Connections\n    SL->>WS: Broadcast to Connections\n    SL-->>-CL: Broadcast Complete\n    CL-->>-AG: Message Sent\n    AG-->>-C: Success\n    \n    WS-->>C: Real-time Message\n```\n```\n\n\n## Module Structure\n\n```javascript\nsrc/\n├── cores/                  # Common architecture\n│   ├── abstract-controllers.ts  # CRUD controller base\n│   ├── abstract-services.ts     # Service layer base\n│   └── types.ts                 # Common types\n├── modules/                # Business modules\n│   ├── chats/             # Chat service (core module)\n│   │   ├── api-chats.ts   # Chat API controller\n│   │   ├── api-rooms.ts   # Chat room API controller\n│   │   ├── model.ts       # Chat data model\n│   │   ├── service.ts     # Chat business logic\n│   │   ├── proxy.ts       # Chat data access\n│   │   ├── transformer.ts # Data transformation\n│   │   ├── types.ts       # Chat type definitions\n│   │   └── views.ts       # Chat view models\n│   ├── callback/          # External callback handling\n│   │   ├── api-callback.ts\n│   │   ├── model.ts\n│   │   ├── service.ts\n│   │   └── ...\n│   ├── mock/              # Test mock data\n│   │   ├── api-mocks.ts\n│   │   ├── api-tests.ts\n│   │   └── ...\n│   └── search/            # Search functionality\n│       ├── api-search.ts\n│       ├── model.ts\n│       └── service.ts\n├── service/               # Core services\n│   ├── backend-service.ts # Main service\n│   ├── backend-proxy.ts   # Data access layer\n│   └── backend-model.ts   # Data models\n└── api/                   # API endpoints\n    ├── hello-api.ts       # Health check\n    └── crons-api.ts       # Scheduled tasks\n```\n\n\n---\n\n\n\n## Key Features\n\n### Chat Service Support\n\n- Chat Room Management (Rooms)\n```javascript\n- `GET /rooms` - List chat rooms\n- `GET /rooms/{id}` - Get room details\n- `POST /rooms/0` - Create new chat room\n- `PUT /rooms/{id}` - Update room information\n- `DELETE /rooms/{id}` - Delete chat room\n```\n- Chat Messages (Chats)\n```javascript\n- `GET /chats` - List messages (with pagination)\n- `GET /chats/{id}` - Get message details\n- `POST /chats/0/start-chat` - Join chat room\n- `POST /chats/0/chat` - Send message\n- `POST /chats/{nodeId}/leave-chat` - Leave chat room\n```\n\n\n### Usage Examples\n\n### \n\n```javascript\n# Create chat room\nPOST /rooms/0 \n{\n  \"name\": \"ChatRoom 1\",\n  \"isPrivate\": false\n}\n\n# Join chat room\nPOST /chats/0/start-chat\n{\n  \"roomId\": \"room123\",\n  \"name\": \"guest\",\n  \"connectionId\": \"QXaagd6MIE0CFtw=\"\n}\n\n# Send new message\nPOST /chats/0/chat\n{\n  \"roomId\": \"room123\",\n  \"nodeId\": \"node123\",\n  \"message\": \"hello world\"\n}\n\n# Leave chat room\nPOST /chats/<node-id>/leave-chat\n```\n\n\n## Related Repositories\n\n- **[eureka-sockets-api](https://github.com/lemoncloud-io/eureka-sockets-api)** - WebSocket real-time messaging service (required)\n- **[lemon-core](https://github.com/lemoncloud-io/lemon-core)** - Common utility library\n- **[eureka-hello-api](https://github.com/lemoncloud-io/eureka-hello-api)** - Serverless API boilerplate\n- **[lemon-model](https://github.com/lemoncloud-io/lemon-model)** - DynamoDB modeling framework\n\n\n## LICENSE\n\n[MIT](http://opensource.org/licenses/MIT)\n\n\n\n## VERSION INFO\n\nVersion History\n\n| Version   | Description\n\n|--         |--\n\n| 0.25.818  | implements chat-service.\n\n| 0.25.808  | optimized `lemon-core@4.0.6` initially.",
+      "parentId": "C318",
+      "parent$": {
+        "id": "C318"
+      },
+      "no": 322,
+      "noOfElement": 66,
+      "category": "Technology",
+      "subCategory": "Backend",
+      "tags": ["en"],
+      "elementIds": [
+        "C322.E001",
+        "C322.E006",
+        "C322.E004",
+        "C322.E005",
+        "C322.E002",
+        "C322.E011",
+        "C322.E008",
+        "C322.E009",
+        "C322.E012",
+        "C322.E016",
+        "C322.E032",
+        "C322.E025",
+        "C322.E023",
+        "C322.E017",
+        "C322.E021",
+        "C322.E018",
+        "C322.E028",
+        "C322.E014",
+        "C322.E026",
+        "C322.E013",
+        "C322.E024",
+        "C322.E020",
+        "C322.E031",
+        "C322.E029",
+        "C322.E019",
+        "C322.E027",
+        "C322.E030",
+        "C322.E015",
+        "C322.E034",
+        "C322.E033",
+        "C322.E036",
+        "C322.E045",
+        "C322.E037",
+        "C322.E040",
+        "C322.E043",
+        "C322.E046",
+        "C322.E042",
+        "C322.E044",
+        "C322.E038",
+        "C322.E041",
+        "C322.E039",
+        "C322.E035",
+        "C322.E059",
+        "C322.E063",
+        "C322.E050",
+        "C322.E065",
+        "C322.E052",
+        "C322.E047",
+        "C322.E051",
+        "C322.E057",
+        "C322.E062",
+        "C322.E053",
+        "C322.E055",
+        "C322.E054",
+        "C322.E049",
+        "C322.E048",
+        "C322.E061",
+        "C322.E064",
+        "C322.E060",
+        "C322.E058",
+        "C322.E066",
+        "C322.E056"
+      ],
+      "element$$": [
+        {
+          "id": "C322.E001",
+          "name": "HeadingOne"
+        },
+        {
+          "id": "C322.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E004",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E005",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E011",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E008",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E009",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E016",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E032",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E023",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E017",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E021",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E018",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E028",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E014",
+          "name": "Code"
+        },
+        {
+          "id": "C322.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E013",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E024",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C322.E020",
+          "name": "Image"
+        },
+        {
+          "id": "C322.E031",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E029",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C322.E019",
+          "name": "Image"
+        },
+        {
+          "id": "C322.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E030",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C322.E015",
+          "name": "Code"
+        },
+        {
+          "id": "C322.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E033",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E036",
+          "name": "Code"
+        },
+        {
+          "id": "C322.E045",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E037",
+          "name": "Divider"
+        },
+        {
+          "id": "C322.E040",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E043",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E046",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C322.E042",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C322.E044",
+          "name": "Code"
+        },
+        {
+          "id": "C322.E038",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C322.E041",
+          "name": "Code"
+        },
+        {
+          "id": "C322.E039",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E035",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C322.E059",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C322.E063",
+          "name": "Code"
+        },
+        {
+          "id": "C322.E050",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E065",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E052",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E047",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E051",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E057",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C322.E062",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E053",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E055",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E054",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E049",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C322.E048",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E061",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E064",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E060",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E058",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E066",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C322.E056",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C321",
+      "createdAt": 1757560572247,
+      "updatedAt": 1757570116479,
+      "deletedAt": 0,
+      "title": "[backend] eureka-sockets-api",
+      "description": null,
+      "readme": "# eureka-sockets-api\n\nServerless event-driven socket service providing real-time WebSocket communication in MSA environments\n\n\n\n## Summary\n\n- Bidirectional real-time messaging and event delivery to clients via `AWS API Gateway WebSocket`\n- Event-driven architecture with loose coupling between microservices using `SNS` and `SQS`\n- Serverless architecture based on `AWS Lambda` functions providing auto-scaling and cost optimization\n- Efficient message routing and subscriber management through service/model-based channel system\n\n\n## Getting Started\n\n- Pre requirements (or installations) before starting.\n- 1. [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) with api-key\n- 2. [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)\n- 3. [nodejs22](https://nodejs.org/en/blog/release/v22.15.1)\n- 4. (optional) [httpie](https://httpie.io/docs/cli/installation)\n- 5. (optional) [wscat](https://www.npmjs.com/package/wscat)\n- - Fork(or clone), develop and deploy the serverless api.\n```javascript\n# clone the code.\n$ git clone https://github.com/lemoncloud-io/eureka-sockets-api.git\n\n# STEP.1 install the dependecies.\n$ npm ci\n\n# STEP.2 run the server locally.\n$ npm run express\n\n# STEP.3 make request and develop locally.\n$ http :8832/hello\n\n# STEP.4 deploy into your AWS cloud (`AWS-Key` is required).\n$ npm run deploy\n\n# (example) try to connect to a WebSocket\n$ wscat -c wss://a5jxmksfa2.execute-api.ap-northeast-2.amazonaws.com/dev\n\n# STEP.5 check the deploy info\n$ npm run info\n\n# STEP.6 remove(or uninstall)\n$ npm run remove\n```\n\n\n## Overall Architecture\n\n### Data Modeling\n\n![file](https://image.lemoncloud.io/e4a1188f-bc36-4574-bd8d-53a1ca097a0c)\n\n\n\n## Module Structure\n\n```javascript\nsrc/\n├── cores/                  # Common architecture\n│   ├── abstract-controllers.ts  # CRUD controller base\n│   ├── abstract-services.ts     # Service layer base\n│   └── types.ts                 # Common types\n├── libs/                  # Common architecture\n│   └── wss/               # WebSocket support library (core module)\n│       ├── tools.ts       # WebSocket support tools\n│       ├── wss-agent.ts   # Websocket business logic\n│       └── wss-types.ts   # Websocket types definitions\n├── modules/                # Business modules\n│   ├── sockets/             # Socket service (core module)\n│   │   ├── api-sockets.ts   # Socket API controller\n│   │   ├── api-channels.ts   # Socket Chnnel API controller\n│   │   ├── model.ts       # Socket data model\n│   │   ├── service.ts     # Socket business logic\n│   │   ├── proxy.ts       # Socket data access\n│   │   ├── transformer.ts # Data transformation\n│   │   ├── types.ts       # Socket type definitions\n│   │   └── views.ts       # Socket view models\n│   ├── callback/          # External callback handling\n│   │   ├── api-callback.ts\n│   │   ├── model.ts\n│   │   ├── service.ts\n│   │   └── ...\n│   ├── mock/              # Test mock data\n│   │   ├── api-mocks.ts\n│   │   ├── api-tests.ts\n│   │   └── ...\n│   └── search/            # Search functionality\n│       ├── api-search.ts\n│       ├── model.ts\n│       └── service.ts\n├── service/               # Core services\n│   ├── backend-service.ts # Main service\n│   ├── backend-proxy.ts   # Data access layer\n│   └── backend-model.ts   # Data models\n└── api/                   # API endpoints\n├── hello-api.ts       # Health check\n└── crons-api.ts       # Scheduled tasks\n```\n\n\n## Key Features\n\n### WebSocket Service Support\n\n- Connection Management\n  - WebSocket connection lifecycle management (`$connect`, `$disconnect`, `$default`)\n  - DynamoDB-based connection state and metadata storage\n  - Secure connection support through IAM or custom authentication\n- Channel System\n  - Channel-based subscription event reception management\n  - Per-client channel subscription/unsubscription management\n  - Channel-specific subscriber list management and message routing\n- Broadcast\n  - MSA event reception and real-time propagation via `SQS` and `SNS`\n  - Selective message broadcasting to channel subscribers\n  - Message filtering and transformation support\n\n\n### Usage Examples\n\n```javascript\n# 0. Create Channel (Optional)\n$ echo '{\"service\": \"orders-api\", \"modelType\": \"order\", \"desc\": \"Order events channel\"}' | \\\nhttp POST :8832/channels/0\n\n# 1. WebSocket Connection\n$ wscat -c wss://<your-wss-endpoint>\n$ wscat -c wss://<your-wss-endpoint>?channels=<channel-id> # w/ subscribe channel\n\n# 2. Ping/Pong Action\n> {\"action\": \"ping\", \"data\": \"hello\"}\n< {\"action\": \"pong\", \"data\": \"hello\"}\n\n# 3. Broadcast (HTTP API)\n# Broadcast message to specific channel\n$ echo '{\"data\": {\"message\": \"hello\"}}' | http POST :8832/sockets/1000001/broadcast\n\n# Message received by subscribers\n< {\"channel\": \"1000001\", \"event\": \"message\", \"data\": {\"message\": \"hello\"}}\n\n# 4. Disconnect\n# WebSocket connection termination (server automatically executes $disconnect handler)\n> (Ctrl+C or close browser)\n```\n\n\n---\n\n\n\n## LICENSE\n\n[MIT](http://opensource.org/licenses/MIT)\n\n\n\n---\n\n\n\n## VERSION INFO\n\nVersion History\n\n| Version   | Description\n\n|--         |--\n\n| 0.25.818  | implements websocket-service.\n\n| 0.25.808  | optimized `lemon-core@4.0.6` initially.",
+      "parentId": "C318",
+      "parent$": {
+        "id": "C318"
+      },
+      "no": 321,
+      "noOfElement": 92,
+      "category": "Technology",
+      "subCategory": "Backend",
+      "tags": ["en"],
+      "elementIds": [
+        "C321.E003",
+        "C321.E009",
+        "C321.E059",
+        "C321.E001",
+        "C321.E012",
+        "C321.E007",
+        "C321.E015",
+        "C321.E002",
+        "C321.E062",
+        "C321.E013",
+        "C321.E011",
+        "C321.E021",
+        "C321.E018",
+        "C321.E017",
+        "C321.E024",
+        "C321.E026",
+        "C321.E025",
+        "C321.E027",
+        "C321.E070",
+        "C321.E020",
+        "C321.E029",
+        "C321.E023",
+        "C321.E056",
+        "C321.E030",
+        "C321.E004",
+        "C321.E016",
+        "C321.E031",
+        "C321.E035",
+        "C321.E036",
+        "C321.E084",
+        "C321.E086",
+        "C321.E089",
+        "C321.E085",
+        "C321.E082",
+        "C321.E083",
+        "C321.E088",
+        "C321.E092",
+        "C321.E091",
+        "C321.E090",
+        "C321.E087",
+        "C321.E040",
+        "C321.E048",
+        "C321.E010",
+        "C321.E014",
+        "C321.E063",
+        "C321.E072",
+        "C321.E049",
+        "C321.E050",
+        "C321.E051",
+        "C321.E064",
+        "C321.E052",
+        "C321.E053",
+        "C321.E055",
+        "C321.E079",
+        "C321.E065",
+        "C321.E066",
+        "C321.E080",
+        "C321.E081",
+        "C321.E069",
+        "C321.E074",
+        "C321.E073",
+        "C321.E076",
+        "C321.E068",
+        "C321.E060",
+        "C321.E078",
+        "C321.E071",
+        "C321.E067",
+        "C321.E077",
+        "C321.E054"
+      ],
+      "element$$": [
+        {
+          "id": "C321.E003",
+          "name": "HeadingOne"
+        },
+        {
+          "id": "C321.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E059",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E001",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C321.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E007",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E015",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E002",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E062",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E013",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C321.E011",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E021",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E018",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E017",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E024",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E026",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C321.E027",
+          "name": "Code"
+        },
+        {
+          "id": "C321.E070",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E020",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C321.E029",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C321.E023",
+          "name": "Image"
+        },
+        {
+          "id": "C321.E056",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E030",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C321.E004",
+          "name": "Code"
+        },
+        {
+          "id": "C321.E016",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E031",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C321.E035",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C321.E036",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E084",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E086",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E089",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E085",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E082",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E083",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E088",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E092",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E091",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E090",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E087",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C321.E040",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E048",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C321.E010",
+          "name": "Code"
+        },
+        {
+          "id": "C321.E014",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E063",
+          "name": "Divider"
+        },
+        {
+          "id": "C321.E072",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E049",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C321.E050",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E051",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E064",
+          "name": "Divider"
+        },
+        {
+          "id": "C321.E052",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E053",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C321.E055",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E079",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E065",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E066",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E080",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E081",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E069",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E074",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E073",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E076",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E068",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E060",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E078",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E071",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E067",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E077",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C321.E054",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C319",
+      "createdAt": 1757560543046,
+      "updatedAt": 1758161079482,
+      "deletedAt": 0,
+      "title": "[front] eureka-chats-front",
+      "description": "Real-time Chat Application by Eureka Codes",
+      "readme": "# About Eureka Chats\n\n---\n\nEureka Chats is a real-time chat application template designed specifically for the [EurekaCodes](https://eureka.codes/) platform. It provides a complete chat solution that can be deployed instantly within your EurekaCodes workspace.\n\n\n\n\n\n## Quick Start on EurekaCodes Platform\n\n---\n\n- Subscribe to EurekaCodes\n- Create a new workspace in your dashboard\n- Select \"Eureka Chats\" from the templates\n- Deploy with one click - your chat service is ready!\n\n\n## What's Included\n\n---\n\nWhen you deploy Eureka Chats through the [EurekaCodes platform](https://eureka.codes/), you get:\n\n- ✅ Complete Chat System - Ready-to-use real-time messaging\n- ✅ Backend APIs - All chat APIs pre-configured and hosted\n- ✅ WebSocket Server - Managed WebSocket infrastructure\n- ✅ Auto-scaling - Handles traffic automatically\n\n\n\n\n## Features\n\n---\n\n**Real-Time Chat System**\n\n- Message System: Support for text messages, images, and file sharing\n- Real-Time Communication: WebSocket-based instant messaging\n- Room Management: Create and manage multiple chat rooms\n**Modern UI Components**\n\n- Responsive Design: Mobile-friendly chat interface\n- Accessibility: WCAG compliant UI components\n- Custom Themes: Flexible theming system\n**WebSocket Integration**\n\n- Live Updates: Real-time message delivery and status updates\n- Connection Management: Automatic reconnection and error handling\n- Typing Indicators: Real-time typing status display\n\n\n## Screenshots\n\n---\n\n![null](https://raw.githubusercontent.com/lemoncloud-io/eureka-chats-front/develop/images/join-chat.JPG)\n\n![null](https://raw.githubusercontent.com/lemoncloud-io/eureka-chats-front/develop/images/active-chat.JPG)\n\n\n\n## Tech Stack\n\n---\n\n- Frontend Framework: React with TypeScript\n- Project Structure: Nx Monorepo\n- State Management: TanStack Query\n- Styling: Tailwind CSS\n- UI Components: Radix UI\n- Real-time Communication: WebSocket\n- API Integration: Axios\n\n\n## Project Structure\n\n---\n\n```javascript\neureka-chats-front/\n├── apps/\n│   └── web/              # Chat service main entry point\n├── libs/\n│   ├── web-core/         # API authentication and initialization core library\n│   ├── chats/            # Chat related API library\n│   ├── ui-kit/           # Common UI kit library\n│   ├── shared/           # Common utility library\n│   ├── types/            # Common type library\n│   └── theme/            # Theme management library\n├── scripts/              # Development scripts\n├── nx.json               # nx configuration file\n└── package.json          # Workspace package manager configuration file\n```\n\n\n\n\n## EurekaCodes Platform Integration\n\n---\n\nThis template is designed to work seamlessly within the **EurekaCodes** ecosystem:\n\n- Automatic Deployment: One-click deployment from the EurekaCodes dashboard\n- Managed Infrastructure: No need to worry about servers, scaling, or maintenance\n- Integrated APIs: Chat APIs, WebSocket connections, and authentication are pre-configured\n- Analytics & Monitoring: Built-in monitoring through the EurekaCodes dashboard\n\n\n\n\n## License\n\n---\n\nEureka Chats is licensed under a proprietary license that restricts commercial usage to active EurekaCodes subscribers only. Public access to this repository is provided for evaluation purposes only.\n\nFor detailed license terms, please see the LICENSE file.",
+      "parentId": "C318",
+      "parent$": {
+        "id": "C318"
+      },
+      "no": 319,
+      "noOfElement": 71,
+      "category": "Technology",
+      "subCategory": "Frontend",
+      "tags": [
+        "en"
+      ],
+      "elementIds": [
+        "C319.E015",
+        "C319.E007",
+        "C319.E014",
+        "C319.E006",
+        "C319.E008",
+        "C319.E021",
+        "C319.E010",
+        "C319.E011",
+        "C319.E002",
+        "C319.E003",
+        "C319.E004",
+        "C319.E020",
+        "C319.E018",
+        "C319.E016",
+        "C319.E017",
+        "C319.E012",
+        "C319.E005",
+        "C319.E019",
+        "C319.E013",
+        "C319.E001",
+        "C319.E009",
+        "C319.E028",
+        "C319.E023",
+        "C319.E045",
+        "C319.E022",
+        "C319.E041",
+        "C319.E035",
+        "C319.E053",
+        "C319.E064",
+        "C319.E063",
+        "C319.E036",
+        "C319.E037",
+        "C319.E060",
+        "C319.E058",
+        "C319.E024",
+        "C319.E026",
+        "C319.E039",
+        "C319.E046",
+        "C319.E031",
+        "C319.E030",
+        "C319.E048",
+        "C319.E034",
+        "C319.E040",
+        "C319.E059",
+        "C319.E038",
+        "C319.E027",
+        "C319.E055",
+        "C319.E047",
+        "C319.E049",
+        "C319.E056",
+        "C319.E062",
+        "C319.E042",
+        "C319.E052",
+        "C319.E050",
+        "C319.E043",
+        "C319.E054",
+        "C319.E051",
+        "C319.E033",
+        "C319.E032",
+        "C319.E025",
+        "C319.E044",
+        "C319.E029",
+        "C319.E061",
+        "C319.E057",
+        "C319.E068",
+        "C319.E067",
+        "C319.E071",
+        "C319.E069",
+        "C319.E065",
+        "C319.E070",
+        "C319.E066"
+      ],
+      "element$$": [
+        {
+          "id": "C319.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E007",
+          "name": "HeadingOne"
+        },
+        {
+          "id": "C319.E014",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E010",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E011",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E002",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C319.E003",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C319.E004",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C319.E020",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C319.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E016",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E017",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E005",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E019",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E013",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E001",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E023",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E045",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E022",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E041",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E035",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E053",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E064",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E063",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E036",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E037",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E060",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E058",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E024",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E026",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E039",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E046",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E031",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E030",
+          "name": "Image"
+        },
+        {
+          "id": "C319.E048",
+          "name": "Image"
+        },
+        {
+          "id": "C319.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E040",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E059",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E038",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E027",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E055",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E047",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E049",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E056",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E062",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E042",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E052",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E050",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E043",
+          "name": "Code"
+        },
+        {
+          "id": "C319.E054",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E051",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E033",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E032",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E044",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E029",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E061",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E057",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C319.E068",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E067",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E071",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C319.E069",
+          "name": "Divider"
+        },
+        {
+          "id": "C319.E065",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E070",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C319.E066",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C318",
+      "createdAt": 1757560497360,
+      "updatedAt": 1757560535501,
+      "deletedAt": 0,
+      "title": "WebSocket",
+      "description": null,
+      "readme": null,
+      "no": 318,
+      "category": null,
+      "subCategory": null,
+      "tags": []
+    },
+    {
+      "id": "C317",
+      "createdAt": 1757379433198,
+      "updatedAt": 1758160066845,
+      "deletedAt": 0,
+      "title": "Don't Search, Just Choose! Level Up Your Life with",
+      "description": "Tired of endless searching? Discover the smarter way to find information by using specialized AI agents that deliver what you need, instantly.",
+      "readme": "![file](https://image.lemoncloud.io/5c8d401f-9053-4bbc-9200-7979fd0f3e92)\n\nTired of the same old routine? All that daily searching, sorting through complex data, \n\nand bouncing between countless tabs just to find what you need?\n\n\n\nWith themed agents, you can skip that inefficient, repetitive work and get the information you want with a simple click.\n\nHere is the translation of the text you provided.What Exactly Are Themed Agents?\n\n\n\n---\n\n\n\n## **What Exactly Are Themed Agents?**\n\n\n\n![file](https://image.lemoncloud.io/7a745e4c-e72d-4c46-9b6a-2fd76b8ec86b)\n\nAn agent is more than just a simple chatbot; it's a customized assistant with a specific purpose and role. \n\nFor example, you could have:\n\n\n\n- A\"Travel Planner\"agent to help you get ready for a trip.\n- A\"Business Support\"agent to assist with writing company reports.\n- A\"Spell Checker\"agent that fixes your grammar and spacing.\n\n\nThese pre-set, themed agents can replace the usual process of searching for keywords, organizing data, or asking others for help every time you need something.\n\n\n\n---\n\n\n\n## 🔍**Why \"Choose\" Instead of \"Search\"?**\n\n\n\nIn the past, to find the information you wanted, you had to go through a sequential process:\n\n\n\n- Type a keyword into the search bar.\n- Dig through multiple articles and documents.\n- Collect and organize the information you need.\n\n\nBut with a **themed agent**, you can:\n\n\n\n- Select the agent for the topic you need.\n- Start the conversation right away.\n- Get the answers and information you need instantly.\n\n\nIn other words, you can get the results you want with just one choice, without the hassle of jumping between tabs.\n\n\n\n---\n\n\n\n## **The Moment Your Daily Life Changes**\n\n\n\nA themed agent isn't just a tool that replaces searching. It completely transforms your workflow.\n\n- **Speed: **You can skip the search-analyze-organize steps and jump straight to the result.\n- **Convenience: **Repetitive questions can be solved with a single selection.\n- **Focus: **By spending less time on searching, you can invest more time in what's important.\n\n\nUltimately, choosing instead of searching isn't just about efficiency—it means a change in the **quality of your daily life**. \n\n\n\nBy simply picking the right agent for your needs, you can get customized help for a variety of situations and purposes. \n\nJust like picking an app from an app store, if we had an **agent catalog** that covers everything from work and daily life to learning, we'd no longer have to waste time endlessly searching.\n\n\n\nThe era where searching was a given is now shifting to an era where you just have to **\"choose.\"** Themed agents aren't just a convenient feature; they will become a new tool that changes the very paradigm of how we handle information.\n\n\n\nWhat kind of themed agent would you want to try first?\n\n\n\n\n\n\n\n![file](https://image.lemoncloud.io/6e9a05ef-bd65-44a2-b3cc-c622ab3b2e24)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 317,
+      "noOfElement": 140,
+      "category": "Blog",
+      "subCategory": "Ideas",
+      "tags": [
+        "ai agent",
+        "smart search",
+        "information retrieval",
+        "efficiency",
+        "productivity",
+        "eureka codes",
+        "ai 에이전트",
+        "정보검색",
+        "유레카 코즈",
+        "인공지능",
+        "en"
+      ],
+      "elementIds": [
+        "C317.E026",
+        "C317.E008",
+        "C317.E025",
+        "C317.E023",
+        "C317.E006",
+        "C317.E005",
+        "C317.E012",
+        "C317.E019",
+        "C317.E022",
+        "C317.E011",
+        "C317.E029",
+        "C317.E018",
+        "C317.E009",
+        "C317.E117",
+        "C317.E089",
+        "C317.E116",
+        "C317.E118",
+        "C317.E056",
+        "C317.E138",
+        "C317.E094",
+        "C317.E115",
+        "C317.E072",
+        "C317.E120",
+        "C317.E061",
+        "C317.E099",
+        "C317.E128",
+        "C317.E055",
+        "C317.E084",
+        "C317.E065",
+        "C317.E140",
+        "C317.E102",
+        "C317.E066",
+        "C317.E101",
+        "C317.E133",
+        "C317.E136",
+        "C317.E081",
+        "C317.E050",
+        "C317.E132",
+        "C317.E123",
+        "C317.E059",
+        "C317.E126",
+        "C317.E127",
+        "C317.E122",
+        "C317.E063",
+        "C317.E105",
+        "C317.E112",
+        "C317.E093",
+        "C317.E130",
+        "C317.E100",
+        "C317.E068",
+        "C317.E070",
+        "C317.E085",
+        "C317.E083",
+        "C317.E131",
+        "C317.E080",
+        "C317.E119",
+        "C317.E104",
+        "C317.E096",
+        "C317.E121",
+        "C317.E090",
+        "C317.E129",
+        "C317.E077",
+        "C317.E113",
+        "C317.E064",
+        "C317.E134",
+        "C317.E106",
+        "C317.E108",
+        "C317.E053",
+        "C317.E098",
+        "C317.E076",
+        "C317.E109",
+        "C317.E103",
+        "C317.E062",
+        "C317.E124",
+        "C317.E092",
+        "C317.E047",
+        "C317.E087",
+        "C317.E048",
+        "C317.E137",
+        "C317.E078",
+        "C317.E091",
+        "C317.E088",
+        "C317.E060",
+        "C317.E033",
+        "C317.E135",
+        "C317.E043",
+        "C317.E028",
+        "C317.E035",
+        "C317.E097",
+        "C317.E040",
+        "C317.E111",
+        "C317.E044",
+        "C317.E037",
+        "C317.E031",
+        "C317.E030",
+        "C317.E139",
+        "C317.E038",
+        "C317.E125",
+        "C317.E039",
+        "C317.E110",
+        "C317.E073",
+        "C317.E071",
+        "C317.E049",
+        "C317.E057",
+        "C317.E069",
+        "C317.E046",
+        "C317.E034",
+        "C317.E079",
+        "C317.E067",
+        "C317.E082",
+        "C317.E051",
+        "C317.E086",
+        "C317.E041",
+        "C317.E052",
+        "C317.E058",
+        "C317.E107",
+        "C317.E032",
+        "C317.E042",
+        "C317.E075",
+        "C317.E036",
+        "C317.E054",
+        "C317.E027",
+        "C317.E095",
+        "C317.E114",
+        "C317.E074",
+        "C317.E045",
+        "C317.E010",
+        "C317.E021",
+        "C317.E016",
+        "C317.E017",
+        "C317.E004",
+        "C317.E020",
+        "C317.E003",
+        "C317.E007",
+        "C317.E013",
+        "C317.E024",
+        "C317.E015"
+      ],
+      "element$$": [
+        {
+          "id": "C317.E026",
+          "name": "Image"
+        },
+        {
+          "id": "C317.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E019",
+          "name": "Divider"
+        },
+        {
+          "id": "C317.E022",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E011",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C317.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E018",
+          "name": "Image"
+        },
+        {
+          "id": "C317.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E117",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E089",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E116",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C317.E118",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C317.E056",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C317.E138",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E094",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E115",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E072",
+          "name": "Divider"
+        },
+        {
+          "id": "C317.E120",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E061",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C317.E099",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E128",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E055",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E084",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C317.E065",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C317.E140",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C317.E102",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E066",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E101",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E133",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C317.E136",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C317.E081",
+          "name": "NumberedList"
+        },
+        {
+          "id": "C317.E050",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E132",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E123",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E059",
+          "name": "Divider"
+        },
+        {
+          "id": "C317.E126",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E127",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C317.E122",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E063",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E105",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C317.E112",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C317.E093",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C317.E130",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E100",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E068",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E070",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E085",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E083",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E131",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E080",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E119",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E104",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E096",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E121",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E090",
+          "name": "Image"
+        },
+        {
+          "id": "C317.E129",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E077",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E113",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E064",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E134",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E106",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E108",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E053",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E098",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E076",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E109",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E103",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E062",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E124",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E092",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E047",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E087",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E048",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E137",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E078",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E091",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E088",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E060",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E033",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E135",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E043",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E035",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E097",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E040",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E111",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E044",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E037",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E031",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E030",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E139",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E038",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E125",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E039",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E110",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E073",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E071",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E049",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E057",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E069",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E046",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E079",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E067",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E082",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E051",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E086",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E041",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E052",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E058",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E107",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E032",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E042",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E075",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E036",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E054",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E095",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E114",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E074",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E045",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E016",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E017",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E004",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E020",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E007",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E013",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C317.E015",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C316",
+      "createdAt": 1757379148221,
+      "updatedAt": 1758160078891,
+      "deletedAt": 0,
+      "title": "검색 대신 선택! 테마별 에이전트로 삶의 질을 올리자",
+      "description": "정보의 바다에서 길을 잃지 않는 방법은? 키워드 검색 대신 테마별 AI 에이전트로 빠르고 정확하게 원하는 정보를 얻는 비법을 공개합니다.",
+      "readme": "![file](https://image.lemoncloud.io/5c8d401f-9053-4bbc-9200-7979fd0f3e92)\n\n\n\n매일 반복되는 검색, 복잡한 자료 정리, 그리고 원하는 정보를 찾기 위해 드나드는 수많은 탭들..\n\n혹시 이런 과정이 지겹게 느껴진 적 없으신가요?\n\n테마별 에이전트는 이런 비효율적이고 반복적인 작업을 거치지 않고, 선택만으로 원하는 정보를 바로 얻는 방식이 가능해졌습니다.\n\n\n\n---\n\n\n\n##  테마별 에이전트란 무엇일까?\n\n![file](https://image.lemoncloud.io/e6030aac-8087-45ea-9ec4-a516fecba840)\n\n\n\n예를 들어,\n\n- 여행 준비를 위한 \"여행 플래너\" 에이전트\n\n- 회사 보고서 작성을 도와주는 \"비즈니스 지원\" 에이전트\n\n- 맞춤법과 띄어쓰기를 교정해주는 \"맞춤법 검사기\" 에이전트\n\n이렇게 **테마에 맞게 사전 설정된 에이전트**는 매번 키워드를 검색하고, 자료를 정리하고, 다른 사람에게 물어보는 과정을 대신해줍니다.\n\n\n\n---\n\n\n\n## 🔍 검색 대신 선택, 뭐가 다를까?\n\n기존에는 내가 원하는 정보를 얻으려면 아래의 과정을 순차적으로 거쳐야 했습니다.\n\n1. 검색창에 키워드를 입력\n\n2. 여러 글과 문서를 뒤져보고\n\n3. 필요한 내용을 취합 후 정리\n\n\n\n하지만 테마별 에이전트를 사용하면\n\n1. 필요한 주제의 에이전트를 선택\n\n2. 바로 대화를 시작\n\n3. 나에게 맞는 답변과 자료를 즉시 제공\n\n\n\n즉, **탭을 넘나드는 불편함 없이 한 번의 선택만으로 원하는 결과**를 얻을 수 있습니다.\n\n\n\n---\n\n\n\n## 일상의 품질이 바뀌는 순간\n\n테마별 에이전트는 단순히 ‘검색을 대신하는 도구’가 아닙니다. 업무 흐름을 완전히 새롭게 바꾸어 주는데요:\n\n- : 검색-분석-정리 단계를 건너뛰고, 바로 결과 도출\n- : 반복적인 질문도 한 번의 선택으로 해결\n- : 검색에 쏟는 시간을 줄이고, 중요한 일에 더 많은 시간을 투자\n\n\n결국, **검색 대신 선택하는 방식**은 단순한 효율이 아니라 **일상의 품질 자체의 변화**를 의미합니다.\n\n내가 필요한 분야에 맞는 에이전트를 고르는 것만으로 다양한 상황과 목적에 딱 맞는 맞춤형 도움을 받을 수 있죠. 마치 앱스토어에서 필요한 앱을 고르듯, 업무, 일상, 학습 등 모든 주제를 커버하는 **에이전트 카탈로그**가 준비되어 있다면, 더 이상 우리가 검색창에 헤매는 일상은 사라집니다.\n\n검색이 당연했던 시대에서, **“선택만 하면 되는”** 시대로 전환되고 있습니다.\n\n\n\n테마별 에이전트는 단순한 편의 기능이 아니라, **우리가 정보를 다루는 패러다임 자체를 바꾸는 새로운 도구**가 될 것입니다.\n\n\n\n여러분은 어떤 테마의 에이전트를 가장 먼저 써보고 싶으신가요?\n\n\n\n\n\n![file](https://image.lemoncloud.io/84982060-77e7-4903-aee7-1f9ffe352166)",
+      "parentId": "C313",
+      "parent$": {
+        "id": "C313"
+      },
+      "no": 316,
+      "noOfElement": 53,
+      "category": "Blog",
+      "subCategory": "Ideas",
+      "tags": [
+        "ai agent",
+        "smart search",
+        "information retrieval",
+        "efficiency",
+        "productivity",
+        "eureka codes",
+        "ai 에이전트",
+        "효율성",
+        "생산성",
+        "유레카코즈",
+        "ko"
+      ],
+      "elementIds": [
+        "C316.E001",
+        "C316.E045",
+        "C316.E034",
+        "C316.E003",
+        "C316.E010",
+        "C316.E002",
+        "C316.E053",
+        "C316.E023",
+        "C316.E008",
+        "C316.E013",
+        "C316.E036",
+        "C316.E009",
+        "C316.E026",
+        "C316.E050",
+        "C316.E004",
+        "C316.E052",
+        "C316.E051",
+        "C316.E033",
+        "C316.E016",
+        "C316.E039",
+        "C316.E048",
+        "C316.E038",
+        "C316.E005",
+        "C316.E007",
+        "C316.E029",
+        "C316.E006",
+        "C316.E035",
+        "C316.E012",
+        "C316.E041",
+        "C316.E017",
+        "C316.E020",
+        "C316.E037",
+        "C316.E027",
+        "C316.E025",
+        "C316.E014",
+        "C316.E022",
+        "C316.E021",
+        "C316.E042",
+        "C316.E046",
+        "C316.E030",
+        "C316.E028",
+        "C316.E015",
+        "C316.E011",
+        "C316.E040",
+        "C316.E047",
+        "C316.E018",
+        "C316.E031",
+        "C316.E044",
+        "C316.E032",
+        "C316.E049",
+        "C316.E043",
+        "C316.E024",
+        "C316.E019"
+      ],
+      "element$$": [
+        {
+          "id": "C316.E001",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E045",
+          "name": "Image"
+        },
+        {
+          "id": "C316.E034",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E003",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E053",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E023",
+          "name": "Divider"
+        },
+        {
+          "id": "C316.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E013",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C316.E036",
+          "name": "Image"
+        },
+        {
+          "id": "C316.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E050",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E004",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E052",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E051",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E033",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E016",
+          "name": "Divider"
+        },
+        {
+          "id": "C316.E039",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E048",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C316.E038",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E007",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E035",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E012",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E041",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E017",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E020",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E037",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E025",
+          "name": "Divider"
+        },
+        {
+          "id": "C316.E014",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E022",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C316.E021",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E042",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C316.E046",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C316.E030",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C316.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E040",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E047",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E031",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E044",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E032",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E049",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E043",
+          "name": "Image"
+        },
+        {
+          "id": "C316.E024",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C316.E019",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C313",
+      "createdAt": 1757379027414,
+      "updatedAt": 1758159969871,
+      "deletedAt": 0,
+      "title": "블로그",
+      "description": "AI와 최신 기술 트렌드에 대한 모든 궁금증을 한곳에서 해결하세요. 유레카 코즈 블로그가 제공하는 모든 콘텐츠를 한눈에 살펴볼 수 있는 길잡이입니다.\nYour ultimate guide to the Eureka Coz blog. Discover all the content on AI and the latest tech trends in one convenient place.",
+      "readme": "### 유레카 코즈 블로그 길잡이: AI와 함께 성장하는 모든 비즈니스를 위한 안내서\n\n\n\n**1.  유레카 코즈 블로그에 오신 것을 환영합니다!**\n\n바쁜 일상 속에서 최신 AI 트렌드를 따라가고, 비즈니스에 적용할 새로운 아이디어를 찾는 것은 쉬운 일이 아닙니다. \n\n유레카 코즈 블로그는 여러분의 이런 고민을 해결하고, AI와 함께 성장하는 방법을 제시하기 위해 만들어졌습니다.\n\n이곳에서는 기술에 대한 깊이 있는 분석부터 실생활에 바로 적용할 수 있는 쉬운 팁까지, 모든 콘텐츠를 한눈에 만나볼 수 있습니다.\n\n### \n\n---\n\n### \n\n**2.  주제별 콘텐츠 찾아보기**\n\n아래 카테고리를 통해 관심 있는 주제의 글을 빠르게 탐색해 보세요. 앞으로 계속 업데이트될 새로운 글들도 이곳에 추가될 예정입니다.\n\n\n\n**AI 챗봇 만들기 & 프롬프트 활용**\n\n- 나만의 챗봇 만들기, 생각보다 쉬워!!\n(영문: Building My Own Chatbot? It Was Surprisingly Easy!)\n- Skip the Search: One Prompt to Your Own AI Chatbot\n\n\n**AI 에이전트 & 스마트한 정보 탐색**\n\n- 검색 대신 '에이전트'를 선택해야 하는 이유: 정보 홍수 시대의 현명한 정보 탐색법\n- 검색 대신 선택! 테마별 에이전트로 삶의 질을 올리자\n(영문: Don't Search, Just Choose! Level Up Your Life with...)\n\n\n**AI:tionship (인간과 AI의 새로운 관계)**\n\n- \"너에게 말할게\": 인간과 AI의 새로운 관계, 'AI:tionship'이 궁금하다면?\n(영문: “Let me tell you”: Curious about the new bond between...)\n\n\n**기술 & 개발**\n\n- HTTP만으론 부족하다, WebSocket이 필요한 순간\n(영문: When HTTP Isn’t Enough: Why We Need WebSocket\n\n\n---\n\n\n\n**3.  주제별 콘텐츠 찾아보기**\n\n유레카 코즈는 단순히 기술을 제공하는 것을 넘어, AI가 만드는 새로운 가치를 여러분과 함께 탐험하려 합니다. \n\n새로운 글이 업데이트될 때마다 이 페이지를 통해 알려드릴 테니, 자주 방문하셔서 필요한 영감을 얻어가시길 바랍니다.",
+      "no": 313,
+      "noOfElement": 31,
+      "category": "Blog",
+      "subCategory": "Notes",
+      "tags": [
+        "블로그",
+        "가이드",
+        "ai",
+        "tech trends",
+        "content",
+        "eureka codes",
+        "guide",
+        "기술 트렌드",
+        "유레카코즈",
+        "콘텐츠"
+      ],
+      "elementIds": [
+        "C313.E024",
+        "C313.E015",
+        "C313.E009",
+        "C313.E005",
+        "C313.E029",
+        "C313.E017",
+        "C313.E008",
+        "C313.E011",
+        "C313.E003",
+        "C313.E020",
+        "C313.E002",
+        "C313.E006",
+        "C313.E018",
+        "C313.E022",
+        "C313.E012",
+        "C313.E013",
+        "C313.E014",
+        "C313.E021",
+        "C313.E016",
+        "C313.E001",
+        "C313.E004",
+        "C313.E025",
+        "C313.E023",
+        "C313.E007",
+        "C313.E019",
+        "C313.E026",
+        "C313.E030",
+        "C313.E028",
+        "C313.E010",
+        "C313.E027",
+        "C313.E031"
+      ],
+      "element$$": [
+        {
+          "id": "C313.E024",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C313.E015",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E009",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E029",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E017",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E008",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C313.E011",
+          "name": "Divider"
+        },
+        {
+          "id": "C313.E003",
+          "name": "HeadingThree"
+        },
+        {
+          "id": "C313.E020",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E002",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E006",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E022",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C313.E012",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C313.E013",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E014",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E021",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C313.E016",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C313.E001",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E004",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E025",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C313.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E007",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E019",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C313.E026",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E030",
+          "name": "Divider"
+        },
+        {
+          "id": "C313.E028",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E027",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C313.E031",
+          "name": "Paragraph"
+        }
+      ]
+    },
+    {
+      "id": "C260",
+      "createdAt": 1753259173478,
+      "updatedAt": 1758171776323,
+      "deletedAt": 0,
+      "title": "검색엔진 (ES) 인덱스 생성",
+      "description": null,
+      "readme": "# 소개\n\n`OpenSearch` 인덱스를 생성하는 세팅 방법을 작성한 문서입니다. (프로젝트 초기 설정 시)\n\n`CloudFormation` 을 통해 AWS 리소스가 생성된 상태여야 합니다. /w `serverless.yml`\n\n---\n\n## 1. Search-API 살펴보기\n\n`search-api.ts` 를 확인합니다.\n\n`SearchAPIController`의 API를 호출하여 해당 프로젝트의 Elastic Search 인덱스 확인 및 생성을 할 수 있습니다.\n\n\n\n각 API endpoint는 다음 기능을 제공합니다.\n\n\n\n\n\n\n\n\n\n💡 **init-elastic** : 인덱스 생성\n\n**destroy-elastic** : 인덱스 삭제\n\n**desc-elastic** : 인덱스 조회 (상세정보)\n\n\n\n- OpenSearch sse 터널링을 연결해 준 뒤,init-elasticAPI를 호출하여 인덱스를 생성합니다.\n```javascript\n# 인덱스 생성하기\n$ http ':8888/search/init-elastic/hello'\n\n# 인덱스 조회하기\n$ http ':8888/search/desc-elastic/hello'\n\n```\n---\n\n## 2. Mappings 확인하기\n\n- 인덱스에 저장될 문서의 필드와 해당 필드의 데이터 타입의 정의를 확인해야 합니다.\n- 데이터를 생성하고, 리스트 조회가 잘 되는지 확인합니다.\n- mappings를 확인하여 타입이 잘 매핑되어 있는지 확인합니다.\n```javascript\n# 데이터 생성 테스트\n$ echo { \"name\": \"lemon\", \"age\": 10 } http POST ':8888/tests/0'\n\n# 목록 조회 테스트 (동기화가 잘 들어와있는지 확인)\n$ http ':8888/tests'\n\n# 인덱스 조회 후 mappings > properties 확인하기\n$ http ':8888/search/desc-elastic/hello'\n{\n  ...,\n  mappings: {\n    ...,\n    properties: {\n      ...\n    }\n  }\n}\n\n```\n---\n\n## 3. 부록\n\n- Error Handling\n  - 400 MAPPER PARSING - mapper_parsing_exception특정 속성에 대하여 초기에 매핑된 타입과 다른 타입이 들어왔을 경우 발생하는 에러입니다.\n매핑이 잘못된 부분을 찾아, 코드에서 타입 변환에 관한 로직을 수정해야 합니다.\nre-index를 하는 방법도 있지만, 사소한 타입 문제라면 이 방식을 추천합니다.\n  - 400 UNKNOWN - connect ECONNREFUSED ::1:PORT_NUMssh 터널링을 하지 않았을 때 발생하는 에러입니다. 접속 해준 뒤 재시도 하세요.",
+      "no": 260,
+      "noOfElement": 29,
+      "category": "Technology",
+      "subCategory": "Backend",
+      "tags": ["ko"],
+      "elementIds": [
+        "C260.E020",
+        "C260.E016",
+        "C260.E008",
+        "C260.E002",
+        "C260.E012",
+        "C260.E023",
+        "C260.E001",
+        "C260.E019",
+        "C260.E018",
+        "C260.E025",
+        "C260.E025",
+        "C260.E025",
+        "C260.E025",
+        "C260.E007",
+        "C260.E010",
+        "C260.E005",
+        "C260.E011",
+        "C260.E017",
+        "C260.E009",
+        "C260.E026",
+        "C260.E021",
+        "C260.E015",
+        "C260.E004",
+        "C260.E003",
+        "C260.E006",
+        "C260.E022",
+        "C260.E027",
+        "C260.E024",
+        "C260.E013",
+        "C260.E014"
+      ],
+      "element$$": [
+        {
+          "id": "C260.E020",
+          "name": "HeadingOne"
+        },
+        {
+          "id": "C260.E016",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E008",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E002",
+          "name": "Divider"
+        },
+        {
+          "id": "C260.E012",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C260.E023",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E001",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E019",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E018",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E025",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E007",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E010",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E005",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E011",
+          "name": "Paragraph"
+        },
+        {
+          "id": "C260.E017",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C260.E009",
+          "name": "Code"
+        },
+        {
+          "id": "C260.E026",
+          "name": "Divider"
+        },
+        {
+          "id": "C260.E021",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C260.E015",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C260.E004",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C260.E003",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C260.E006",
+          "name": "Code"
+        },
+        {
+          "id": "C260.E022",
+          "name": "Divider"
+        },
+        {
+          "id": "C260.E027",
+          "name": "HeadingTwo"
+        },
+        {
+          "id": "C260.E024",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C260.E013",
+          "name": "BulletedList"
+        },
+        {
+          "id": "C260.E014",
+          "name": "BulletedList"
+        }
+      ]
+    }
+  ],
+  "total": 21,
+  "aggr": null
+}

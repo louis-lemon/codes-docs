@@ -1,0 +1,52 @@
+{
+  "name": "codes-docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "start": "next start",
+    "deploy": "next build",
+    "deploy:aws": "next build && echo 'Build completed. Upload ./out/* to S3 /en/ directory' && ./scripts/deploy-en.sh en",
+    "deploy:local": "yarn build && gh-pages -d out -b gh-pages",
+    "postinstall": "fumadocs-mdx",
+    "generate": "FORCE_REBUILD=true tsx scripts/generate-md.ts",
+    "generate:en": "FORCE_REBUILD=true tsx scripts/generate-md.ts --lang en",
+    "generate:ko": "FORCE_REBUILD=true tsx scripts/generate-md.ts --lang ko",
+    "generate:build": "yarn generate && yarn postinstall && yarn build",
+    "generate:dev": "yarn generate && yarn postinstall && yarn dev"
+  },
+  "dependencies": {
+    "@orama/orama": "^3.1.12",
+    "@paper-design/shaders-react": "^0.0.47",
+    "@radix-ui/react-toast": "^1.2.15",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "framer-motion": "^12.23.12",
+    "fumadocs-core": "15.7.7",
+    "fumadocs-mdx": "11.8.2",
+    "fumadocs-ui": "15.7.7",
+    "js-yaml": "^4.1.0",
+    "lucide-react": "^0.542.0",
+    "mermaid": "^11.11.0",
+    "next": "15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/js-yaml": "^4.0.9",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^8",
+    "eslint-config-next": "15.5.2",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

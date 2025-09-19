@@ -1,0 +1,889 @@
+#!/usr/bin/env node
+
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
+import yaml from 'js-yaml';
+import { fetchDocuments, fetchDocument, fetchCategories, fetchChangedDocuments } from '../src/lib/mock-api';
+import type { EurekaDocument, EurekaApiResponse } from '../src/types/eureka';
+
+// 명령행 인수 파싱
+const args = process.argv.slice(2);
+const langIndex = args.findIndex(arg => arg === '--lang' || arg === '-l');
+const FILTER_LANGUAGE = langIndex !== -1 && args[langIndex + 1] ? args[langIndex + 1] : null;
+
+console.log(FILTER_LANGUAGE ? `🌐 Language filter: ${FILTER_LANGUAGE}` : '🌐 No language filter - processing all documents');
+
+// 언어별 문서 필터링 함수
+function filterDocumentsByLanguage(documents: EurekaDocument[], language?: string | null): EurekaDocument[] {
+  if (!language) {
+    return documents; // 언어 필터가 없으면 모든 문서 반환
+  }
+
+  return documents.filter(doc => {
+    // tags가 없거나 빈 배열인 경우 포함 (언어 태그가 없는 문서)
+    if (!doc.tags || doc.tags.length === 0) {
+      return true;
+    }
+
+    // 지정된 언어 태그가 포함된 문서만 필터링
+    return doc.tags.includes(language);
+  });
+}
+
+interface MDFrontmatter {
+  title: string;
+  description: string;
+  id: string;
+  no: number;
+  order: number;
+  category?: string | null;
+  subCategory?: string | null;
+  tags?: string[];
+  created: string;
+  updated: string;
+  published?: string | null;
+  featured: boolean;
+  draft: boolean;
+  hasChildren: boolean;
+  elementCount?: number;
+  childCount?: number;
+  slug: string;
+}
+
+interface BuildCache {
+  version: string;
+  lastBuild: number;
+  slugMapping: Record<string, string>;
+  documentHashes: Record<string, string>;
+  categoryStructure: Record<string, string[]>;
+}
+
+interface ProcessingContext {
+  slugMap: Map<string, string>;
+  documents: Map<string, EurekaDocument>;
+  parentChildMap: Map<string, EurekaDocument[]>;
+  errors: Array<{ docId: string; error: string }>;
+}
+
+const CONTENT_DOCS_DIR = path.join(process.cwd(), 'content', 'docs');
+const CONTENT_BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
+const CACHE_DIR = path.join(process.cwd(), '.build-cache');
+const CACHE_VERSION = '2.0.0';
+const BATCH_SIZE = 10;
+
+// Mermaid detection and conversion
+function hasMermaidCharts(content: string): boolean {
+  return /```mermaid[\s\S]*?```/g.test(content);
+}
+
+function convertMermaidToMDX(content: string): string {
+  return content.replace(/```mermaid\n([\s\S]*?)```/g, (match, chart) => {
+    // Clean up the chart content and escape for JSX
+    const cleanChart = chart.trim()
+        .replace(/\\/g, '\\\\')  // Escape backslashes
+        .replace(/"/g, '\\"')    // Escape double quotes
+        .replace(/\n/g, '\\n')   // Convert newlines to escaped newlines
+        .replace(/\r/g, '');     // Remove carriage returns
+    return `<Mermaid chart={"${cleanChart}"} />`;
+  });
+}
+
+// Slug generation
+function generateSlug(doc: EurekaDocument): string {
+  if (doc.slug) return doc.slug;
+
+  if (doc.title) {
+    return doc.title
+            .toLowerCase()
+            .replace(/\[.*?\]/g, '')
+            .replace(/[^\w\s가-힣-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .slice(0, 60)
+        || `doc-${doc.id.toLowerCase()}`;
+  }
+
+  return `doc-${doc.id.toLowerCase()}`;
+}
+
+function ensureUniqueSlug(slug: string, existingSlugs: Set<string>): string {
+  let uniqueSlug = slug;
+  let counter = 1;
+
+  while (existingSlugs.has(uniqueSlug)) {
+    uniqueSlug = `${slug}-${counter}`;
+    counter++;
+  }
+
+  existingSlugs.add(uniqueSlug);
+  return uniqueSlug;
+}
+
+// Cache management
+async function loadOrCreateCache(): Promise<BuildCache> {
+  const cachePath = path.join(CACHE_DIR, 'build-cache.json');
+
+  if (fs.existsSync(cachePath)) {
+    try {
+      const cache = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+      if (cache.version === CACHE_VERSION) {
+        return cache;
+      }
+    } catch (error) {
+      console.warn('⚠️  Cache file corrupted, creating new cache');
+    }
+  }
+
+  return {
+    version: CACHE_VERSION,
+    lastBuild: 0,
+    slugMapping: {},
+    documentHashes: {},
+    categoryStructure: {}
+  };
+}
+
+function computeDocumentHash(doc: EurekaDocument): string {
+  return crypto
+      .createHash('md5')
+      .update(JSON.stringify({
+        title: doc.title,
+        readme: doc.readme,
+        category: doc.category,
+        subCategory: doc.subCategory,
+        keywords: doc.keywords,
+        updatedAt: doc.updatedAt
+      }))
+      .digest('hex');
+}
+
+function shouldRebuildDocument(doc: EurekaDocument, cache: BuildCache): boolean {
+  return cache.documentHashes[doc.id] !== computeDocumentHash(doc);
+}
+
+// Content processing
+function extractDescription(content: string, maxLength: number = 160): string {
+  const plainText = content
+      .replace(/^#{1,6}\s+.*$/gm, '')
+      .replace(/!\[.*?\]\(.*?\)/g, '')
+      .replace(/\[([^\]]+)\]\(.*?\)/g, '$1')
+      .replace(/[*_~`]/g, '')
+      .replace(/^\s*[-*+]\s+/gm, '')
+      .replace(/\n{2,}/g, ' ')
+      .trim();
+
+  const sentences = plainText.match(/[^.!?]+[.!?]+/g) || [];
+  let description = '';
+
+  for (const sentence of sentences) {
+    const cleaned = sentence.trim();
+    if ((description + cleaned).length <= maxLength) {
+      description += cleaned + ' ';
+    } else if (description.length === 0) {
+      // 첫 문장이 너무 길면 잘라서 사용
+      description = plainText.substring(0, maxLength - 3) + '...';
+      break;
+    } else {
+      break;
+    }
+  }
+
+  return description.trim() || plainText.substring(0, maxLength).trim() + '...';
+}
+
+function buildDocumentPath(fromDoc: EurekaDocument, toDoc: EurekaDocument, toSlug: string): string {
+  const fromCategory = fromDoc.category || 'uncategorized';
+  const fromSubCategory = fromDoc.subCategory || 'general';
+  const toCategory = toDoc.category || 'uncategorized';
+  const toSubCategory = toDoc.subCategory || 'general';
+
+  // 같은 카테고리/서브카테고리
+  if (fromCategory === toCategory && fromSubCategory === toSubCategory) {
+    return `./${toSlug}`;
+  }
+
+  // 같은 카테고리, 다른 서브카테고리
+  if (fromCategory === toCategory) {
+    return `../${toSubCategory}/${toSlug}`;
+  }
+
+  // 다른 카테고리 - 절대 경로 사용
+  return `/docs/${toCategory}/${toSubCategory}/${toSlug}`;
+}
+
+async function processContent(
+    content: string,
+    doc: EurekaDocument,
+    context: ProcessingContext
+): Promise<string> {
+  if (!content) return '';
+
+  let processed = content;
+
+  // 내부 링크 변환 - C123 형식을 slug 기반 경로로
+  processed = processed.replace(
+      /\[([^\]]+)\]\((?:https?:\/\/box\.eureka\.codes\/)?(C\d+)\)/g,
+      (match, text, docId) => {
+        const targetSlug = context.slugMap.get(docId);
+        const targetDoc = context.documents.get(docId);
+
+        if (targetSlug && targetDoc) {
+          const path = buildDocumentPath(doc, targetDoc, targetSlug);
+          return `[${text}](${path})`;
+        }
+        return match;
+      }
+  );
+
+  // 이미지 alt text 개선
+  processed = processed.replace(
+      /!\[(file|image|그림|사진|)?\]\((https?:\/\/[^)]+)\)/gi,
+      (match, alt, url) => {
+        if (!alt || alt === 'file' || alt === 'image') {
+          try {
+            const urlObj = new URL(url);
+            const pathSegments = urlObj.pathname.split('/').filter(Boolean);
+            const lastSegment = pathSegments[pathSegments.length - 1] || '';
+
+            // UUID 패턴이면 문서 제목 사용
+            if (/^[a-f0-9-]{36}$/i.test(lastSegment)) {
+              alt = `${doc.title || 'Document'} image`;
+            } else {
+              alt = lastSegment
+                  .replace(/\.[^.]+$/, '')
+                  .replace(/[-_]/g, ' ')
+                  .trim() || 'image';
+            }
+          } catch {
+            alt = 'image';
+          }
+        }
+        return `![${alt}](${url})`;
+      }
+  );
+
+  // 잘못된 형태의 Mermaid 패턴 수정 (중첩된 코드 블록 처리)
+  // 패턴: ```javascript\n```mermaid\n...```\n```
+  processed = processed.replace(/```javascript\n```mermaid\n([\s\S]*?)```\n```/g, (match, mermaidContent) => {
+    // Mermaid 내용을 MDX 컴포넌트로 변환
+    const cleanChart = mermaidContent.trim()
+        .replace(/\\/g, '\\\\')  // Escape backslashes
+        .replace(/"/g, '\\"')    // Escape double quotes
+        .replace(/\n/g, '\\n')   // Convert newlines to escaped newlines
+        .replace(/\r/g, '');     // Remove carriage returns
+    return `<Mermaid chart={"${cleanChart}"} />`;
+  });
+
+  // Mermaid 코드 블록을 MDX 컴포넌트로 변환 (먼저 처리)
+  if (hasMermaidCharts(processed)) {
+    processed = convertMermaidToMDX(processed);
+  }
+
+  // 중복 H1 제거 (frontmatter title과 중복 방지)
+  const lines = processed.split('\n');
+  const firstH1Index = lines.findIndex(line => /^#\s+/.test(line));
+  if (firstH1Index !== -1 && doc.title) {
+    const h1Title = lines[firstH1Index].replace(/^#\s+/, '').trim();
+    if (h1Title === doc.title || h1Title.toLowerCase() === doc.title.toLowerCase()) {
+      lines.splice(firstH1Index, 1);
+      processed = lines.join('\n');
+    }
+  }
+
+  // 코드 블록 언어 힌트 추가
+  processed = processed.replace(
+      /```(\s*\n)/g,
+      (match, newline, offset) => {
+        const nextLine = processed.substring(offset + match.length).split('\n')[0];
+        const firstWord = nextLine.trim().split(/\s+/)[0]?.toLowerCase() || '';
+
+        // 전체 코드 블록 내용을 확인하여 더 정확한 언어 추론
+        const remainingContent = processed.substring(offset + match.length);
+        const codeBlockEnd = remainingContent.indexOf('```');
+        const codeContent = codeBlockEnd > 0 ? remainingContent.substring(0, codeBlockEnd) : '';
+
+        const langMap: Record<string, string> = {
+          'import': 'javascript',
+          'export': 'javascript',
+          'const': 'javascript',
+          'let': 'javascript',
+          'var': 'javascript',
+          'function': 'javascript',
+          'class': 'javascript',
+          'interface': 'typescript',
+          'type': 'typescript',
+          'enum': 'typescript',
+          'select': 'sql',
+          'create': 'sql',
+          'insert': 'sql',
+          'update': 'sql',
+          'delete': 'sql',
+          'from': 'python',
+          'def': 'python',
+          'npm': 'shell',
+          'yarn': 'shell',
+          'pnpm': 'shell',
+          '$': 'shell',
+          '#': 'shell',
+          'git': 'shell',
+          'curl': 'shell',
+          'wget': 'shell',
+          'echo': 'shell',
+          'cat': 'shell',
+          'ls': 'shell',
+          'cd': 'shell',
+          'mkdir': 'shell',
+          'rm': 'shell',
+          'cp': 'shell',
+          'mv': 'shell'
+        };
+
+        // 쉘 명령어 패턴 감지
+        if (codeContent.includes('$ ') || codeContent.includes('# ') ||
+            /^[#$]\s/.test(codeContent.trim()) ||
+            /POST|GET|PUT|DELETE\s+\//.test(codeContent)) {
+          return '```shell' + newline;
+        }
+
+        // API 경로나 HTTP 메소드가 포함된 경우
+        if (/^-\s+`(GET|POST|PUT|DELETE)/.test(codeContent)) {
+          return '```javascript' + newline;
+        }
+
+        const lang = langMap[firstWord] || '';
+        return '```' + lang + newline;
+      }
+  );
+
+  // 불필요한 구분선 제거 (헤딩 바로 다음의 ---)
+  processed = processed.replace(/^##\s+([^\n]*)\n\n---\n/gm, '## $1\n\n');
+  processed = processed.replace(/^###\s+([^\n]*)\n\n---\n/gm, '### $1\n\n');
+  processed = processed.replace(/^####\s+([^\n]*)\n\n---\n/gm, '#### $1\n\n');
+
+  // 독립적인 구분선도 제거 (섹션 끝의 불필요한 ---)
+  processed = processed.replace(/\n\n---\n\n/g, '\n\n');
+  processed = processed.replace(/\n---\n\n/g, '\n\n');
+
+  // 테이블 문법 정리 (여러 줄로 분리된 테이블을 한 줄로)
+  processed = processed.replace(/\|\s*([^|\n]+)\s*\n\n\|\s*--/g, '| $1\n| --');
+  processed = processed.replace(/\|\s*([^|\n]+)\s*\n\n\|\s*([^|\n]+)/g, '| $1\n| $2');
+
+  // 빈 헤딩 제거 (### 만 있고 내용 없는 경우)
+  processed = processed.replace(/^###\s*$\n/gm, '');
+
+  // 특수 문자 정리
+  processed = processed
+      .replace(/\u00A0/g, ' ')
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201C\u201D]/g, '"')
+      .replace(/\u2014/g, '—')
+      .replace(/\u2013/g, '–')
+      .replace(/\u2026/g, '...');
+
+  // 과도한 빈 줄 정리 (3개 이상의 연속된 빈 줄을 2개로)
+  processed = processed.replace(/\n{4,}/g, '\n\n\n');
+
+  return processed.trim();
+}
+
+// 파일 생성
+function createFrontmatter(
+    doc: EurekaDocument,
+    slug: string,
+    processedContent: string,
+    childCount: number = 0
+): MDFrontmatter {
+  const description = doc.description || extractDescription(processedContent);
+
+  return {
+    title: doc.title || `Document ${doc.no}`,
+    description,
+    id: doc.id,
+    no: doc.no,
+    order: doc.order || doc.no,
+    category: doc.category || null,
+    subCategory: doc.subCategory || null,
+    tags: doc.tags || [],
+    created: new Date(doc.createdAt).toISOString(),
+    updated: new Date(doc.updatedAt).toISOString(),
+    published: doc.publishedAt ? new Date(doc.publishedAt).toISOString() : null,
+    featured: (doc.markCount || 0) > 0,
+    draft: !doc.publishedAt,
+    hasChildren: childCount > 0,
+    elementCount: doc.noOfElement,
+    childCount,
+    slug
+  };
+}
+
+async function createMarkdownFile(
+    doc: EurekaDocument,
+    filePath: string,
+    context: ProcessingContext
+): Promise<void> {
+  const slug = context.slugMap.get(doc.id)!;
+  const processedContent = await processContent(doc.readme || '', doc, context);
+  const children = context.parentChildMap.get(doc.id) || [];
+  const frontmatter = createFrontmatter(doc, slug, processedContent, children.length);
+
+  // yaml 덤프 시 옵션
+  const frontmatterYaml = yaml.dump(frontmatter, {
+    lineWidth: -1,
+    quotingType: '"',
+    forceQuotes: false,
+    noRefs: true,
+    sortKeys: false
+  });
+
+  const mdContent = `---
+${frontmatterYaml.trim()}
+---
+
+${processedContent}
+`;
+
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+
+  fs.writeFileSync(filePath, mdContent, 'utf-8');
+  console.log(`✅ Created: ${path.relative(process.cwd(), filePath)}`);
+}
+
+function getDocumentPath(
+    doc: EurekaDocument,
+    slug: string,
+    parentDoc?: EurekaDocument,
+    parentSlug?: string,
+    hasMermaid: boolean = false
+): string {
+  // 파일명은 항상 ID 사용, mermaid가 있으면 .mdx 확장자 사용
+  const fileName = `${doc.id}.${hasMermaid ? 'mdx' : 'md'}`;
+  const category = doc.category || 'uncategorized';
+
+  // Blog 카테고리는 단일 구조로 content/blog에 저장
+  if (category.toLowerCase() === 'blog') {
+    return path.join(CONTENT_BLOG_DIR, fileName);
+  }
+
+  // 나머지 카테고리는 기존 nested 구조 유지
+  if (parentDoc) {
+    const parentCategory = sanitizePath(parentDoc.category || 'uncategorized');
+    const parentSubCategory = sanitizePath(parentDoc.subCategory || 'general');
+    // 부모 폴더도 ID 사용
+    return path.join(CONTENT_DOCS_DIR, parentCategory, parentSubCategory, parentDoc.id, fileName);
+  }
+
+  const sanitizedCategory = sanitizePath(category);
+  const subCategory = sanitizePath(doc.subCategory || 'general');
+  return path.join(CONTENT_DOCS_DIR, sanitizedCategory, subCategory, fileName);
+}
+
+function sanitizePath(str: string): string {
+  const clean = str
+      .toLowerCase()
+      .replace(/[가-힣ㄱ-ㅎㅏ-ㅣ]/g, '') // 한글 제거
+      .replace(/[^a-z0-9-]/g, '-')
+      .replace(/-{2,}/g, '-')
+      .replace(/^-+|-+$/g, '');
+
+  if (!clean) {
+    return 'cat-' + crypto.createHash('md5').update(str).digest('hex').substring(0, 6);
+  }
+
+  return clean;
+}
+
+// Meta 파일 생성
+function createMetaJson(
+    dirPath: string,
+    items: Array<{ slug: string; title: string; order?: number; type?: string }>
+): void {
+  const meta = {
+    pages: items
+        .sort((a, b) => (a.order || 999) - (b.order || 999))
+        .map(item => ({
+          name: item.slug,
+          title: item.title,
+          ...(item.type && { type: item.type })
+        }))
+  };
+
+  fs.writeFileSync(
+      path.join(dirPath, '_meta.json'),
+      JSON.stringify(meta, null, 2),
+      'utf-8'
+  );
+}
+
+// 배치 처리
+async function processBatch(
+    documents: EurekaDocument[],
+    context: ProcessingContext
+): Promise<void> {
+  for (let i = 0; i < documents.length; i += BATCH_SIZE) {
+    const batch = documents.slice(i, i + BATCH_SIZE);
+
+    await Promise.all(
+        batch.map(async (doc) => {
+          try {
+            const slug = context.slugMap.get(doc.id)!;
+            const parentDoc = doc.parentId ? context.documents.get(doc.parentId) : undefined;
+            const parentSlug = parentDoc ? context.slugMap.get(parentDoc.id) : undefined;
+            const hasMermaid = hasMermaidCharts(doc.readme || '');
+            const filePath = getDocumentPath(doc, slug, parentDoc, parentSlug, hasMermaid);
+
+            await createMarkdownFile(doc, filePath, context);
+          } catch (error) {
+            context.errors.push({
+              docId: doc.id,
+              error: error instanceof Error ? error.message : String(error)
+            });
+            console.error(`❌ Failed: ${doc.id} - ${error}`);
+          }
+        })
+    );
+
+    const progress = Math.min(i + BATCH_SIZE, documents.length);
+    console.log(`📦 Processed ${progress}/${documents.length} documents`);
+  }
+}
+
+// 카테고리 구조 생성 (Blog 제외)
+function generateCategoryStructure(
+    documents: EurekaDocument[],
+    context: ProcessingContext
+): Map<string, Map<string, EurekaDocument[]>> {
+  const structure = new Map<string, Map<string, EurekaDocument[]>>();
+
+  documents.forEach(doc => {
+    if (doc.parentId) return; // 자식 문서는 스킵
+
+    const category = doc.category || 'uncategorized';
+
+    // Blog 카테고리는 별도 처리하므로 제외
+    if (category.toLowerCase() === 'blog') return;
+
+    const subCategory = doc.subCategory || 'general';
+
+    if (!structure.has(category)) {
+      structure.set(category, new Map());
+    }
+
+    const categoryMap = structure.get(category)!;
+    if (!categoryMap.has(subCategory)) {
+      categoryMap.set(subCategory, []);
+    }
+
+    categoryMap.get(subCategory)!.push(doc);
+  });
+
+  return structure;
+}
+
+// Blog 문서 구조 생성
+function generateBlogStructure(
+    documents: EurekaDocument[],
+    context: ProcessingContext
+): EurekaDocument[] {
+  return documents.filter(doc => {
+    const category = doc.category || 'uncategorized';
+    return category.toLowerCase() === 'blog' && !doc.parentId; // 부모 문서만
+  });
+}
+
+async function generateMarkdown(): Promise<void> {
+  console.log('🚀 Starting Markdown generation...\n');
+
+  // 디렉토리 초기화
+  if (!fs.existsSync(CACHE_DIR)) {
+    fs.mkdirSync(CACHE_DIR, { recursive: true });
+  }
+
+  // 컨텐츠 디렉토리 정리 또는 생성
+  // docs/index.md 파일 백업
+  const indexMdPath = path.join(CONTENT_DOCS_DIR, 'index.md');
+  let indexMdContent: string | null = null;
+  if (fs.existsSync(indexMdPath)) {
+    indexMdContent = fs.readFileSync(indexMdPath, 'utf-8');
+    console.log('📝 Backing up docs/index.md');
+  }
+
+  // docs 디렉토리 정리
+  if (fs.existsSync(CONTENT_DOCS_DIR)) {
+    fs.rmSync(CONTENT_DOCS_DIR, { recursive: true, force: true });
+  }
+  fs.mkdirSync(CONTENT_DOCS_DIR, { recursive: true });
+
+  // blog 디렉토리 정리
+  if (fs.existsSync(CONTENT_BLOG_DIR)) {
+    fs.rmSync(CONTENT_BLOG_DIR, { recursive: true, force: true });
+  }
+  fs.mkdirSync(CONTENT_BLOG_DIR, { recursive: true });
+
+  // docs/index.md 파일 복원
+  if (indexMdContent) {
+    fs.writeFileSync(indexMdPath, indexMdContent, 'utf-8');
+    console.log('✅ Restored docs/index.md');
+  }
+
+  // 캐시 로드
+  const cache = await loadOrCreateCache();
+
+  // 문서 페치
+  const response = await fetchDocuments(true);
+  const allDocuments = response.list;
+  console.log(`📚 Fetched ${allDocuments.length} documents`);
+
+  // 언어별 필터링 적용
+  const documents = filterDocumentsByLanguage(allDocuments, FILTER_LANGUAGE);
+
+  if (FILTER_LANGUAGE) {
+    console.log(`🔍 Filtered to ${documents.length} documents for language: ${FILTER_LANGUAGE}\n`);
+  } else {
+    console.log(`📝 Processing all ${documents.length} documents\n`);
+  }
+
+  if (documents.length === 0) {
+    console.error('❌ No documents found after filtering!');
+    return;
+  }
+
+  // 컨텍스트 초기화
+  const context: ProcessingContext = {
+    slugMap: new Map(Object.entries(cache.slugMapping)),
+    documents: new Map(documents.map(d => [d.id, d])),
+    parentChildMap: new Map(),
+    errors: []
+  };
+
+  // 부모-자식 관계 구축
+  documents.forEach(doc => {
+    if (doc.parentId) {
+      if (!context.parentChildMap.has(doc.parentId)) {
+        context.parentChildMap.set(doc.parentId, []);
+      }
+      context.parentChildMap.get(doc.parentId)!.push(doc);
+    }
+  });
+
+  // 새 문서들에 대한 slug 생성
+  const existingSlugs = new Set(context.slugMap.values());
+  documents.forEach(doc => {
+    if (!context.slugMap.has(doc.id)) {
+      const slug = ensureUniqueSlug(generateSlug(doc), existingSlugs);
+      context.slugMap.set(doc.id, slug);
+      console.log(`Generated slug for ${doc.id}: ${slug}`);
+    }
+  });
+
+  // 리빌드할 문서 필터링 - 캐시 체크를 건너뛰고 모든 문서 처리
+  const forceRebuild = process.env.FORCE_REBUILD === 'true' || Object.keys(cache.documentHashes).length === 0;
+  const documentsToProcess = forceRebuild ? documents : documents.filter(doc => shouldRebuildDocument(doc, cache));
+
+  console.log(`📊 Total: ${documents.length}, To process: ${documentsToProcess.length}\n`);
+
+  if (documentsToProcess.length === 0) {
+    console.log('ℹ️  No documents need rebuilding');
+    return;
+  }
+
+  // 모든 문서 처리 (배치 처리 대신 직접 처리로 변경하여 디버깅)
+  for (const doc of documentsToProcess) {
+    try {
+      const slug = context.slugMap.get(doc.id)!;
+      const parentDoc = doc.parentId ? context.documents.get(doc.parentId) : undefined;
+      const parentSlug = parentDoc ? context.slugMap.get(parentDoc.id) : undefined;
+
+      // 파일 경로 생성
+      const hasMermaid = hasMermaidCharts(doc.readme || '');
+      const filePath = getDocumentPath(doc, slug, parentDoc, parentSlug, hasMermaid);
+      console.log(`Processing ${doc.id} -> ${path.relative(process.cwd(), filePath)}`);
+
+      // 마크다운 파일 생성
+      await createMarkdownFile(doc, filePath, context);
+    } catch (error) {
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      context.errors.push({
+        docId: doc.id,
+        error: errorMsg
+      });
+      console.error(`❌ Failed: ${doc.id} - ${errorMsg}`);
+    }
+  }
+
+  // 카테고리 구조 및 메타 파일 생성
+  const categoryStructure = generateCategoryStructure(documents, context);
+  const blogDocuments = generateBlogStructure(documents, context);
+
+  // Blog 문서들을 content/blog에 단일 구조로 생성
+  if (blogDocuments.length > 0) {
+    console.log(`📝 Processing ${blogDocuments.length} blog documents`);
+
+    // Blog 문서들의 _meta.json 생성
+    const blogItems = blogDocuments.map(doc => ({
+      slug: doc.id,
+      title: doc.title || `Document ${doc.no}`,
+      order: doc.order || doc.no
+    }));
+
+    createMetaJson(CONTENT_BLOG_DIR, blogItems);
+    console.log('✅ Created blog _meta.json');
+  }
+
+  // 각 카테고리와 서브카테고리에 대한 _meta.json 생성 (Blog 제외)
+// generateMarkdown 함수 내의 카테고리 구조 생성 부분 수정
+  categoryStructure.forEach((subCategories, category) => {
+    const categoryDir = path.join(CONTENT_DOCS_DIR, sanitizePath(category));
+
+    if (!fs.existsSync(categoryDir)) {
+      fs.mkdirSync(categoryDir, { recursive: true });
+    }
+
+    const subCategoryMetas: Array<{ slug: string; title: string; order: number }> = [];
+
+    subCategories.forEach((docs, subCategory) => {
+      const sanitizedSubCategory = sanitizePath(subCategory);
+      const subCategoryDir = path.join(categoryDir, sanitizedSubCategory);
+
+      if (!fs.existsSync(subCategoryDir)) {
+        fs.mkdirSync(subCategoryDir, { recursive: true });
+      }
+
+      // 서브카테고리의 문서들 (부모 문서만)
+      const items = docs
+          .filter(doc => !doc.parentId)
+          .map(doc => {
+            const hasChildren = context.parentChildMap.has(doc.id);
+            return {
+              slug: doc.id,
+              title: doc.title || `Document ${doc.no}`,
+              order: doc.order || doc.no,
+              type: hasChildren ? 'folder' : undefined  // folder 타입 명시
+            };
+          });
+
+      // 부모-자식 구조 처리
+      docs.forEach(async doc => {
+        const children = context.parentChildMap.get(doc.id);
+        if (children && children.length > 0) {
+          const parentDir = path.join(subCategoryDir, doc.id);
+
+          if (!fs.existsSync(parentDir)) {
+            fs.mkdirSync(parentDir, { recursive: true });
+          }
+
+          // index.md 파일 생성 (부모 문서 내용)
+          const parentHasMermaid = hasMermaidCharts(doc.readme || '');
+          const indexPath = path.join(parentDir, `index.${parentHasMermaid ? 'mdx' : 'md'}`);
+          await createMarkdownFile(doc, indexPath, context);
+
+          // 자식 문서들 생성
+          for (const child of children) {
+            const childHasMermaid = hasMermaidCharts(child.readme || '');
+            const childPath = path.join(parentDir, `${child.id}.${childHasMermaid ? 'mdx' : 'md'}`);
+            await createMarkdownFile(child, childPath, context);
+          }
+
+          // 부모 폴더의 _meta.json - index는 제외
+          const childItems = children.map(child => ({
+            slug: child.id,
+            title: child.title || `Document ${child.no}`,
+            order: child.order || child.no
+          }));
+
+          createMetaJson(parentDir, childItems);
+        }
+      });
+
+      // 서브카테고리 _meta.json
+      if (items.length > 0) {
+        createMetaJson(subCategoryDir, items);
+        subCategoryMetas.push({
+          slug: sanitizedSubCategory,
+          title: subCategory, // 원본 서브카테고리명 표시
+          order: 0
+        });
+      }
+    });
+
+    // 카테고리 레벨 _meta.json
+    if (subCategoryMetas.length > 0) {
+      createMetaJson(categoryDir, subCategoryMetas);
+    }
+  });
+
+// 루트 메타 파일 (docs 디렉토리용, Blog 제외)
+  const rootCategories = Array.from(categoryStructure.keys()).map(cat => ({
+    slug: sanitizePath(cat),
+    title: cat, // 원본 카테고리명 표시
+    order: 0
+  }));
+
+  if (rootCategories.length > 0) {
+    createMetaJson(CONTENT_DOCS_DIR, rootCategories);
+  }
+
+  // 캐시 저장
+  const newCache: BuildCache = {
+    version: CACHE_VERSION,
+    lastBuild: Date.now(),
+    slugMapping: Object.fromEntries(context.slugMap),
+    documentHashes: Object.fromEntries(
+        documents.map(doc => [doc.id, computeDocumentHash(doc)])
+    ),
+    categoryStructure: Object.fromEntries(
+        Array.from(categoryStructure.entries()).map(([cat, subCats]) => [
+          cat,
+          Array.from(subCats.keys())
+        ])
+    )
+  };
+
+  fs.writeFileSync(
+      path.join(CACHE_DIR, 'build-cache.json'),
+      JSON.stringify(newCache, null, 2),
+      'utf-8'
+  );
+
+  // 통계 출력
+  const stats = {
+    generatedAt: new Date().toISOString(),
+    totalDocuments: documents.length,
+    processedDocuments: documentsToProcess.length,
+    categories: categoryStructure.size,
+    errors: context.errors.length
+  };
+
+  fs.writeFileSync(
+      path.join(CACHE_DIR, 'generation-stats.json'),
+      JSON.stringify(stats, null, 2),
+      'utf-8'
+  );
+
+  if (context.errors.length > 0) {
+    console.error(`\n⚠️  ${context.errors.length} errors occurred`);
+    fs.writeFileSync(
+        path.join(CACHE_DIR, 'build-errors.json'),
+        JSON.stringify(context.errors, null, 2),
+        'utf-8'
+    );
+  }
+
+  console.log('\n✨ Markdown generation completed!');
+  console.log(`📊 Processed: ${stats.processedDocuments} documents in ${stats.categories} categories`);
+}
+
+// 에러 핸들링
+process.on('unhandledRejection', (error) => {
+  console.error('Unhandled rejection:', error);
+  process.exit(1);
+});
+
+// 실행
+generateMarkdown().catch((error) => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});

@@ -1,0 +1,12 @@
+{
+  "pages": [
+    {
+      "name": "technology",
+      "title": "Technology"
+    },
+    {
+      "name": "user-guides",
+      "title": "User guides"
+    }
+  ]
+}
