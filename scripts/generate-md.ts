@@ -81,10 +81,10 @@ function convertMermaidToMDX(content: string): string {
   return content.replace(/```mermaid\n([\s\S]*?)```/g, (match, chart) => {
     // Clean up the chart content and escape for JSX
     const cleanChart = chart.trim()
-      .replace(/\\/g, '\\\\')  // Escape backslashes
-      .replace(/"/g, '\\"')    // Escape double quotes
-      .replace(/\n/g, '\\n')   // Convert newlines to escaped newlines
-      .replace(/\r/g, '');     // Remove carriage returns
+        .replace(/\\/g, '\\\\')  // Escape backslashes
+        .replace(/"/g, '\\"')    // Escape double quotes
+        .replace(/\n/g, '\\n')   // Convert newlines to escaped newlines
+        .replace(/\r/g, '');     // Remove carriage returns
     return `<Mermaid chart={"${cleanChart}"} />`;
   });
 }
@@ -263,6 +263,23 @@ async function processContent(
       }
   );
 
+  // 잘못된 형태의 Mermaid 패턴 수정 (중첩된 코드 블록 처리)
+  // 패턴: ```javascript\n```mermaid\n...```\n```
+  processed = processed.replace(/```javascript\n```mermaid\n([\s\S]*?)```\n```/g, (match, mermaidContent) => {
+    // Mermaid 내용을 MDX 컴포넌트로 변환
+    const cleanChart = mermaidContent.trim()
+        .replace(/\\/g, '\\\\')  // Escape backslashes
+        .replace(/"/g, '\\"')    // Escape double quotes
+        .replace(/\n/g, '\\n')   // Convert newlines to escaped newlines
+        .replace(/\r/g, '');     // Remove carriage returns
+    return `<Mermaid chart={"${cleanChart}"} />`;
+  });
+
+  // Mermaid 코드 블록을 MDX 컴포넌트로 변환 (먼저 처리)
+  if (hasMermaidCharts(processed)) {
+    processed = convertMermaidToMDX(processed);
+  }
+
   // 중복 H1 제거 (frontmatter title과 중복 방지)
   const lines = processed.split('\n');
   const firstH1Index = lines.findIndex(line => /^#\s+/.test(line));
@@ -280,6 +297,11 @@ async function processContent(
       (match, newline, offset) => {
         const nextLine = processed.substring(offset + match.length).split('\n')[0];
         const firstWord = nextLine.trim().split(/\s+/)[0]?.toLowerCase() || '';
+
+        // 전체 코드 블록 내용을 확인하여 더 정확한 언어 추론
+        const remainingContent = processed.substring(offset + match.length);
+        const codeBlockEnd = remainingContent.indexOf('```');
+        const codeContent = codeBlockEnd > 0 ? remainingContent.substring(0, codeBlockEnd) : '';
 
         const langMap: Record<string, string> = {
           'import': 'javascript',
@@ -299,20 +321,56 @@ async function processContent(
           'delete': 'sql',
           'from': 'python',
           'def': 'python',
-          'npm': 'bash',
-          'yarn': 'bash',
-          'pnpm': 'bash'
+          'npm': 'shell',
+          'yarn': 'shell',
+          'pnpm': 'shell',
+          '$': 'shell',
+          '#': 'shell',
+          'git': 'shell',
+          'curl': 'shell',
+          'wget': 'shell',
+          'echo': 'shell',
+          'cat': 'shell',
+          'ls': 'shell',
+          'cd': 'shell',
+          'mkdir': 'shell',
+          'rm': 'shell',
+          'cp': 'shell',
+          'mv': 'shell'
         };
 
-        const lang = langMap[firstWord] || 'text';
+        // 쉘 명령어 패턴 감지
+        if (codeContent.includes('$ ') || codeContent.includes('# ') ||
+            /^[#$]\s/.test(codeContent.trim()) ||
+            /POST|GET|PUT|DELETE\s+\//.test(codeContent)) {
+          return '```shell' + newline;
+        }
+
+        // API 경로나 HTTP 메소드가 포함된 경우
+        if (/^-\s+`(GET|POST|PUT|DELETE)/.test(codeContent)) {
+          return '```javascript' + newline;
+        }
+
+        const lang = langMap[firstWord] || '';
         return '```' + lang + newline;
       }
   );
 
-  // Mermaid 코드 블록을 MDX 컴포넌트로 변환
-  if (hasMermaidCharts(processed)) {
-    processed = convertMermaidToMDX(processed);
-  }
+  // 불필요한 구분선 제거 (헤딩 바로 다음의 ---)
+  processed = processed.replace(/^##\s+([^\n]*)\n\n---\n/gm, '## $1\n\n');
+  processed = processed.replace(/^###\s+([^\n]*)\n\n---\n/gm, '### $1\n\n');
+  processed = processed.replace(/^####\s+([^\n]*)\n\n---\n/gm, '#### $1\n\n');
+
+  // 독립적인 구분선도 제거 (섹션 끝의 불필요한 ---)
+  processed = processed.replace(/\n\n---\n\n/g, '\n\n');
+  processed = processed.replace(/\n---\n\n/g, '\n\n');
+
+  // 테이블 문법 정리 (여러 줄로 분리된 테이블을 한 줄로)
+  processed = processed.replace(/\|\s*([^|\n]+)\s*\n\n\|\s*--/g, '| $1\n| --');
+  processed = processed.replace(/\|\s*([^|\n]+)\s*\n\n\|\s*([^|\n]+)/g, '| $1\n| $2');
+
+  // 빈 헤딩 제거 (### 만 있고 내용 없는 경우)
+  processed = processed.replace(/^###\s*$\n/gm, '');
 
   // 특수 문자 정리
   processed = processed
@@ -322,6 +380,9 @@ async function processContent(
       .replace(/\u2014/g, '—')
       .replace(/\u2013/g, '–')
       .replace(/\u2026/g, '...');
+
+  // 과도한 빈 줄 정리 (3개 이상의 연속된 빈 줄을 2개로)
+  processed = processed.replace(/\n{4,}/g, '\n\n\n');
 
   return processed.trim();
 }
@@ -499,9 +560,9 @@ function generateCategoryStructure(
 
   documents.forEach(doc => {
     if (doc.parentId) return; // 자식 문서는 스킵
-    
+
     const category = doc.category || 'uncategorized';
-    
+
     // Blog 카테고리는 별도 처리하므로 제외
     if (category.toLowerCase() === 'blog') return;
 
@@ -578,7 +639,7 @@ async function generateMarkdown(): Promise<void> {
 
   // 언어별 필터링 적용
   const documents = filterDocumentsByLanguage(allDocuments, FILTER_LANGUAGE);
-  
+
   if (FILTER_LANGUAGE) {
     console.log(`🔍 Filtered to ${documents.length} documents for language: ${FILTER_LANGUAGE}\n`);
   } else {
@@ -660,14 +721,14 @@ async function generateMarkdown(): Promise<void> {
   // Blog 문서들을 content/blog에 단일 구조로 생성
   if (blogDocuments.length > 0) {
     console.log(`📝 Processing ${blogDocuments.length} blog documents`);
-    
+
     // Blog 문서들의 _meta.json 생성
     const blogItems = blogDocuments.map(doc => ({
       slug: doc.id,
       title: doc.title || `Document ${doc.no}`,
       order: doc.order || doc.no
     }));
-    
+
     createMetaJson(CONTENT_BLOG_DIR, blogItems);
     console.log('✅ Created blog _meta.json');
   }
