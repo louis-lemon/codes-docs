@@ -11,8 +11,8 @@ CACHE_CONTROL_NO_CACHE="max-age=0,no-cache,no-store,must-revalidate"
 CACHE_CONTROL_LOCALES="max-age=0,s-maxage=0,no-cache,no-store,must-revalidate,proxy-revalidate"
 
 # it works
-# aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths '/*'
-
+#aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths '/*'
+#return
 # Functions
 log_error() {
     echo "[ERROR] $1" >&2

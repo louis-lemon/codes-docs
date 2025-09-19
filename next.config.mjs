@@ -23,8 +23,8 @@ const config = {
     unoptimized: true,
   },
   // S3 /en/ 경로 배포
-  basePath: process.env.NODE_ENV === 'production' ? '/en' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://docs.eureka.codes/en' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://docs.eureka.codes' : '',
   // Fix fs module error for client components
   webpack: (config, { isServer }) => {
     if (!isServer) {
