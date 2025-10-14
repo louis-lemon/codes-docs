@@ -11,8 +11,8 @@ on:
         type: boolean
 
   # 정기 동기화
-  schedule:
-    - cron: '0 */6 * * *'  # 6시간마다
+  #schedule:
+  #  - cron: '0 */6 * * *'  # 6시간마다
 
   # 메인 브랜치 푸시 시
   push:
