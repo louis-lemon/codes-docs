@@ -243,7 +243,7 @@ export default function PostsPage() {
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
                       <Link
-                        href={`/admin/posts/edit/${post.path}`}
+                        href={`/admin/posts/edit?path=${encodeURIComponent(post.path)}`}
                         className="p-2 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
                         title="Edit"
                       >

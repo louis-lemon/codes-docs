@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, use } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { ArrowLeft, Save, Loader2, Eye, Code, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import { useAuth } from '@/components/admin/auth-provider';
@@ -10,14 +10,10 @@ import { FrontmatterForm, type Frontmatter } from '@/components/admin/frontmatte
 import { getPost, updatePost, deletePost } from '@/lib/github-client';
 import type { Post } from '@/types/admin';
 
-interface PageProps {
-  params: Promise<{ path: string[] }>;
-}
-
-export default function EditPostPage({ params }: PageProps) {
-  const { path: pathSegments } = use(params);
-  const path = pathSegments.join('/');
+export default function EditPostPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const path = searchParams.get('path') || '';
   const { isAuthenticated, isLoading: authLoading } = useAuth();
 
   const [loading, setLoading] = useState(true);
@@ -41,7 +37,7 @@ export default function EditPostPage({ params }: PageProps) {
   }, [authLoading, isAuthenticated, router]);
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && path) {
       fetchPost();
     }
   }, [path, isAuthenticated]);
@@ -137,6 +133,17 @@ export default function EditPostPage({ params }: PageProps) {
     return (
       <div className="flex items-center justify-center py-12">
         <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      </div>
+    );
+  }
+
+  if (!path) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-gray-500 dark:text-gray-400">No post path specified</p>
+        <Link href="/admin/posts" className="mt-4 text-blue-600 hover:underline">
+          Back to posts
+        </Link>
       </div>
     );
   }
