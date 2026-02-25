@@ -1,5 +1,6 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import Image from 'next/image';
+import { siteConfig, navigationConfig } from '@/config';
 
 /**
  * Shared layout configurations
@@ -14,45 +15,24 @@ export function baseOptions(): BaseLayoutProps {
       title: (
         <>
           <Image
-            src="https://image.lemoncloud.io/codes/codes-logo-black.png"
+            src={siteConfig.logo.light}
             alt="Logo"
             width={24}
             height={24}
             className="dark:hidden"
           />
           <Image
-            src="https://image.lemoncloud.io/codes/codes-logo-white.png"
+            src={siteConfig.logo.dark}
             alt="Logo"
             width={24}
             height={24}
             className="hidden dark:block"
           />
-          EurekaCodes
+          {siteConfig.name}
         </>
       ),
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [
-      {
-        text: 'Home',
-        url: '/',
-        active: 'nested-url',
-      },
-      {
-        text: 'Docs',
-        url: '/docs',
-        active: 'nested-url',
-      },
-      {
-        text: "Blog",
-        url: "/blog",
-        active: 'nested-url',
-      },
-      {
-        text: 'GitHub',
-        url: 'https://github.com/lemoncloud-io',
-        external: true,
-      },
-    ],
+    links: navigationConfig,
   };
 }

@@ -1,15 +1,16 @@
 import { MetadataRoute } from 'next';
 import { source } from '@/lib/source';
+import { siteConfig } from '@/config';
 
 // Static export를 위한 설정
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://docs.eureka.codes';
-  
+  const baseUrl = siteConfig.url;
+
   // Get all pages from the source
   const pages = source.getPages();
-  
+
   const sitemap: MetadataRoute.Sitemap = [
     {
       url: baseUrl,

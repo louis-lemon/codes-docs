@@ -9,6 +9,7 @@
     "deploy": "next build",
     "deploy:aws": "next build && echo 'Build completed. Upload ./out/* to S3 /en/ directory' && ./scripts/deploy-en.sh en",
     "deploy:local": "yarn build && gh-pages -d out -b gh-pages",
+    "deploy:gh-pages": "GITHUB_PAGES=true yarn build && touch ./out/.nojekyll && echo 'Build completed. Push to GitHub and enable Pages in settings.'",
     "postinstall": "fumadocs-mdx",
     "generate": "FORCE_REBUILD=true tsx scripts/generate-md.ts",
     "generate:en": "FORCE_REBUILD=true tsx scripts/generate-md.ts --lang en",
@@ -17,6 +18,8 @@
     "generate:dev": "yarn generate && yarn postinstall && yarn dev"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@octokit/rest": "^22.0.1",
     "@orama/orama": "^3.1.12",
     "@paper-design/shaders-react": "^0.0.47",
     "@radix-ui/react-toast": "^1.2.15",
@@ -29,6 +32,7 @@
     "lucide-react": "^0.542.0",
     "mermaid": "^11.11.0",
     "next": "15.5.2",
+    "next-auth": "^5.0.0-beta.30",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "slugify": "^1.6.6"

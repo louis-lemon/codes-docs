@@ -25,6 +25,12 @@
       ],
       "@/*": [
         "./src/*"
+      ],
+      "@/config": [
+        "./config/index.ts"
+      ],
+      "@/config/*": [
+        "./config/*"
       ]
     },
     "plugins": [

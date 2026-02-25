@@ -2,7 +2,8 @@ import '@/app/global.css';
 import { Provider } from '@/components/layout/provider';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
-import {Toaster} from "@/components/ui/toaster";
+import { Toaster } from '@/components/ui/toaster';
+import { siteConfig } from '@/config';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -10,34 +11,30 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'EurekaCodes',
-    template: '%s | EurekaCodes',
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: 'From Infrastructure to Scalable Microservices. Transform your ideas into intelligent, production-ready applications with EurekaCodes platform.',
-  keywords: [
-    'microservices', 'AI agents', 'cloud-native', 'infrastructure', 
-    'scalable applications', 'DevOps automation', 'real-time chat', 
-    'WebSocket', 'serverless', 'eureka codes'
-  ],
-  authors: [{ name: 'EurekaCodes Team' }],
-  creator: 'EurekaCodes',
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.author }],
+  creator: siteConfig.creator,
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: siteConfig.favicon,
+    shortcut: siteConfig.favicon,
+    apple: siteConfig.favicon,
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://docs.eureka.codes',
-    title: 'EurekaCodes - From Infrastructure to Scalable Microservices',
-    description: 'Transform your ideas into intelligent, production-ready applications. Build AI agents, microservices, and real-time applications with enterprise-grade infrastructure.',
-    siteName: 'EurekaCodes',
+    type: siteConfig.openGraph.type,
+    locale: siteConfig.openGraph.locale,
+    url: siteConfig.url,
+    title: siteConfig.openGraph.title,
+    description: siteConfig.openGraph.description,
+    siteName: siteConfig.openGraph.siteName,
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'EurekaCodes - From Infrastructure to Scalable Microservices',
-    description: 'Transform your ideas into intelligent, production-ready applications with EurekaCodes platform.',
+    card: siteConfig.twitter.card,
+    title: siteConfig.twitter.title,
+    description: siteConfig.twitter.description,
   },
   robots: {
     index: true,
