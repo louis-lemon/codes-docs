@@ -4,8 +4,10 @@ import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Save, Loader2, Eye, Code, Trash2 } from 'lucide-react';
 import Link from 'next/link';
+import { useAuth } from '@/components/admin/auth-provider';
 import { MDXEditor } from '@/components/admin/mdx-editor';
 import { FrontmatterForm, type Frontmatter } from '@/components/admin/frontmatter-form';
+import { getPost, updatePost, deletePost } from '@/lib/github-client';
 import type { Post } from '@/types/admin';
 
 interface PageProps {
@@ -16,6 +18,7 @@ export default function EditPostPage({ params }: PageProps) {
   const { path: pathSegments } = use(params);
   const path = pathSegments.join('/');
   const router = useRouter();
+  const { isAuthenticated, isLoading: authLoading } = useAuth();
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -32,27 +35,34 @@ export default function EditPostPage({ params }: PageProps) {
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    fetchPost();
-  }, [path]);
+    if (!authLoading && !isAuthenticated) {
+      router.push('/admin/login');
+    }
+  }, [authLoading, isAuthenticated, router]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchPost();
+    }
+  }, [path, isAuthenticated]);
 
   const fetchPost = async () => {
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch(`/api/admin/posts/${path}`);
+      const data = await getPost(path);
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch post');
+      if (!data) {
+        throw new Error('Post not found');
       }
 
-      const data = await response.json();
-      setPost(data.post);
+      setPost(data);
       setFrontmatter({
-        title: data.post.title,
-        description: data.post.description || '',
+        title: data.title,
+        description: data.description || '',
       });
-      setContent(data.post.content);
+      setContent(data.content);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
@@ -72,30 +82,24 @@ export default function EditPostPage({ params }: PageProps) {
     setError(null);
 
     try {
-      const response = await fetch(`/api/admin/posts/${path}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          frontmatter: {
-            title: frontmatter.title,
-            description: frontmatter.description || undefined,
-          },
-          content,
-          sha: post.sha,
-          message: `Update ${frontmatter.title}`,
-        }),
-      });
+      const result = await updatePost(
+        path,
+        {
+          title: frontmatter.title,
+          description: frontmatter.description || undefined,
+        },
+        content,
+        post.sha,
+        `Update ${frontmatter.title}`
+      );
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to update post');
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to update post');
       }
 
-      // Refresh to get new SHA
-      const data = await response.json();
-      setPost({ ...post, sha: data.sha });
+      // Update SHA for next save
+      setPost({ ...post, sha: result.sha! });
 
-      // Show success feedback
       alert('Post updated successfully!');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unknown error');
@@ -115,13 +119,10 @@ export default function EditPostPage({ params }: PageProps) {
     setError(null);
 
     try {
-      const response = await fetch(`/api/admin/posts/${path}?sha=${post.sha}`, {
-        method: 'DELETE',
-      });
+      const result = await deletePost(path, post.sha);
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to delete post');
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to delete post');
       }
 
       router.push('/admin/posts');
@@ -132,7 +133,7 @@ export default function EditPostPage({ params }: PageProps) {
     }
   };
 
-  if (loading) {
+  if (authLoading || loading) {
     return (
       <div className="flex items-center justify-center py-12">
         <Loader2 className="h-8 w-8 animate-spin text-blue-600" />

@@ -1,9 +1,29 @@
-import { auth } from '@/lib/auth';
-import { FileText, BookOpen, PenTool, GitCommit } from 'lucide-react';
-import Link from 'next/link';
+'use client';
 
-export default async function AdminDashboard() {
-  const session = await auth();
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { FileText, BookOpen, PenTool, Loader2 } from 'lucide-react';
+import Link from 'next/link';
+import { useAuth } from '@/components/admin/auth-provider';
+import { GITHUB_CONFIG } from '@/lib/github-client';
+
+export default function AdminDashboard() {
+  const router = useRouter();
+  const { user, isAuthenticated, isLoading } = useAuth();
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.push('/admin/login');
+    }
+  }, [isLoading, isAuthenticated, router]);
+
+  if (isLoading || !isAuthenticated) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      </div>
+    );
+  }
 
   const stats = [
     { name: 'Documentation', icon: BookOpen, href: '/admin/posts?type=docs', description: 'Manage documentation pages' },
@@ -16,7 +36,7 @@ export default async function AdminDashboard() {
       {/* Welcome section */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Welcome back, {session?.user?.name?.split(' ')[0]}!
+          Welcome back, {user?.name?.split(' ')[0] || user?.login}!
         </h1>
         <p className="mt-1 text-gray-600 dark:text-gray-400">
           Manage your documentation and blog content from this dashboard.
@@ -50,24 +70,25 @@ export default async function AdminDashboard() {
 
       {/* Repository info */}
       <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <GitCommit className="h-5 w-5 text-gray-500" />
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Repository
-          </h2>
-        </div>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          Repository
+        </h2>
         <div className="space-y-2 text-sm">
           <p className="text-gray-600 dark:text-gray-400">
             <span className="font-medium text-gray-900 dark:text-white">Owner:</span>{' '}
-            {process.env.GITHUB_OWNER || 'Not configured'}
+            {GITHUB_CONFIG.owner}
           </p>
           <p className="text-gray-600 dark:text-gray-400">
             <span className="font-medium text-gray-900 dark:text-white">Repo:</span>{' '}
-            {process.env.GITHUB_REPO || 'Not configured'}
+            {GITHUB_CONFIG.repo}
           </p>
           <p className="text-gray-600 dark:text-gray-400">
             <span className="font-medium text-gray-900 dark:text-white">Branch:</span>{' '}
-            {process.env.GITHUB_BRANCH || 'main'}
+            {GITHUB_CONFIG.branch}
+          </p>
+          <p className="text-gray-600 dark:text-gray-400">
+            <span className="font-medium text-gray-900 dark:text-white">Signed in as:</span>{' '}
+            @{user?.login}
           </p>
         </div>
       </div>

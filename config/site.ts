@@ -101,6 +101,24 @@ export const siteConfig = {
     /** Twitter handle (optional, e.g., '@yourusername') */
     // creator: '@eurekacodes',
   },
+
+  // ============================================
+  // GITHUB REPOSITORY (for Admin CMS)
+  // ============================================
+
+  github: {
+    /** Repository owner (username or organization) */
+    owner: 'louis-lemon',
+
+    /** Repository name */
+    repo: 'codes-docs',
+
+    /** Branch to commit to */
+    branch: 'develop',
+
+    /** Content directory path */
+    contentPath: 'content',
+  },
 } as const;
 
 /** Type for the site configuration */

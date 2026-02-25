@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useSession, signOut } from 'next-auth/react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useAuth } from './auth-provider';
 import {
   LayoutDashboard,
   FileText,
@@ -27,7 +27,13 @@ const secondaryNavigation = [
 
 export function AdminSidebar() {
   const pathname = usePathname();
-  const { data: session } = useSession();
+  const router = useRouter();
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    router.push('/admin/login');
+  };
 
   return (
     <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
@@ -83,23 +89,23 @@ export function AdminSidebar() {
         {/* User section */}
         <div className="border-t border-gray-200 dark:border-gray-700 p-4">
           <div className="flex items-center gap-3">
-            {session?.user?.image && (
+            {user?.avatar_url && (
               <img
-                src={session.user.image}
-                alt={session.user.name || 'User'}
+                src={user.avatar_url}
+                alt={user.name || user.login}
                 className="h-8 w-8 rounded-full"
               />
             )}
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
-                {session?.user?.name}
+                {user?.name || user?.login}
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                @{session?.user?.username}
+                @{user?.login}
               </p>
             </div>
             <button
-              onClick={() => signOut({ callbackUrl: '/admin/login' })}
+              onClick={handleLogout}
               className="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
               title="Sign out"
             >

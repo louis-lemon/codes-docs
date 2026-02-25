@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Save, Loader2, Eye, Code } from 'lucide-react';
 import Link from 'next/link';
+import { useAuth } from '@/components/admin/auth-provider';
 import { MDXEditor } from '@/components/admin/mdx-editor';
 import { FrontmatterForm, type Frontmatter } from '@/components/admin/frontmatter-form';
+import { createPost } from '@/lib/github-client';
 
 const DEFAULT_CONTENT = `# Getting Started
 
@@ -27,6 +29,7 @@ console.log(greeting);
 
 export default function NewPostPage() {
   const router = useRouter();
+  const { isAuthenticated, isLoading: authLoading } = useAuth();
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [previewMode, setPreviewMode] = useState(false);
@@ -40,6 +43,12 @@ export default function NewPostPage() {
     description: '',
   });
   const [content, setContent] = useState(DEFAULT_CONTENT);
+
+  useEffect(() => {
+    if (!authLoading && !isAuthenticated) {
+      router.push('/admin/login');
+    }
+  }, [authLoading, isAuthenticated, router]);
 
   const handleSave = async () => {
     if (!frontmatter.title.trim()) {
@@ -60,23 +69,18 @@ export default function NewPostPage() {
         ? `${type}/${folder}/${slug}.mdx`
         : `${type}/${slug}.mdx`;
 
-      const response = await fetch('/api/admin/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          path,
-          frontmatter: {
-            title: frontmatter.title,
-            description: frontmatter.description || undefined,
-          },
-          content,
-          message: `Create ${frontmatter.title}`,
-        }),
-      });
+      const result = await createPost(
+        path,
+        {
+          title: frontmatter.title,
+          description: frontmatter.description || undefined,
+        },
+        content,
+        `Create ${frontmatter.title}`
+      );
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to create post');
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to create post');
       }
 
       router.push('/admin/posts');
@@ -86,6 +90,14 @@ export default function NewPostPage() {
       setSaving(false);
     }
   };
+
+  if (authLoading || !isAuthenticated) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

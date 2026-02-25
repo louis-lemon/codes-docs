@@ -1,12 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { FileText, BookOpen, Search, Plus, Edit, Trash2, Loader2 } from 'lucide-react';
+import { useAuth } from '@/components/admin/auth-provider';
+import { listPosts, getPost, deletePost as deletePostApi } from '@/lib/github-client';
 import type { PostListItem } from '@/types/admin';
 
 export default function PostsPage() {
+  const router = useRouter();
+  const { isAuthenticated, isLoading: authLoading } = useAuth();
   const searchParams = useSearchParams();
   const typeFilter = searchParams.get('type') as 'docs' | 'blog' | null;
 
@@ -16,27 +20,26 @@ export default function PostsPage() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    fetchPosts();
-  }, [typeFilter]);
+    if (!authLoading && !isAuthenticated) {
+      router.push('/admin/login');
+    }
+  }, [authLoading, isAuthenticated, router]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchPosts();
+    }
+  }, [typeFilter, isAuthenticated]);
 
   const fetchPosts = async () => {
     setLoading(true);
     setError(null);
 
     try {
-      const url = typeFilter
-        ? `/api/admin/posts?type=${typeFilter}`
-        : '/api/admin/posts';
-      const response = await fetch(url);
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch posts');
-      }
-
-      const data = await response.json();
-      setPosts(data.posts);
+      const data = await listPosts(typeFilter || undefined);
+      setPosts(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unknown error');
+      setError(err instanceof Error ? err.message : 'Failed to fetch posts');
     } finally {
       setLoading(false);
     }
@@ -53,29 +56,29 @@ export default function PostsPage() {
     }
 
     try {
-      // First get the post to get the SHA
-      const getResponse = await fetch(`/api/admin/posts/${post.path}`);
-      if (!getResponse.ok) {
+      const fullPost = await getPost(post.path);
+      if (!fullPost) {
         throw new Error('Failed to get post');
       }
-      const { post: fullPost } = await getResponse.json();
 
-      // Then delete it
-      const deleteResponse = await fetch(
-        `/api/admin/posts/${post.path}?sha=${fullPost.sha}`,
-        { method: 'DELETE' }
-      );
-
-      if (!deleteResponse.ok) {
-        throw new Error('Failed to delete post');
+      const result = await deletePostApi(post.path, fullPost.sha);
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to delete post');
       }
 
-      // Refresh the list
       fetchPosts();
     } catch (err) {
       alert(err instanceof Error ? err.message : 'Failed to delete post');
     }
   };
+
+  if (authLoading || !isAuthenticated) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
