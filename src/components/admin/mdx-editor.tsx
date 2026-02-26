@@ -32,7 +32,36 @@ import {
   Separator,
   type MDXEditorMethods,
 } from '@mdxeditor/editor';
+import { EditorView } from '@codemirror/view';
 import '@mdxeditor/editor/style.css';
+
+// Light theme for CodeMirror (source/diff mode)
+const lightTheme = EditorView.theme({
+  '&': {
+    backgroundColor: '#ffffff',
+    color: '#1f2937',
+  },
+  '.cm-content': {
+    caretColor: '#1f2937',
+  },
+  '.cm-cursor, .cm-dropCursor': {
+    borderLeftColor: '#1f2937',
+  },
+  '&.cm-focused .cm-selectionBackground, .cm-selectionBackground, .cm-content ::selection': {
+    backgroundColor: '#d1d5db',
+  },
+  '.cm-gutters': {
+    backgroundColor: '#f9fafb',
+    color: '#6b7280',
+    border: 'none',
+  },
+  '.cm-activeLineGutter': {
+    backgroundColor: '#f3f4f6',
+  },
+  '.cm-activeLine': {
+    backgroundColor: '#f9fafb',
+  },
+});
 
 interface MDXEditorProps {
   value: string;
@@ -122,6 +151,7 @@ export const MDXEditor = forwardRef<MDXEditorMethods, MDXEditorProps>(
                 swift: 'Swift',
                 kotlin: 'Kotlin',
               },
+              codeMirrorExtensions: [lightTheme],
             }),
 
             // Frontmatter support (for MDX files)
