@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { Suspense, useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ArrowLeft, Save, Loader2, Trash2, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
@@ -13,7 +13,15 @@ import type { Post } from '@/types/admin';
 
 type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 
-export default function EditPostPage() {
+function LoadingState() {
+  return (
+    <div className="flex items-center justify-center py-12">
+      <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+    </div>
+  );
+}
+
+function EditPostContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const path = searchParams.get('path') || '';
@@ -48,6 +56,7 @@ export default function EditPostPage() {
     if (isAuthenticated && path) {
       fetchPost();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path, isAuthenticated]);
 
   const fetchPost = async () => {
@@ -232,11 +241,7 @@ export default function EditPostPage() {
   }, [hasChanges]);
 
   if (authLoading || loading) {
-    return (
-      <div className="flex items-center justify-center py-12">
-        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
-      </div>
-    );
+    return <LoadingState />;
   }
 
   if (!path) {
@@ -384,4 +389,12 @@ function SaveStatusIndicator({
   }
 
   return null;
+}
+
+export default function EditPostPage() {
+  return (
+    <Suspense fallback={<LoadingState />}>
+      <EditPostContent />
+    </Suspense>
+  );
 }
