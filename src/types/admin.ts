@@ -1,6 +1,25 @@
 /**
- * Admin CMS Types
+ * Admin CMS Types - Matching existing blog format
  */
+
+/**
+ * Extended frontmatter fields matching existing blog format
+ */
+export interface ExtendedFrontmatter {
+  title: string;
+  description?: string;
+  id?: string;
+  no?: number;
+  order?: number;
+  category?: string;
+  subCategory?: string;
+  tags?: string[];
+  created?: string;
+  updated?: string;
+  slug?: string;
+  /** Additional custom fields */
+  [key: string]: unknown;
+}
 
 export interface Post {
   /** File path relative to content/ (e.g., "docs/getting-started.mdx") */
@@ -17,6 +36,8 @@ export interface Post {
   content: string;
   /** Raw frontmatter as YAML string */
   frontmatter: string;
+  /** Parsed frontmatter object */
+  rawFrontmatter?: Record<string, unknown>;
   /** Last modified date from Git */
   lastModified?: string;
   /** Git SHA for optimistic locking */
@@ -30,17 +51,15 @@ export interface PostListItem {
   title: string;
   description?: string;
   lastModified?: string;
+  /** Tags */
+  tags?: string[];
 }
 
 export interface PostCreateInput {
   /** File path relative to content/ */
   path: string;
   /** Frontmatter as object */
-  frontmatter: {
-    title: string;
-    description?: string;
-    [key: string]: unknown;
-  };
+  frontmatter: ExtendedFrontmatter;
   /** MDX content (without frontmatter) */
   content: string;
   /** Commit message */
@@ -51,11 +70,7 @@ export interface PostUpdateInput {
   /** File path relative to content/ */
   path: string;
   /** Frontmatter as object */
-  frontmatter: {
-    title: string;
-    description?: string;
-    [key: string]: unknown;
-  };
+  frontmatter: ExtendedFrontmatter;
   /** MDX content (without frontmatter) */
   content: string;
   /** Git SHA for optimistic locking */
@@ -82,3 +97,13 @@ export interface GitHubContentResponse {
   content: string;
   encoding: 'base64';
 }
+
+/**
+ * Save status for editor autosave feature
+ */
+export type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
+
+/**
+ * Editor mode for MDX editing
+ */
+export type EditorMode = 'wysiwyg' | 'source' | 'preview';

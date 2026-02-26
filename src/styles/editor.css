@@ -1,0 +1,225 @@
+/**
+ * MDXEditor Custom Styles - Light Mode Default
+ * Customizes the MDXEditor appearance for the admin CMS
+ */
+
+/* Editor container - Light mode default */
+.mdx-editor-wrapper {
+  @apply border border-gray-300 rounded-lg overflow-hidden bg-white;
+}
+
+/* Force light mode for the editor */
+.mdx-editor-wrapper,
+.mdx-editor-wrapper * {
+  color-scheme: light;
+}
+
+/* Toolbar styling */
+.mdx-editor-wrapper [role="toolbar"] {
+  @apply bg-gray-100 border-b border-gray-300 px-3 py-2 flex-wrap gap-1;
+}
+
+.mdx-editor-wrapper [role="toolbar"] button {
+  @apply text-gray-700 hover:bg-gray-200 rounded p-1.5 transition-colors;
+}
+
+.mdx-editor-wrapper [role="toolbar"] button[data-state="on"],
+.mdx-editor-wrapper [role="toolbar"] button[aria-pressed="true"] {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.mdx-editor-wrapper [role="toolbar"] button:hover {
+  @apply bg-gray-200;
+}
+
+/* Separator styling */
+.mdx-editor-wrapper [data-orientation="vertical"] {
+  @apply w-px h-5 bg-gray-300 mx-1;
+}
+
+/* Block type select dropdown */
+.mdx-editor-wrapper [role="combobox"] {
+  @apply bg-white border border-gray-300 rounded px-2 py-1 text-sm text-gray-700;
+}
+
+/* Editor content area */
+.mdx-editor-wrapper .mdxeditor-root-contenteditable,
+.mdx-editor-wrapper .mdx-editor-content {
+  @apply min-h-[400px] outline-none bg-white text-gray-900;
+}
+
+/* Prose styling for content */
+.mdx-editor-wrapper .mdx-editor-content {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.mdx-editor-wrapper .mdx-editor-content p {
+  @apply text-gray-800 my-3;
+}
+
+/* Code blocks */
+.mdx-editor-wrapper pre {
+  @apply bg-gray-900 rounded-lg overflow-x-auto my-4;
+}
+
+.mdx-editor-wrapper pre code {
+  @apply text-sm font-mono text-gray-100;
+}
+
+/* CodeMirror editor in code blocks */
+.mdx-editor-wrapper .cm-editor {
+  @apply bg-gray-900 rounded-lg;
+}
+
+.mdx-editor-wrapper .cm-editor .cm-scroller {
+  @apply font-mono text-sm;
+}
+
+.mdx-editor-wrapper .cm-editor .cm-gutters {
+  @apply bg-gray-800 border-r border-gray-700;
+}
+
+.mdx-editor-wrapper .cm-editor .cm-activeLineGutter {
+  @apply bg-gray-700;
+}
+
+.mdx-editor-wrapper .cm-editor .cm-activeLine {
+  @apply bg-gray-800/50;
+}
+
+/* Inline code */
+.mdx-editor-wrapper code:not(pre code) {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm text-pink-600 font-mono border border-gray-200;
+}
+
+/* Blockquotes */
+.mdx-editor-wrapper blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 bg-blue-50 py-3 pr-4 rounded-r my-4;
+}
+
+/* Tables */
+.mdx-editor-wrapper table {
+  @apply w-full border-collapse my-4;
+}
+
+.mdx-editor-wrapper th,
+.mdx-editor-wrapper td {
+  @apply border border-gray-300 px-3 py-2 text-left text-gray-800;
+}
+
+.mdx-editor-wrapper th {
+  @apply bg-gray-100 font-semibold;
+}
+
+/* Links */
+.mdx-editor-wrapper a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+/* Images */
+.mdx-editor-wrapper img {
+  @apply max-w-full rounded-lg my-4;
+}
+
+/* Headings */
+.mdx-editor-wrapper h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-gray-900;
+}
+
+.mdx-editor-wrapper h2 {
+  @apply text-2xl font-bold mt-6 mb-3 text-gray-900;
+}
+
+.mdx-editor-wrapper h3 {
+  @apply text-xl font-semibold mt-5 mb-2 text-gray-900;
+}
+
+.mdx-editor-wrapper h4 {
+  @apply text-lg font-semibold mt-4 mb-2 text-gray-900;
+}
+
+/* Lists */
+.mdx-editor-wrapper ul {
+  @apply list-disc pl-6 my-4 space-y-2;
+}
+
+.mdx-editor-wrapper ol {
+  @apply list-decimal pl-6 my-4 space-y-2;
+}
+
+.mdx-editor-wrapper li {
+  @apply text-gray-800;
+}
+
+/* Horizontal rule */
+.mdx-editor-wrapper hr {
+  @apply border-gray-300 my-8;
+}
+
+/* Link dialog */
+.mdx-editor-wrapper [role="dialog"] {
+  @apply bg-white border border-gray-300 rounded-lg shadow-xl p-4;
+}
+
+.mdx-editor-wrapper [role="dialog"] input {
+  @apply bg-white border border-gray-300 rounded px-3 py-2 text-gray-900 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.mdx-editor-wrapper [role="dialog"] button {
+  @apply px-4 py-2 rounded font-medium transition-colors;
+}
+
+/* Diff source view */
+.mdx-editor-wrapper .mdxeditor-diff-source-wrapper {
+  @apply bg-gray-900;
+}
+
+/* Select dropdown content */
+.mdx-editor-wrapper [role="listbox"] {
+  @apply bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden z-50;
+}
+
+.mdx-editor-wrapper [role="option"] {
+  @apply px-3 py-2 text-gray-700 cursor-pointer hover:bg-gray-100;
+}
+
+.mdx-editor-wrapper [role="option"][data-state="checked"] {
+  @apply bg-blue-50 text-blue-700;
+}
+
+/* Placeholder text */
+.mdx-editor-wrapper [data-placeholder]::before {
+  @apply text-gray-400;
+}
+
+/* Focus states */
+.mdx-editor-wrapper:focus-within {
+  @apply ring-2 ring-blue-500/50 border-blue-400;
+}
+
+/* Popover and floating elements */
+.mdx-editor-wrapper [data-radix-popper-content-wrapper] {
+  @apply z-50;
+}
+
+/* Save status indicator */
+.save-status {
+  @apply text-sm flex items-center gap-2;
+}
+
+.save-status.saving {
+  @apply text-yellow-600;
+}
+
+.save-status.saved {
+  @apply text-green-600;
+}
+
+.save-status.unsaved {
+  @apply text-gray-500;
+}
+
+.save-status.error {
+  @apply text-red-600;
+}

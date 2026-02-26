@@ -30,11 +30,9 @@ export default function BlogAllPage({ blogPosts }: BlogAllPageProps) {
   const searchParams = useSearchParams()
   const selectedCategory = searchParams.get('category')
 
-  // Filter and sort posts (show all posts including drafts for development)
+  // Filter and sort posts
   const allPosts = blogPosts
     .filter(post => {
-      // Show all posts including drafts for now
-      // if (post.data.draft) return false
       if (selectedCategory) {
         // For Blog category, use subCategory as the filtering criteria
         const postCategory = getCategoryFromPost(post)

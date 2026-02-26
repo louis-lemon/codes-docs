@@ -22,9 +22,8 @@ interface BlogListPageProps {
 export default function BlogListPage({ blogPosts }: BlogListPageProps) {
 
 
-  // Filter and sort posts (show all posts including drafts for development)
+  // Sort posts by date
   const allPosts = blogPosts
-    // .filter(post => !post.data.draft)  // Show drafts for now
     .sort((a, b) => {
       const dateA = new Date(a.data.created || a.data.updated || '').getTime()
       const dateB = new Date(b.data.created || b.data.updated || '').getTime()
