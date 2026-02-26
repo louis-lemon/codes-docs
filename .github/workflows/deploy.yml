@@ -1,7 +1,7 @@
 # GitHub Pages Deployment Workflow
 #
 # This workflow automatically builds and deploys your documentation site
-# to GitHub Pages whenever you push to the main branch.
+# to GitHub Pages whenever you push to the develop branch.
 #
 # Setup Instructions:
 # 1. Go to your repository Settings > Pages
@@ -15,9 +15,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs only on pushes to develop branch
   push:
-    branches: ['main', 'develop']
+    branches: ['develop']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
