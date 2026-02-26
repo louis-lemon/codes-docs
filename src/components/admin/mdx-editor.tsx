@@ -1,49 +1,168 @@
 'use client';
 
-import { useRef, useCallback } from 'react';
-import Editor, { OnMount } from '@monaco-editor/react';
-import type { editor } from 'monaco-editor';
+import { forwardRef, useEffect, useState } from 'react';
+import {
+  MDXEditor as BaseMDXEditor,
+  headingsPlugin,
+  listsPlugin,
+  quotePlugin,
+  thematicBreakPlugin,
+  markdownShortcutPlugin,
+  linkPlugin,
+  linkDialogPlugin,
+  imagePlugin,
+  tablePlugin,
+  codeBlockPlugin,
+  codeMirrorPlugin,
+  diffSourcePlugin,
+  toolbarPlugin,
+  frontmatterPlugin,
+  UndoRedo,
+  BoldItalicUnderlineToggles,
+  StrikeThroughSupSubToggles,
+  ListsToggle,
+  BlockTypeSelect,
+  CreateLink,
+  InsertImage,
+  InsertTable,
+  InsertThematicBreak,
+  InsertCodeBlock,
+  CodeToggle,
+  DiffSourceToggleWrapper,
+  Separator,
+  type MDXEditorMethods,
+} from '@mdxeditor/editor';
+import '@mdxeditor/editor/style.css';
 
 interface MDXEditorProps {
   value: string;
   onChange: (value: string) => void;
-  height?: string;
+  placeholder?: string;
+  readOnly?: boolean;
+  className?: string;
 }
 
-export function MDXEditor({ value, onChange, height = '500px' }: MDXEditorProps) {
-  const editorRef = useRef<editor.IStandaloneCodeEditor | null>(null);
+/**
+ * MDXEditor wrapper component with WYSIWYG editing capabilities.
+ * Includes toolbar, code block support, and diff view.
+ */
+export const MDXEditor = forwardRef<MDXEditorMethods, MDXEditorProps>(
+  ({ value, onChange, placeholder = 'Start writing...', readOnly = false, className = '' }, ref) => {
+    // Use mounted state to avoid SSR issues
+    const [mounted, setMounted] = useState(false);
 
-  const handleEditorDidMount: OnMount = useCallback((editor) => {
-    editorRef.current = editor;
-  }, []);
+    useEffect(() => {
+      setMounted(true);
+    }, []);
 
-  const handleChange = useCallback(
-    (value: string | undefined) => {
-      onChange(value || '');
-    },
-    [onChange]
-  );
+    if (!mounted) {
+      // Show a loading placeholder during SSR
+      return (
+        <div className={`min-h-[500px] border border-gray-200 rounded-lg bg-gray-50 flex items-center justify-center ${className}`}>
+          <div className="text-gray-400">Loading editor...</div>
+        </div>
+      );
+    }
 
-  return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-      <Editor
-        height={height}
-        defaultLanguage="mdx"
-        language="markdown"
-        value={value}
-        onChange={handleChange}
-        onMount={handleEditorDidMount}
-        theme="vs-dark"
-        options={{
-          minimap: { enabled: false },
-          fontSize: 14,
-          lineNumbers: 'on',
-          wordWrap: 'on',
-          scrollBeyondLastLine: false,
-          padding: { top: 16, bottom: 16 },
-          automaticLayout: true,
-        }}
-      />
-    </div>
-  );
-}
+    return (
+      <div className={`mdx-editor-wrapper ${className}`}>
+        <BaseMDXEditor
+          ref={ref}
+          markdown={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          readOnly={readOnly}
+          contentEditableClassName="mdx-editor-content prose max-w-none min-h-[400px] p-4 focus:outline-none"
+          plugins={[
+            // Core plugins
+            headingsPlugin(),
+            listsPlugin(),
+            quotePlugin(),
+            thematicBreakPlugin(),
+            markdownShortcutPlugin(),
+
+            // Link and image support
+            linkPlugin(),
+            linkDialogPlugin(),
+            imagePlugin({
+              imageUploadHandler: async () => {
+                // For now, return a placeholder. Image upload can be implemented later.
+                return Promise.resolve('https://via.placeholder.com/400x300');
+              },
+            }),
+
+            // Table support
+            tablePlugin(),
+
+            // Code block support with syntax highlighting
+            codeBlockPlugin({ defaultCodeBlockLanguage: 'typescript' }),
+            codeMirrorPlugin({
+              codeBlockLanguages: {
+                typescript: 'TypeScript',
+                javascript: 'JavaScript',
+                tsx: 'TSX',
+                jsx: 'JSX',
+                css: 'CSS',
+                html: 'HTML',
+                json: 'JSON',
+                markdown: 'Markdown',
+                python: 'Python',
+                bash: 'Bash',
+                shell: 'Shell',
+                yaml: 'YAML',
+                sql: 'SQL',
+                graphql: 'GraphQL',
+                go: 'Go',
+                rust: 'Rust',
+                java: 'Java',
+                cpp: 'C++',
+                c: 'C',
+                php: 'PHP',
+                ruby: 'Ruby',
+                swift: 'Swift',
+                kotlin: 'Kotlin',
+              },
+            }),
+
+            // Frontmatter support (for MDX files)
+            frontmatterPlugin(),
+
+            // Diff source view (toggle between rich text and markdown source)
+            diffSourcePlugin({
+              viewMode: 'rich-text',
+              diffMarkdown: value,
+            }),
+
+            // Toolbar
+            toolbarPlugin({
+              toolbarContents: () => (
+                <DiffSourceToggleWrapper>
+                  <div className="flex flex-wrap items-center gap-1">
+                    <UndoRedo />
+                    <Separator />
+                    <BoldItalicUnderlineToggles />
+                    <StrikeThroughSupSubToggles />
+                    <CodeToggle />
+                    <Separator />
+                    <BlockTypeSelect />
+                    <Separator />
+                    <ListsToggle />
+                    <Separator />
+                    <CreateLink />
+                    <InsertImage />
+                    <InsertTable />
+                    <InsertThematicBreak />
+                    <Separator />
+                    <InsertCodeBlock />
+                  </div>
+                </DiffSourceToggleWrapper>
+              ),
+            }),
+          ]}
+        />
+      </div>
+    );
+  }
+);
+
+MDXEditor.displayName = 'MDXEditor';

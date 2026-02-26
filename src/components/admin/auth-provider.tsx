@@ -1,7 +1,15 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { getToken, getUser, login as authLogin, logout as authLogout, type GitHubUser } from '@/lib/auth-client';
+import {
+  getToken,
+  getUser,
+  saveUser,
+  login as authLogin,
+  logout as authLogout,
+  validateToken,
+  type GitHubUser,
+} from '@/lib/auth-client';
 
 interface AuthContextType {
   user: GitHubUser | null;
@@ -18,15 +26,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check for existing auth on mount
-    const token = getToken();
-    const savedUser = getUser();
+    // Check for existing auth on mount and validate token
+    const initAuth = async () => {
+      const token = getToken();
+      const savedUser = getUser();
 
-    if (token && savedUser) {
-      setUser(savedUser);
-    }
+      if (token && savedUser) {
+        // Validate token is still valid
+        const validatedUser = await validateToken(token);
 
-    setIsLoading(false);
+        if (validatedUser) {
+          // Token is valid, update user info in case it changed
+          saveUser(validatedUser);
+          setUser(validatedUser);
+        } else {
+          // Token is invalid or expired, clear auth
+          authLogout();
+          setUser(null);
+        }
+      }
+
+      setIsLoading(false);
+    };
+
+    initAuth();
   }, []);
 
   const login = async (token: string) => {

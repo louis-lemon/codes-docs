@@ -6,18 +6,18 @@ import { useAuth } from './auth-provider';
 import {
   LayoutDashboard,
   FileText,
+  BookOpen,
   FolderOpen,
   Settings,
   LogOut,
-  Plus,
   ExternalLink,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-  { name: 'All Posts', href: '/admin/posts', icon: FileText },
-  { name: 'New Post', href: '/admin/posts/new', icon: Plus },
+  { name: 'Docs', href: '/admin/docs', icon: BookOpen },
+  { name: 'Blog', href: '/admin/blog', icon: FileText },
 ];
 
 const secondaryNavigation = [
@@ -50,7 +50,8 @@ export function AdminSidebar() {
         <nav className="flex-1 space-y-1 px-3 py-4">
           <div className="space-y-1">
             {navigation.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = pathname === item.href ||
+                (item.href !== '/admin' && pathname.startsWith(item.href));
               return (
                 <Link
                   key={item.name}

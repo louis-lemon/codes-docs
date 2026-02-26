@@ -35,8 +35,6 @@ export default function AllArticlesPage() {
       tags: post.data.tags,
       created: post.data.created,
       updated: post.data.updated,
-      draft: post.data.draft,
-      featured: post.data.featured,
     }
   }));
 
