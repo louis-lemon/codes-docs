@@ -1,20 +1,11 @@
-import Link from 'next/link';
-import {
-  Globe,
-  Cloud,
-  Wrench,
-  BookOpen,
-  Bot,
-  Zap,
-  Lightbulb,
-  Search,
-  Compass, Monitor, Server, BrainCircuit, Smartphone
-} from 'lucide-react';
 import ShaderBackground from "@/components/common/shader-background";
 import { SearchButton } from "@/components/common/search-button";
 import { QuickStartCard, TopicCard } from "@/components/home/home-cards";
+import { getHomepageSettings, iconMap } from '@/lib/settings';
 
 export default function HomePage() {
+  const settings = getHomepageSettings();
+
   return (
     <main className="flex flex-1 flex-col">
       {/* Hero Section with Background Image */}
@@ -83,56 +74,44 @@ export default function HomePage() {
       {/* Quick Start Section */}
       <section className="my-12 mx-auto max-w-6xl px-5">
         <p className="text-gray-900 dark:text-gray-200 text-left mt-4 text-2xl mb-4 font-semibold">
-          Get started in 5 minutes
+          {settings.quickStart.title}
         </p>
 
         <div>
           <div className="not-prose grid gap-x-4 sm:grid-cols-3">
-            <QuickStartCard
-              title="Quick start"
-              description="Learn how to use EurekaCodes Pro Plan with workspaces and projects"
-              href="/docs/getting-started/C346"
-              icon={<BookOpen className="w-6 h-6" />}
-            />
-            <QuickStartCard
-              title="Chat App Application Guide"
-              description="How to apply Chat App service in EurekaCodes platform"
-              href="/docs/getting-started/C348"
-              icon={<Bot className="w-6 h-6" />}
-            />
+            {settings.quickStart.cards.map((card) => {
+              const IconComponent = iconMap[card.icon];
+              return (
+                <QuickStartCard
+                  key={card.id}
+                  title={card.title}
+                  description={card.description}
+                  href={card.href}
+                  icon={<IconComponent className="w-6 h-6" />}
+                />
+              );
+            })}
           </div>
         </div>
 
         {/* Topics Section */}
         <p className="text-gray-900 dark:text-gray-200 text-left mt-10 text-2xl mb-4 font-semibold">
-          Technology Stack
+          {settings.techStack.title}
         </p>
 
         <div className="not-prose grid gap-x-4 sm:grid-cols-3">
-          <TopicCard
-            title="eureka-chats-front"
-            description="Real-time Chat Application frontend built with React, TypeScript, and modern UI components"
-            href="/docs/technology/C319"
-            icon={<Globe className="w-6 h-6" />}
-          />
-          <TopicCard
-            title="eureka-sockets-api"
-            description="Serverless event-driven WebSocket service providing real-time communication in MSA environments"
-            href="/docs/technology/C321"
-            icon={<Server className="w-6 h-6" />}
-          />
-          <TopicCard
-            title="eureka-chats-api"
-            description="Serverless real-time chat microservice with WebSocket integration for backend API services"
-            href="/docs/technology/C322"
-            icon={<Server className="w-6 h-6" />}
-          />
-          <TopicCard
-            title="MCP Utilization: LangChain & LangGraph"
-            description="Framework for developing AI applications with large language models and flexible workflows"
-            href="/docs/technology/C338"
-            icon={<BrainCircuit className="w-6 h-6" />}
-          />
+          {settings.techStack.cards.map((card) => {
+            const IconComponent = iconMap[card.icon];
+            return (
+              <TopicCard
+                key={card.id}
+                title={card.title}
+                description={card.description}
+                href={card.href}
+                icon={<IconComponent className="w-6 h-6" />}
+              />
+            );
+          })}
         </div>
       </section>
 
