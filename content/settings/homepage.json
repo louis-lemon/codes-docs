@@ -1,10 +1,10 @@
 {
   "quickStart": {
-    "title": "Get started in 5 minutes",
+    "title": "12345 Get started in 5 minutes",
     "cards": [
       {
         "id": "qs-1",
-        "title": "Quick start",
+        "title": "123 Quick start",
         "description": "Learn how to use EurekaCodes Pro Plan with workspaces and projects",
         "href": "/docs/getting-started/C346",
         "icon": "BookOpen"
@@ -15,6 +15,13 @@
         "description": "How to apply Chat App service in EurekaCodes platform",
         "href": "/docs/getting-started/C348",
         "icon": "Bot"
+      },
+      {
+        "id": "qs-1773289600456",
+        "title": "eureka-chats-front",
+        "description": "Real-time Chat Application frontend built with React, TypeScript, and modern UI components",
+        "href": "/docs/technology/C319",
+        "icon": "BookOpen"
       }
     ]
   },
