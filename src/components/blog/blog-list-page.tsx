@@ -14,6 +14,7 @@ import {
 
 import { categoryInfo } from '@/constants/blog-categories'
 import BlogCard from '@/components/blog/blog-card'
+import { getBlogFeaturedSettings } from '@/lib/settings'
 
 interface BlogListPageProps {
   blogPosts: any[];
@@ -30,8 +31,9 @@ export default function BlogListPage({ blogPosts }: BlogListPageProps) {
       return dateB - dateA // Most recent first
     })
 
-  // Specific featured posts: C135, C136, C138
-  const featuredPostIds = ['C329', 'C331']
+  // Get featured post IDs from settings
+  const featuredSettings = getBlogFeaturedSettings();
+  const featuredPostIds = featuredSettings.featuredPostIds;
   const featuredPosts = featuredPostIds
     .map(id => allPosts.find(post => post.data.id === id))
     .filter(Boolean) // Remove any undefined posts
