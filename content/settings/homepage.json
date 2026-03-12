@@ -1,0 +1,54 @@
+{
+  "quickStart": {
+    "title": "Get started in 5 minutes",
+    "cards": [
+      {
+        "id": "qs-1",
+        "title": "Quick start",
+        "description": "Learn how to use EurekaCodes Pro Plan with workspaces and projects",
+        "href": "/docs/getting-started/C346",
+        "icon": "BookOpen"
+      },
+      {
+        "id": "qs-2",
+        "title": "Chat App Application Guide",
+        "description": "How to apply Chat App service in EurekaCodes platform",
+        "href": "/docs/getting-started/C348",
+        "icon": "Bot"
+      }
+    ]
+  },
+  "techStack": {
+    "title": "Technology Stack",
+    "cards": [
+      {
+        "id": "ts-1",
+        "title": "eureka-chats-front",
+        "description": "Real-time Chat Application frontend built with React, TypeScript, and modern UI components",
+        "href": "/docs/technology/C319",
+        "icon": "Globe"
+      },
+      {
+        "id": "ts-2",
+        "title": "eureka-sockets-api",
+        "description": "Serverless event-driven WebSocket service providing real-time communication in MSA environments",
+        "href": "/docs/technology/C321",
+        "icon": "Server"
+      },
+      {
+        "id": "ts-3",
+        "title": "eureka-chats-api",
+        "description": "Serverless real-time chat microservice with WebSocket integration for backend API services",
+        "href": "/docs/technology/C322",
+        "icon": "Server"
+      },
+      {
+        "id": "ts-4",
+        "title": "MCP Utilization: LangChain & LangGraph",
+        "description": "Framework for developing AI applications with large language models and flexible workflows",
+        "href": "/docs/technology/C338",
+        "icon": "BrainCircuit"
+      }
+    ]
+  }
+}
